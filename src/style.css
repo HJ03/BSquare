@@ -14,11 +14,13 @@ li {
     color: #000000;
 }
 
+
 li a {
     text-decoration: none;
     color: rgb(255, 255, 255);
 
 }
+
 
 .heading_style  {
     text-align: center;
@@ -90,6 +92,13 @@ main {
 
 .navbar-nav .nav-item .nav-link {
     color: rgb(0, 0, 0);
+    margin: 0px 10px;
+    font-weight: 600;
+    font-size: 16px;
+}
+.navbar-nav .nav-item .nav-link:active,
+.navbar-nav .nav-item .nav-link:focus {
+    color: rgb(255, 0, 0);
     margin: 0px 10px;
     font-weight: 600;
     font-size: 16px;
