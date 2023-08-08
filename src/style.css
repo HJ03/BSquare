@@ -9,21 +9,30 @@ section {
 }
 
 li {
-    list-style: none;
+    /* list-style: none; */
     margin: 10px 0;
+    color: #000000;
 }
 
 li a {
     text-decoration: none;
-    color: white;
+    color: rgb(255, 255, 255);
 
 }
 
-.heading_style {
+.heading_style  {
     text-align: center;
-    font-weight: 700;
+    font-weight: 600;
     margin: 20px 0;
+    color: #000000;
 }
+.heading_style span  {
+    text-align: center;
+    font-weight: 600;
+    margin: 20px 0;
+    color: #0087c4;
+}
+
 
 .hr {
     width: 80px;
@@ -38,10 +47,12 @@ li a {
     position: fixed;
     top: 0;
     width: 100%;
+    height: 70px;
     right: 0;
     left: 0;
-    background-color: black;
+    background-color: rgb(255, 255, 255);
     z-index: 1000;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 
 }
 
@@ -52,7 +63,7 @@ main {
 
 .navbar .navbar-brand {
     font-size: 30px;
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 #nav_container {
@@ -78,7 +89,7 @@ main {
 }
 
 .navbar-nav .nav-item .nav-link {
-    color: white;
+    color: rgb(0, 0, 0);
     margin: 0px 10px;
     font-weight: 600;
     font-size: 16px;
@@ -180,7 +191,29 @@ main {
 #cards_landscape_wrap-2 .card-flyer .text-box {
     text-align: center;
 }
+/* #row ul {
+    padding: 0;
+} */
+#row .text-container{
+    text-align: start;
+}
+#row ul li{
+    font-size: 13px;
+}
+#row ul li span {
+position: absolute;
+margin-left: -25px;
+padding-right: 100%;
+transform: translateX(0px);   
+transition: .3s; 
+font-size: 20px;
 
+}
+#row ul li span:hover {
+    transform: translateX(5px);   
+    transition: .3s; 
+    
+}
 #cards_landscape_wrap-2 .card-flyer .text-box .text-container {
     padding: 30px 18px;
 }
@@ -224,7 +257,7 @@ main {
     text-transform: uppercase;
     font-family: 'Roboto Black', sans-serif;
     letter-spacing: 1px;
-    color: #0087c4;
+    color: #000000;
 }
 
 .button_one {
@@ -392,13 +425,15 @@ main {
     position: relative;
     z-index: 1;
     transform: translateY(-0px);
-    transition: .5s;
+    transition: .3s;
+    border-top: 2px solid rgb(255, 255, 255);
 
 }
 
 .card:hover {
     transform: translateY(-10px);
-    transition: .5s;
+    transition: .3s;
+    border-top: 2px solid #0087c4;
 
 }
 
@@ -505,6 +540,9 @@ a:focus {
     background-color: rgb(46, 46, 46);
     color: white;
 }
+.footer .row li{
+    list-style: none;
+}
 
 .footer .container {
     padding: 50px 0;
@@ -517,4 +555,3 @@ a:focus {
     padding: 7px 10px;
     border-radius: 50%;
 }
-
