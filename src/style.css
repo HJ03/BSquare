@@ -1093,19 +1093,19 @@ a:focus {
 }
 
 .case-study-images li:nth-child(1) .img-hero-background {
-    background-image: url("/public/images/back1.jpg");
+    background-image: url("../public/images/back1.jpg");
 }
 
 .case-study-images li:nth-child(2) .img-hero-background {
-    background-image: url("/public/images/back2.jpg");
+    background-image: url("../public/images/back2.jpg");
 }
 
 .case-study-images li:nth-child(3) .img-hero-background {
-    background-image: url("/public/images/back3.jpg");
+    background-image: url("../public/images/back3.jpg");
 }
 
 .case-study-images li:nth-child(4) .img-hero-background {
-    background-image: url("/public/images/back1.jpg");
+    background-image: url("../public/images/back1.jpg");
 }
 
 /* #Media
