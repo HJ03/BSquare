@@ -14,6 +14,8 @@
 </head>
 
 <body>
+   
+     
     <nav class="navbar navbar-expand-lg navbar-fixed-top py-0" aria-label="Offcanvas navbar large">
         <div class="container-fluid" id="nav_container">
             <a class="navbar-brand" href="index.html">Logo</a>
@@ -28,7 +30,7 @@
                     <button type="button" class="btn-close btn-close-dark" data-bs-dismiss="offcanvas"
                         aria-label="Close"></button>
                 </div>
-                <div class="offcanvas-body bg-white"  >
+                <div class="offcanvas-body"  >
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                         <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="index.html">Home</a>
@@ -66,29 +68,89 @@
         </div>
     </nav>
 
+<section class="hover_slide">
+    <div class="container">
+        <ul class="case-study-wrapper ">
+          
+            <li class="case-study-name">                           	
+                <a href="#" class="hover-target">DemoBsquare</a>
+            </li>
+            <li class="case-study-name">                                         	
+                <a href="#" class="hover-target">DemoBsquare</a>
+            </li>
+            <li class="case-study-name">                                        	
+                <a href="#" class="hover-target">DemoBsquare</a>
+            </li>
+            <li class="case-study-name">                                         	
+                <a href="#" class="hover-target">DemoBsquare</a>
+            </li>
+        </ul>
+        <ul class="case-study-images">
+            <li>
+                <div class="img-hero-background"></div> 
+                <div class="dark-over-hero"></div>  
+                <!-- <div class="hero-number-back">01</div>  -->
+                <div class="hero-number">01</div> 
+                <div class="hero-number-fixed">04</div> 
+                <div class="case-study-title">BSQUARE</div> 
+            </li>
+            <li>
+                <div class="img-hero-background"></div> 
+                <!-- <div class="hero-number-back">02</div>  -->
+                <div class="hero-number">02</div>  
+                <div class="hero-number-fixed">04</div> 
+                <div class="case-study-title">BSQUARE</div> 
+            </li>
+            <li>
+                <div class="img-hero-background"></div>
+                <!-- <div class="hero-number-back">03</div>   -->
+                <div class="hero-number">03</div> 
+                <div class="hero-number-fixed">04</div> 
+                <div class="case-study-title">BSQUARE</div> 
+            </li>
+            <li>
+                <div class="img-hero-background"></div> 
+                <!-- <div class="hero-number-back">04</div>  -->
+                <div class="hero-number">04</div>  
+                <div class="hero-number-fixed">04</div> 
+                <div class="case-study-title">BSQUARE</div> 
+            </li>
+        </ul>	
+    </div>
+    
+    <!-- Page cursor
+    ================================================== -->
+    
+    <div class='cursor' id="cursor"></div>
+    <div class='cursor2' id="cursor2"></div>
+    <div class='cursor3' id="cursor3"></div> 
 
-    <div id="carouselExampleAutoplaying" class="carousel slide carousel-fade" data-bs-ride="carousel">
+</section>
+<section class="black">
+
+</section>
+    <!-- <div id="carouselExampleAutoplaying" class="carousel slide carousel-fade" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active" data-bs-interval="3000">
                 <img src="./public/images/back1.jpg" class="d-block w-100 "  alt="...">
-                <!-- <div class="carousel-caption d-none d-md-block">
+                <div class="carousel-caption d-none d-md-block">
                         <h5>First slide label</h5>
                         <p>Some representative placeholder content for the first slide.</p>
-                    </div> -->
+                    </div>
             </div>
             <div class="carousel-item" data-bs-interval="3000">
                 <img src="./public/images/back2.jpg" class="d-block w-100" alt="...">
-                <!-- <div class="carousel-caption d-none d-md-block">
+                <div class="carousel-caption d-none d-md-block">
                         <h5>First slide label</h5>
                         <p>Some representative placeholder content for the first slide.</p>
-                    </div> -->
+                    </div>
             </div>
             <div class="carousel-item" data-bs-interval="3000">
                 <img src="./public/images/back3.jpg" class="d-block w-100" alt="...">
-                <!-- <div class="carousel-caption d-none d-md-block">
+                <div class="carousel-caption d-none d-md-block">
                         <h5>First slide label</h5>
                         <p>Some representative placeholder content for the first slide.</p>
-                    </div> -->
+                    </div>
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
@@ -101,11 +163,44 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
-    </div>
+    </div> -->
 
     <main>
-        <section class="counter">
+        <section>
             <div class="container ">
+                <div class="row"  >
+                    
+                    <div class="col-md-4 col-sm-6">
+                        <div class="counter red">
+                            <div class="counter-icon">
+                                <span class="bi bi-building"></span>
+                            </div>
+                            <h3>Sq.Ft Managed Space</h3>
+                            <span class="counter-value">25000</span> 
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="counter red">
+                            <div class="counter-icon">
+                                <span class="bi bi-people"></span>
+                            </div>
+                            <h3>Resources Worked</h3>
+                            <span class="counter-value">15000</span> 
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="counter red">
+                            <div class="counter-icon">
+                                <span class="bi bi-calendar2-week"></span>
+                            </div>
+                            <h3>Days Served</h3>
+                            <span class="counter-value">5000</span> 
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <!-- <div class="container ">
                 <div class="row text-white">
                     <div class="col d-flex flex-row">
                         <div class="col-4 text-center">
@@ -135,19 +230,19 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </section>
         <section >
-           
-            <div class="container  ">
+           <div class="section_padding"></div>
+            <div class="container">
                 <div class="row">
                     <div class="col-xs-12 col-sm-6">
                         <h2>img</h2>
                     </div>
                     <div class="col-xs-12 col-sm-6" data-aos="zoom-in" data-aos-duration="1000">
-                        <h1>Coworking & Furnished Office Solutions By --</h1>
-                        <hr class="hr">
-                        <p>Say goodbye to the age-old constraints of the ancient office-room scenarios and say hello to
+                        <h1 class="hover-target">Coworking & Furnished Office Solutions By <span style="color: #0087c4;">BSQUARE</span>  <hr class="hr"></h1>
+                       
+                        <p >Say goodbye to the age-old constraints of the ancient office-room scenarios and say hello to
                             the best coworking space in Ahmedabad that takes you several steps closer to reaching the
                             pinnacle of success. BSQUARE Coworking Space is one of the pioneers in providing office
                             space solutions across the financial capital of Gujarat. We have experience of 10+ years in
@@ -164,8 +259,10 @@
             </div>
             
         </section>
-        <section>
-            <div>
+        
+        <section >
+          
+            <div class="container">
                 <h2 class="heading_style">Workspace Options In Ahmedabad</h2>
                 <hr class="hr m-auto">
                 <p class="text-center mt-2">Office Space solutions that suit your professional sensibilities.</p>
@@ -773,6 +870,17 @@
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
         crossorigin="anonymous"></script>
     <script>
+      
+      window.addEventListener(
+  "scroll",
+  () => {
+    document.body.style.setProperty(
+      "--scroll",
+      window.pageYOffset / (document.body.offsetHeight - window.innerHeight)
+    );
+  },
+  false
+);
         const $dropdown = $(".dropdown");
         const $dropdownToggle = $(".dropdown-toggle");
         const $dropdownMenu = $(".dropdown-menu");
@@ -798,28 +906,106 @@
                 $dropdown.off("mouseenter mouseleave");
             }
         });
-        const counters = document.querySelectorAll('.value');
-        const speed = 500;
+        // const counters = document.querySelectorAll('.value');
+        // const speed = 500;
 
-        counters.forEach(counter => {
-            const animate = () => {
-                const value = +counter.getAttribute('akhi');
-                const data = +counter.innerText;
+        // counters.forEach(counter => {
+        //     const animate = () => {
+        //         const value = +counter.getAttribute('akhi');
+        //         const data = +counter.innerText;
 
-                const time = value / speed;
-                if (data < value) {
-                    counter.innerText = Math.ceil(data + time);
-                    setTimeout(animate, 1);
-                } else {
-                    counter.innerText = value;
-                }
+        //         const time = value / speed;
+        //         if (data < value) {
+        //             counter.innerText = Math.ceil(data + time);
+        //             setTimeout(animate, 1);
+        //         } else {
+        //             counter.innerText = value;
+        //         }
 
-            }
+        //     }
 
-            animate();
+        //     animate();
+        // });
+
+        (function($) { "use strict";
+		
+        //Page cursors
+    
+        document.getElementsByTagName("body")[0].addEventListener("mousemove", function(n) {
+            t.style.left = n.clientX + "px", 
+            t.style.top = n.clientY + "px", 
+            e.style.left = n.clientX + "px", 
+            e.style.top = n.clientY + "px", 
+            i.style.left = n.clientX + "px", 
+            i.style.top = n.clientY + "px"
         });
+        var t = document.getElementById("cursor"),
+            e = document.getElementById("cursor2"),
+            i = document.getElementById("cursor3");
+        function n(t) {
+            e.classList.add("hover"), i.classList.add("hover")
+        }
+        function s(t) {
+            e.classList.remove("hover"), i.classList.remove("hover")
+        }
+        s();
+        for (var r = document.querySelectorAll(".hover-target"), a = r.length - 1; a >= 0; a--) {
+            o(r[a])
+        }
+        function o(t) {
+            t.addEventListener("mouseover", n), t.addEventListener("mouseout", s)
+        }
+        
+        $(document).ready(function() {
+            
+            /* Hero Case study images */			
+            
+            $('.case-study-name:nth-child(1)').on('mouseenter', function() {
+                $('.case-study-name.active').removeClass('active');
+                $('.case-study-images li.show').removeClass("show");
+                $('.case-study-images li:nth-child(1)').addClass("show");
+                $('.case-study-name:nth-child(1)').addClass('active');
+            })
+            $('.case-study-name:nth-child(2)').on('mouseenter', function() {
+                $('.case-study-name.active').removeClass('active');
+                $('.case-study-images li.show').removeClass("show");
+                $('.case-study-images li:nth-child(2)').addClass("show");
+                $('.case-study-name:nth-child(2)').addClass('active');
+            })
+            $('.case-study-name:nth-child(3)').on('mouseenter', function() {
+                $('.case-study-name.active').removeClass('active');
+                $('.case-study-images li.show').removeClass("show");
+                $('.case-study-images li:nth-child(3)').addClass("show");
+                $('.case-study-name:nth-child(3)').addClass('active');
+            })
+            $('.case-study-name:nth-child(4)').on('mouseenter', function() {
+                $('.case-study-name.active').removeClass('active');
+                $('.case-study-images li.show').removeClass("show");
+                $('.case-study-images li:nth-child(4)').addClass("show");
+                $('.case-study-name:nth-child(4)').addClass('active');
+            })
+            $('.case-study-name:nth-child(1)').trigger('mouseenter')
+                        
+        });
+    
+        
+        
+        
+      })(jQuery); 
 
-
+      $(document).ready(function(){
+    $('.counter-value').each(function(){
+        $(this).prop('Counter',0).animate({
+            Counter: $(this).text()
+        },{
+            duration: 6000,
+            easing: 'swing',
+            step: function (now){
+                $(this).text(Math.ceil(now));
+            }
+        });
+    });
+});
 
     </script>
       <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
