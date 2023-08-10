@@ -197,14 +197,15 @@ main {
 } */
 
 /*----  Main Style  ----*/
-/* #cards_landscape_wrap-2{
+#cards_landscape_wrap-2{
     text-align: center;
     background: #F7F7F7;
-  } */
-/* #cards_landscape_wrap-2 .container{
+  } 
+ #cards_landscape_wrap-2 .container{
     padding-top: 80px; 
     padding-bottom: 100px;
-  } */
+  } 
+
 #cards_landscape_wrap-2 a {
     text-decoration: none;
     outline: none;
@@ -241,11 +242,11 @@ main {
 
 #cards_landscape_wrap-2 .card-flyer .text-box {
     text-align: center;
-}
+} */ 
 
-/* #row ul {
+ #row ul {
     padding: 0;
-} */
+}
 #row .text-container {
     text-align: start;
 }
@@ -1211,4 +1212,13 @@ a:focus {
 
 .hover_slide .container .case-study-images li{
     clip-path: polygon(100% 0, 282% 82%, -1% 100%, 0 100%, 0 0);
+}
+
+.Gallery .row h1{
+    position: absolute;
+  margin-top: 15%;
+  z-index: 1;
+  color: red;
+  text-align: center;
+  background-color: white;
 }
