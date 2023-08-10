@@ -209,43 +209,34 @@ footer a {
 </style>
 
 <body>
-  <main mv-app="tabs"
-		mv-bar="no-login"
-		mv-storage="https://github.com/DmitrySharabin/mavo-tabs-widget">
-	<h2 property="headline"></h2>
-	<section class="tabs" style="--count: [count(tab)];">
-		<details property="tab"
-					mv-multiple
-					open="[open]"
-					mv-action="set(open.$all, false), set(open, true)">
-			<meta property="open">
-			
-			<summary property="title">
-				<img class="icon" src="[image]" alt="Icon">
-				<span property="text"></span>
-			</summary>
-			
-			<section property="content">
-				<h3 property="headline"></h3>
-				<img property="image" src=""
-					  alt="Illustration for [headline]">
-				<p property="text"></p>
-				<a property="url" href="#">
-					<span property="destination"></span>
-				</a>
-			</section>		
-		</details>
-	</section>
-</main>
-<footer>
-	<p>
-		Want to see how it works under the hood and/or add your content? Simply <a href="?login">log in</a> with your <b>Github</b> account.
-	</p>
-	<p>
-		Made with Mavo. Want to know more? Visit the
-		<a href="https://mavo.io/">Mavo website</a>.
-	</p>
-</footer>
+  <div class="lightbox">
+    <div class="row">
+      <div class="col-lg-4">
+        <img
+          src="https://mdbcdn.b-cdn.net/img/Photos/Thumbnails/Slides/1.webp"
+          data-mdb-img="https://mdbcdn.b-cdn.net/img/Photos/Slides/1.webp"
+          alt="Table Full of Spices"
+          class="w-100"
+        />
+      </div>
+      <div class="col-lg-4">
+        <img
+          src="https://mdbcdn.b-cdn.net/img/Photos/Thumbnails/Slides/2.webp"
+          data-mdb-img="https://mdbcdn.b-cdn.net/img/Photos/Slides/2.webp"
+          alt="Winter Landscape"
+          class="w-100"
+        />
+      </div>
+      <div class="col-lg-4">
+        <img
+          src="https://mdbcdn.b-cdn.net/img/Photos/Thumbnails/Slides/3.webp"
+          data-mdb-img="https://mdbcdn.b-cdn.net/img/Photos/Slides/3.webp"
+          alt="View of the City in the Mountains"
+          class="w-100"
+        />
+      </div>
+    </div>
+  </div>
   <script src="https://code.jquery.com/jquery-3.6.3.min.js"
     integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"

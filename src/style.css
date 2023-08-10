@@ -46,9 +46,6 @@ li a {
 
 }
 
-.navbar {
-    background-color: darkblue;
-}
 
 #nav_container {
     position: fixed;
@@ -57,18 +54,23 @@ li a {
     height: 70px;
     right: 0;
     left: 0;
-    background-color: #0087c4;
+    background-color: #005276;
     z-index: 1000;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 
 }
 
-.navbar-toggler,
-.navbar-toggler:focus,
-.navbar-toggler:active {
-    border: none;
-
+#nav_container .navbar-toggler {
+    
+    color: white;
     box-shadow: none;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    box-shadow: none;
+}
+#nav_container .navbar-toggler span{
+    font-size: 35px;
 }
 
 
@@ -197,14 +199,15 @@ main {
 } */
 
 /*----  Main Style  ----*/
-#cards_landscape_wrap-2{
+#cards_landscape_wrap-2 {
     text-align: center;
     background: #F7F7F7;
-  } 
- #cards_landscape_wrap-2 .container{
-    padding-top: 80px; 
+}
+
+#cards_landscape_wrap-2 .container {
+    padding-top: 80px;
     padding-bottom: 100px;
-  } 
+}
 
 #cards_landscape_wrap-2 a {
     text-decoration: none;
@@ -242,11 +245,12 @@ main {
 
 #cards_landscape_wrap-2 .card-flyer .text-box {
     text-align: center;
-} */ 
+}
 
- #row ul {
+*/ #row ul {
     padding: 0;
 }
+
 #row .text-container {
     text-align: start;
 }
@@ -362,6 +366,7 @@ main {
 }
 
 .tabs label {
+    border: 1px solid #0072a73e;
     display: block;
     float: left;
     width: 25%;
@@ -389,8 +394,8 @@ main {
 
 .tabs label:hover {
     color: black;
-  background-color: #0087c4;
-  
+    background-color: #0087c4;
+
 }
 
 .tab-content {
@@ -594,7 +599,7 @@ a:focus {
 }
 
 .footer {
-    background-color: rgb(46, 46, 46);
+    background-color: #004664;
     color: white;
 }
 
@@ -747,7 +752,7 @@ a:focus {
     display: flex;
     position: absolute;
     top: 50%;
-    left:43%;
+    left: 43%;
     z-index: 10;
     width: auto;
     margin: 0;
@@ -847,6 +852,24 @@ a:focus {
         transform: translate(-50%, -50%);
         list-style: none;
     }
+    .tabs label {
+        display: block;
+        float: left;
+        width: 100%;
+        color: white;
+        font-size: 20px;
+        font-weight: 600;
+        text-decoration: none;
+        text-align: center;
+        line-height: 2;
+        cursor: pointer;
+        /* box-shadow: inset 0 4px #ccc;
+        border-bottom: 4px solid #ccc; */
+        -webkit-transition: all 0.5s;
+        /* Safari 3.1 to 6.0 */
+        transition: all 0.5s;
+    }
+   
 }
 
 .case-study-wrapper .case-study-name a {
@@ -1184,7 +1207,7 @@ a:focus {
 }
 
 .counter.red {
-    --main-color: #0087c4;
+    --main-color: #0072a7;
 }
 
 .counter.yellow {
@@ -1210,15 +1233,31 @@ a:focus {
     margin-top: 3rem;
 }
 
-.hover_slide .container .case-study-images li{
+.hover_slide .container .case-study-images li {
     clip-path: polygon(100% 0, 282% 82%, -1% 100%, 0 100%, 0 0);
 }
 
-.Gallery img{
-    
+.Gallery img {
+
     transition: .4s;
 }
-.Gallery img:hover{
+
+.Gallery img:hover {
     transform: scale(1.1);
     transition: .4s;
+}
+
+.key-points .row .col{
+    background-color: red;
+    margin: 0px 20px;
+    padding: 10px 10px;
+    transform: translateX(5px);
+    transition: .4s;
+}
+.key-points .row .col:hover{
+    transform: translateY(-5px);
+    transition: .4s;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+    
+   
 }
