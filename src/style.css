@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Roboto:wght@300&display=swap');
+
 * {
     box-sizing: border-box;
 
@@ -23,7 +24,8 @@ li a {
     font-family: 'Roboto', sans-serif;
 
 }
-p{
+
+p {
     font-family: 'Roboto', sans-serif;
 }
 
@@ -67,7 +69,7 @@ p{
 }
 
 #nav_container .navbar-toggler {
-    
+
     color: white;
     box-shadow: none;
     border: none;
@@ -75,7 +77,8 @@ p{
     background-color: transparent;
     box-shadow: none;
 }
-#nav_container .navbar-toggler span{
+
+#nav_container .navbar-toggler span {
     font-size: 35px;
 }
 
@@ -100,8 +103,8 @@ main {
 }
 
 .navbar .navbar-brand img {
-    
-width: 50%;
+
+    width: 50%;
 }
 
 #nav_container {
@@ -141,6 +144,7 @@ width: 50%;
         font-weight: 400;
         font-size: 18px;
     }
+
     /* .navbar .nav-item:last-child a{
         background-color: #0072a7;
         font-weight: 600;
@@ -179,11 +183,12 @@ width: 50%;
         width: 100%;
         transition: .3s;
     }
+
     .navbar-nav .nav-item .nav-link:hover {
         color: #0072a7;
         border-bottom: 1px solid white;
         transition: 0.4s;
-    
+
     }
 }
 
@@ -378,8 +383,9 @@ width: 50%;
 }
 
 .locations {
-    background-color: #0087c4;
-    clip-path: polygon(100% 0, 282% 82%, -1% 100%, 0 100%, 0 0);
+    background-color: #006594;
+    
+    border-radius: 0% 0% 35% 0%;
 }
 
 .tabs {
@@ -891,6 +897,7 @@ a:focus {
         transform: translate(-50%, -50%);
         list-style: none;
     }
+
     .tabs label {
         display: block;
         float: left;
@@ -908,12 +915,20 @@ a:focus {
         /* Safari 3.1 to 6.0 */
         transition: all 0.5s;
     }
+
     .cursor,
-.cursor2,
-.cursor3{
-    display: none;
-}
-   
+    .cursor2,
+    .cursor3 {
+        display: none;
+    }
+
+    .locations {
+        background-color: #006594;
+        clip-path: polygon(100% 0, 282% 82%, -1% 100%, 0 100%, 0 0);
+        border-radius: 0% 0% 0% 0%;
+    }
+
+
 }
 
 .case-study-wrapper .case-study-name a {
@@ -1291,43 +1306,46 @@ a:focus {
     transition: .4s;
 }
 
-.key-points .row .col{
+.key-points .row .col {
     background-color: red;
     margin: 0px 20px;
     padding: 10px 10px;
     transform: translateX(5px);
     transition: .4s;
 }
-.key-points .row .col:hover{
+
+.key-points .row .col:hover {
     transform: translateY(-5px);
     transition: .4s;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
-    
-   
+
+
 }
 
-.img_overlay{
+.img_overlay {
     position: absolute;
     left: 10px;
     opacity: 0.2;
     top: 130px;
     width: 250px;
     height: 250px;
-}.float{
-	position:fixed;
-	width:60px;
-	height:60px;
-	bottom:40px;
-	right:40px;
-	background-color:#25d366;
-	color:#FFF;
-	border-radius:50px;
-	text-align:center;
-  font-size:30px;
-	box-shadow: 2px 2px 3px #999;
-  z-index:100;
 }
 
-.my-float{
-	margin-top:16px;
+.float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 100;
+}
+
+.my-float {
+    margin-top: 16px;
 }
