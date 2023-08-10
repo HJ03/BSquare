@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+
 * {
     box-sizing: border-box;
 
@@ -73,15 +75,29 @@ li a {
     font-size: 35px;
 }
 
-
+.navbar .nav-item:last-child a{
+    background-color: #0072a7;
+    font-weight: 600;
+    border-radius: 2px;
+    border: none;
+    
+}
+.navbar .nav-item:last-child a:hover{
+    background-color: #ffffff;
+    color: black;
+    font-weight: 600;
+    border-radius: 2px;
+    border: none;
+    
+}
 main {
     background-color: white;
 
 }
 
-.navbar .navbar-brand {
-    font-size: 30px;
-    color: rgb(255, 255, 255);
+.navbar .navbar-brand img {
+    
+width: 50%;
 }
 
 #nav_container {
@@ -109,16 +125,17 @@ main {
 .navbar-nav .nav-item .nav-link {
     color: rgb(255, 255, 255);
     margin: 0px 10px;
-    font-weight: 600;
-    font-size: 16px;
+    font-weight: 400;
+    font-size: 14px;
+    border-bottom: 1px solid transparent;
 }
 
 @media (max-width:600px) {
     .navbar-nav .nav-item .nav-link {
         color: rgb(0, 0, 0);
         margin: 0px 10px;
-        font-weight: 600;
-        font-size: 16px;
+        font-weight: 400;
+        font-size: 14px;
     }
 }
 
@@ -133,7 +150,7 @@ main {
 .navbar-nav .nav-item .nav-link:hover {
     color: #ffffff;
     border-bottom: 1px solid white;
-    transition: 2s;
+    transition: 0.4s;
 
 }
 
@@ -1268,7 +1285,7 @@ a:focus {
     position: absolute;
     left: 10px;
     opacity: 0.2;
-    top: 150px;
+    top: 130px;
     width: 250px;
     height: 250px;
 }
