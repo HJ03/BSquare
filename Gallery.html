@@ -16,6 +16,117 @@
     .tabs span {
         color: black;
     }
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+
+    h2 {
+        font-family: "Voltaire";
+        text-transform: uppercase;
+        margin: 0;
+    }
+
+    #scene {
+        background-color: white;
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+    }
+
+    .layer {
+        pointer-events: none;
+    }
+
+    .col {
+        display: inline-block;
+        float: left;
+        overflow: hidden;
+        position: relative;
+        width: 20%;
+        pointer-events: all;
+        overflow: initial;
+        margin: 0 0 30px;
+    }
+
+    .layer.main {
+        width: 150%;
+        position: absolute;
+        z-index: 1;
+        padding: 20px;
+    }
+
+    .col a {
+        display: block;
+        margin: 15px;
+        overflow: hidden;
+        box-shadow: 0px 16px 32px rgba(0, 0, 0, 0.37);
+    }
+
+    .col a .hover {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        bottom: -15px;
+        left: 15px;
+        z-index: 1;
+        color: white;
+        background: -moz-linear-gradient(45deg, rgba(0, 0, 0, 0.47) 0%, rgba(0, 0, 0, 0) 100%);
+        background: -webkit-linear-gradient(45deg, rgba(0, 0, 0, 0.47) 0%, rgba(0, 0, 0, 0) 100%);
+        background: linear-gradient(45deg, rgba(0, 0, 0, 0.47) 0%, rgba(0, 0, 0, 0) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#78000000', endColorstr='#00000000', GradientType=1);
+    }
+
+    /* .col a .hover:after{
+	content:'';
+	position:absolut;
+	top:0;
+	left:0;
+	z-index:1;
+	width:100%;
+	height:100%;
+	display:block;
+	background: rgb(235, 116, 152);
+	opacity:0;
+	transition:0.35s ease;
+} */
+    .col a .hover:hover:after {
+        opacity: 0.85;
+        transition: 0.35s ease;
+    }
+
+    .align-bottom {
+        position: absolute;
+        width: 100%;
+        bottom: 0%;
+        z-index: 2;
+        padding: 15px 20px;
+    }
+
+    .bg-img {
+        padding: 0px;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-size: cover;
+        background-position: 50% 50%;
+    }
+
+    @media only screen and (max-width:1200px) {
+        .layer .col {
+            width: 16.666%;
+        }
+
+    }
+
+    @media only screen and (max-width:650px) {
+        .layer .col {
+            width: 25%;
+        }
+
+    }
 </style>
 
 <body>
@@ -123,14 +234,14 @@
                     <input type="radio" name="tabs" id="tab1" checked>
                     <div>
                         <label for="tab1">
-                            <i class="fa fa-html5"></i><span>ALL</span>
+                            <span>ALL</span>
                         </label>
                     </div>
 
                     <input type="radio" name="tabs" id="tab2">
                     <div>
                         <label for="tab2">
-                            <i class="fa fa-css3"></i><span>S.G. ROAD</span>
+                            <span>S.G. ROAD</span>
                         </label>
                     </div>
 
@@ -138,21 +249,282 @@
                     <input type="radio" name="tabs" id="tab3">
                     <div>
                         <label for="tab3">
-                            <i class="fa fa-code"></i><span>IIM-A ROAD</span>
+                            <span>IIM-A ROAD</span>
                         </label>
                     </div>
 
                     <input type="radio" name="tabs" id="tab4">
                     <div>
                         <label for="tab4">
-                            <i class="fa fa-code"></i><span>NAVRANGPURA</span>
+                            <span>NAVRANGPURA</span>
                         </label>
                     </div>
 
 
                     <div id="tab-content1" class="tab-content">
                         <h3>All</h3>
-                        <div class="container Gallery">
+                        <div id="scene" data-pointer-events="true" data-x-origin="0.5" data-y-origin="0.5"
+                            data-scalar-y="150.0" data-scalar-x="100.0" data-friction-x="0.05" data-friction-y="0.05">
+                            <div class="layer main" data-depth="1.0">
+                                <div class="col">
+                                    <a href="#">
+                                        <div class="hover">
+                                            <div class="pad align-bottom">
+                                                <h2>Project Title</h2>
+                                            </div>
+                                        </div>
+                                        <div class="bg-img" style="background-image:url(./public/images/back1.jpg);">
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="#">
+                                        <div class="hover">
+                                            <div class="pad align-bottom">
+                                                <h2>Project Title</h2>
+                                            </div>
+                                            <div class="more"><i class="demo-icon icon-plus"></i></div>
+                                        </div>
+                                        <div class="bg-img"
+                                            style="background-image:url(./public/images/gallery/gallery1.JPG);">
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="#">
+                                        <div class="hover">
+                                            <div class="pad align-bottom">
+                                                <h2>Project Title</h2>
+                                            </div>
+                                            <div class="more"><i class="demo-icon icon-plus"></i></div>
+                                        </div>
+                                        <div class="bg-img"
+                                            style="background-image:url(./public/images/gallery/gallery1.JPG);">
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="#">
+                                        <div class="hover">
+                                            <div class="pad align-bottom">
+                                                <h2>Project Title</h2>
+                                            </div>
+                                        </div>
+                                        <div class="bg-img"
+                                            style="background-image:url(./public/images/gallery/gallery1.JPG);">
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="#">
+                                        <div class="hover">
+                                            <div class="pad align-bottom">
+                                                <h2>Project Title</h2>
+                                            </div>
+                                            <div class="more"><i class="demo-icon icon-plus"></i></div>
+                                        </div>
+                                        <div class="bg-img"
+                                            style="background-image:url(./public/images/gallery/gallery1.JPG);">
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="#">
+                                        <div class="hover">
+                                            <div class="pad align-bottom">
+                                                <h2>Project Title</h2>
+                                            </div>
+                                            <div class="more"><i class="demo-icon icon-plus"></i></div>
+                                        </div>
+                                        <div class="bg-img"
+                                            style="background-image:url(./public/images/gallery/gallery1.JPG);">
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="#">
+                                        <div class="hover">
+                                            <div class="pad align-bottom">
+                                                <h2>Project Title</h2>
+                                            </div>
+                                        </div>
+                                        <div class="bg-img"
+                                            style="background-image:url(./public/images/gallery/gallery1.JPG);">
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="#">
+                                        <div class="hover">
+                                            <div class="pad align-bottom">
+                                                <h2>Project Title</h2>
+                                            </div>
+                                            <div class="more"><i class="demo-icon icon-plus"></i></div>
+                                        </div>
+                                        <div class="bg-img"
+                                            style="background-image:url(./public/images/gallery/gallery1.JPG);">
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="#">
+                                        <div class="hover">
+                                            <div class="pad align-bottom">
+                                                <h2>Project Title</h2>
+                                            </div>
+                                            <div class="more"><i class="demo-icon icon-plus"></i></div>
+                                        </div>
+                                        <div class="bg-img"
+                                            style="background-image:url(./public/images/gallery/gallery1.JPG);">
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="#">
+                                        <div class="hover">
+                                            <div class="pad align-bottom">
+                                                <h2>Project Title</h2>
+                                            </div>
+                                        </div>
+                                        <div class="bg-img"
+                                            style="background-image:url(./public/images/gallery/gallery1.JPG);">
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="#">
+                                        <div class="hover">
+                                            <div class="pad align-bottom">
+                                                <h2>Project Title</h2>
+                                            </div>
+                                            <div class="more"><i class="demo-icon icon-plus"></i></div>
+                                        </div>
+                                        <div class="bg-img"
+                                            style="background-image:url(./public/images/gallery/gallery1.JPG);">
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="#">
+                                        <div class="hover">
+                                            <div class="pad align-bottom">
+                                                <h2>Project Title</h2>
+                                            </div>
+                                            <div class="more"><i class="demo-icon icon-plus"></i></div>
+                                        </div>
+                                        <div class="bg-img"
+                                            style="background-image:url(./public/images/gallery/gallery1.JPG);">
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="#">
+                                        <div class="hover">
+                                            <div class="pad align-bottom">
+                                                <h2>Project Title</h2>
+                                            </div>
+                                        </div>
+                                        <div class="bg-img"
+                                            style="background-image:url(./public/images/gallery/gallery1.JPG);">
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="#">
+                                        <div class="hover">
+                                            <div class="pad align-bottom">
+                                                <h2>Project Title</h2>
+                                            </div>
+                                            <div class="more"><i class="demo-icon icon-plus"></i></div>
+                                        </div>
+                                        <div class="bg-img"
+                                            style="background-image:url(./public/images/gallery/gallery1.JPG);">
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="#">
+                                        <div class="hover">
+                                            <div class="pad align-bottom">
+                                                <h2>Project Title</h2>
+                                            </div>
+                                            <div class="more"><i class="demo-icon icon-plus"></i></div>
+                                        </div>
+                                        <div class="bg-img"
+                                            style="background-image:url(./public/images/gallery/gallery1.JPG);">
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="#">
+                                        <div class="hover">
+                                            <div class="pad align-bottom">
+                                                <h2>Project Title</h2>
+                                            </div>
+                                            <div class="more"><i class="demo-icon icon-plus"></i></div>
+                                        </div>
+                                        <div class="bg-img"
+                                            style="background-image:url(./public/images/gallery/gallery1.JPG);">
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="#">
+                                        <div class="hover">
+                                            <div class="pad align-bottom">
+                                                <h2>Project Title</h2>
+                                            </div>
+                                            <div class="more"><i class="demo-icon icon-plus"></i></div>
+                                        </div>
+                                        <div class="bg-img"
+                                            style="background-image:url(./public/images/gallery/gallery1.JPG);">
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="#">
+                                        <div class="hover">
+                                            <div class="pad align-bottom">
+                                                <h2>Project Title</h2>
+                                            </div>
+                                            <div class="more"><i class="demo-icon icon-plus"></i></div>
+                                        </div>
+                                        <div class="bg-img"
+                                            style="background-image:url(./public/images/gallery/gallery1.JPG);">
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="#">
+                                        <div class="hover">
+                                            <div class="pad align-bottom">
+                                                <h2>Project Title</h2>
+                                            </div>
+                                            <div class="more"><i class="demo-icon icon-plus"></i></div>
+                                        </div>
+                                        <div class="bg-img"
+                                            style="background-image:url(./public/images/gallery/gallery1.JPG);">
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a href="#">
+                                        <div class="hover">
+                                            <div class="pad align-bottom">
+                                                <h2>Project Title</h2>
+                                            </div>
+                                            <div class="more"><i class="demo-icon icon-plus"></i></div>
+                                        </div>
+                                        <div class="bg-img"
+                                            style="background-image:url(./public/images/gallery/gallery1.JPG);">
+                                        </div>
+                                    </a>
+                                </div>
+
+                            </div>
+                            
+                        </div>
+                        <div class="container Gallery" id="Gallery">
 
                             <div class="row">
                                 <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
@@ -164,7 +536,8 @@
 
 
                                     <img src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain1.webp"
-                                        class="w-100 shadow-1-strong rounded mb-4" alt="Wintry Mountain Landscape" />
+                                        class="w-100 shadow-1-strong rounded mb-4"
+                                        alt="Wintry Mountain Landscape" />
 
                                 </div>
 
@@ -191,6 +564,7 @@
 
                     <div id="tab-content2" class="tab-content">
                         <h3>Demo1</h3>
+                        
                         <div class="container Gallery">
 
                             <div class="row">
@@ -371,10 +745,13 @@
 
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"
         integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/2.1.3/parallax.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
         crossorigin="anonymous"></script>
     <script>
+
+        
         const $dropdown = $(".dropdown");
         const $dropdownToggle = $(".dropdown-toggle");
         const $dropdownMenu = $(".dropdown-menu");
@@ -423,6 +800,22 @@
 
 
 
+        var makeWinHeight = function () {
+            var vh = $(window).height();
+            var projects = vh / 2;
+            $('#scene, .layer.main').height(vh);
+            $('#scene .col a, #scene .col').height(projects);
+        }
+        $(document).ready(function () {
+            makeWinHeight();
+
+        });
+        $(window).resize(function () {
+            makeWinHeight();
+        });
+
+        var scene = document.getElementById('scene');
+        var parallax = new Parallax(scene);
     </script>
 </body>
 
