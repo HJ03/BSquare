@@ -12,146 +12,258 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css">
 </head>
 <style>
+/*** 
 
-.container {
-  position: absolute;
-  height: 300px;
-  width: 600px;
-  top: 60px;
-  left: calc(50% - 300px);
-  display: flex;
+====================================================================
+		Testimonial Section
+====================================================================
+
+***/
+
+.large-container {
+  position: static;
+  max-width: 1580px;
+  padding: 0px 30px;
+  margin: 0 auto;
 }
 
-.card {
-  display: flex;
-  height: 280px;
-  width: 200px;
-  background-color: #17141d;
-  border-radius: 10px;
-  box-shadow: -1rem 0 3rem #000;
-/*   margin-left: -50px; */
-  transition: 0.4s ease-out;
+.testimonial-section {
   position: relative;
-  left: 0px;
+  padding-top: 80px;
+  padding-bottom: 210px;
+  overflow: hidden;
+  &:before {
+    position: absolute;
+    left: -200px;
+    top: 22%;
+    background-image: url(http://t.commonsupport.com/adro/images/icons/ring-circle.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 701px;
+    height: 756px;
+    content: "";
+    -webkit-animation: fa-spin 25s infinite alternate;
+    -moz-animation: fa-spin 25s infinite alternate;
+    -ms-animation: fa-spin 25s infinite alternate;
+    -o-animation: fa-spin 25s infinite alternate;
+    animation: fa-spin 25s infinite alternate;
+  }
+  .sec-title {
+    position: relative;
+    margin-bottom: 115px;
+    .title {
+      margin-bottom: 20px;
+    }
+  }
+  .testimonial-carousel {
+    position: relative;
+    max-width: 1100px;
+    margin: 0 -50px;
+  }
 }
 
-.card:not(:first-child) {
-    margin-left: -50px;
-}
-
-.card:hover {
-  transform: translateY(-20px);
-  transition: 0.4s ease-out;
-}
-
-.card:hover ~ .card {
+.testimonial-block {
   position: relative;
-  left: 50px;
-  transition: 0.4s ease-out;
+  padding: 50px;
+  .inner-box {
+    padding: 80px 105px;
+    background-color: #ffffff;
+    box-shadow: 0 0 50px rgba(226, 222, 232, 0.75);
+  }
+  .text {
+    position: relative;
+    display: block;
+    font-size: 18px;
+    line-height: 32px;
+    color: #282331;
+    font-weight: 400;
+    margin-bottom: 50px;
+    font-family: "Muli", sans-serif;
+  }
+  .info-box {
+    position: relative;
+    padding-left: 115px;
+    padding-top: 10px;
+    .thumb {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 82px;
+      width: 82px;
+      img {
+        border: 6px solid #e5e6fa;
+        border-radius: 50%;
+        overflow: hidden;
+        display: block;
+        width: 100%;
+        box-shadow: 0 45px 45px rgba(147, 147, 147, 0.35);
+      }
+    }
+    .name {
+      position: relative;
+      display: block;
+      font-size: 21px;
+      line-height: 1.2em;
+      color: #382c4d;
+      font-weight: 700;
+      margin-bottom: 10px;
+      font-family: "Niramit", sans-serif;
+    }
+    .designation {
+      position: relative;
+      display: block;
+      font-size: 16px;
+      line-height: 24px;
+      color: #8053f7;
+      font-weight: 400;
+      font-family: "Muli", sans-serif;
+    }
+  }
 }
 
-.title {
-  color: white;
-  font-weight: 300;
+.testimonial-carousel {
+  .owl-nav {
+    position: absolute;
+    right: 75px;
+    bottom: 70px;
+  }
+  .owl-next, .owl-prev {
+    position: relative;
+    display: inline-block;
+    height: 75px;
+    width: 75px;
+    line-height: 75px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: #ffffff;
+    -webkit-transition: all 300ms ease;
+    -moz-transition: all 300ms ease;
+    -ms-transition: all 300ms ease;
+    -o-transition: all 300ms ease;
+    transition: all 300ms ease;
+  }
+  .owl-next:hover, .owl-prev:hover {
+    background-color: #00df97;
+    box-shadow: 0 24px 24px rgba(187, 187, 187, 0.75);
+  }
+}
+
+.arrow-right, .arrow-left {
+  position: relative;
+  display: inline-block;
+  height: 9px;
+  width: 43px;
+  background-image: url(http://t.commonsupport.com/adro/images/icons/arrow-left-2.png);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.arrow-right {
+  background-image: url(http://t.commonsupport.com/adro/images/icons/arrow-right-2.png);
+}
+
+.testimonial-section .thumb-layer {
   position: absolute;
-  left: 20px;
-  top: 15px;
+  right: 30px;
+  top: 120px;
+  .image {
+    position: relative;
+    margin-right: 0;
+    img {
+      display: inline-block;
+      max-width: 100%;
+      height: auto;
+    }
+  }
 }
 
-.bar {
-  position: absolute;
-  top: 100px;
-  left: 20px;
-  height: 5px;
-  width: 150px;
+@media only screen and (max-width: 767px) {
+  .testimonial-section .sec-title {
+    margin-bottom: 50px;
+  }
+  .testimonial-block {
+    padding: 0;
+    .inner-box {
+      box-shadow: none;
+      border: 2px solid #f1f1f1;
+    }
+  }
+  .testimonial-carousel {
+    .owl-nav {
+      position: relative;
+      left: 0;
+      bottom: 0;
+      margin-top: 20px;
+      text-align: center;
+    }
+    .owl-next, .owl-prev {
+      border: 2px solid #f1f1f1;
+    }
+  }
 }
 
-.emptybar {
-  background-color: #2e3033;
-  width: 100%;
-  height: 100%;
-}
-
-.filledbar {
-  position: absolute;
-  top: 0px;
-  z-index: 3;
-  width: 0px;
-  height: 100%;
-  background: rgb(0,154,217);
-  background: linear-gradient(90deg, rgba(0,154,217,1) 0%, rgba(217,147,0,1) 65%, rgba(255,186,0,1) 100%);
-  transition: 0.6s ease-out;
-}
-
-.card:hover .filledbar {
-  width: 120px;
-  transition: 0.4s ease-out;
-}
-
-.circle {
-  position: absolute;
-  top: 150px;
-  left: calc(50% - 60px);
-}
-
-.stroke {
-  stroke: white;
-  stroke-dasharray: 360;
-  stroke-dashoffset: 360;
-  transition: 0.6s ease-out;
-}
-
-svg {
-  fill: #17141d;
-  stroke-width: 2px;
-}
-
-.card:hover .stroke {
-  stroke-dashoffset: 100;
-  transition: 0.6s ease-out;
+@media only screen and (max-width: 1366px) {
+  .large-container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 </style>
 
 <body>
-	<div class="container">
-        <div class="card">
-            <h3 class="title">Card 1</h3>
-            <div class="bar">
-                <div class="emptybar"></div>
-                <div class="filledbar"></div>
-            </div>
-            <div class="circle">
-                <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
-                    <circle class="stroke" cx="60" cy="60" r="50" />
-                </svg>
-            </div>
-        </div>
-        <div class="card">
-            <h3 class="title">Card 2</h3>
-            <div class="bar">
-                <div class="emptybar"></div>
-                <div class="filledbar"></div>
-            </div>
-            <div class="circle">
-                <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
-                    <circle class="stroke" cx="60" cy="60" r="50" />
-                </svg>
-            </div>
-        </div>
-        <div class="card">
-            <h3 class="title">Card 3</h3>
-            <div class="bar">
-                <div class="emptybar"></div>
-                <div class="filledbar"></div>
-            </div>
-            <div class="circle">
-                <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
-                    <circle class="stroke" cx="60" cy="60" r="50" />
-                </svg>
-            </div>
-        </div>
+	<!-- Testimonial Section -->
+	<section class="testimonial-section">
+		<div class="large-container">
+			<div class="sec-title">
+				<span class="title">Testimonial</span>
+				<h2>What Our core client say ?</h2>
+			</div>
 
-    </div>
+			<div class="testimonial-carousel owl-carousel owl-theme">
+				<!-- Testimonial Block -->
+				<div class="testimonial-block">
+					<div class="inner-box">
+						<div class="text">Why is this important? Because clients want to know the businesses they depend on for advice, are well managed in their own right.  Not only that but this event gives you the chance to give your back-office team</div>
+						<div class="info-box">
+							<div class="thumb"><img src="http://t.commonsupport.com/adro/images/resource/thumb-1.jpg" alt=""></div>
+							<h4 class="name">Mahfuz Riad</h4>
+							<span class="designation">Ui Designer & CEO</span>
+						</div>
+					</div>
+				</div>
+
+				<!-- Testimonial Block -->
+				<div class="testimonial-block">
+					<div class="inner-box">
+						<div class="text">Why is this important? Because clients want to know the businesses they depend on for advice, are well managed in their own right.  Not only that but this event gives you the chance to give your back-office team</div>
+						<div class="info-box">
+							<div class="thumb"><img src="http://t.commonsupport.com/adro/images/resource/thumb-1.jpg" alt=""></div>
+							<h4 class="name">Mahfuz Riad</h4>
+							<span class="designation">Ui Designer & CEO</span>
+						</div>
+					</div>
+				</div>
+
+				<!-- Testimonial Block -->
+				<div class="testimonial-block">
+					<div class="inner-box">
+						<div class="text">Why is this important? Because clients want to know the businesses they depend on for advice, are well managed in their own right.  Not only that but this event gives you the chance to give your back-office team</div>
+						<div class="info-box">
+							<div class="thumb"><img src="http://t.commonsupport.com/adro/images/resource/thumb-1.jpg" alt=""></div>
+							<h4 class="name">Mahfuz Riad</h4>
+							<span class="designation">Ui Designer & CEO</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="thumb-layer paroller">
+				<figure class="image"><img src="http://t.commonsupport.com/adro/images/resource/user-thumbs.png" alt=""></figure>
+			</div>
+		</div>
+	</section>
+	<!--End Testimonial Section -->
+
 	
   <script src="https://code.jquery.com/jquery-3.6.3.min.js"
     integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
@@ -161,25 +273,43 @@ svg {
     crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js"></script>
+    <script src="https://md-aqil.github.io/images/swiper.min.js"></script>
   <script>
    
-
-var makeWinHeight = function(){
-	var vh = $(window).height();
-	var projects = vh/2;
-	$('#scene, .layer.main').height(vh);
-	$('#scene .col a, #scene .col').height(projects);
-}
-$(document).ready(function(){
-	makeWinHeight();
-
-});
-$(window).resize(function(){
-	makeWinHeight();
-});
-
-var scene = document.getElementById('scene');
-var parallax = new Parallax(scene);
+(function($) {
+	
+	"use strict";
+	
+	// Testimonial Carousel
+	if ($('.testimonial-carousel').length) {
+		$('.testimonial-carousel').owlCarousel({
+			animateOut: 'slideOutDown',
+		    animateIn: 'zoomIn',
+			loop:true,
+			margin:0,
+			nav:true,
+			smartSpeed: 300,
+			autoplay: 7000,
+			navText: [ '<span class="arrow-left"></span>', '<span class="arrow-right"></span>' ],
+			responsive:{
+				0:{
+					items:1
+				},
+				600:{
+					items:1
+				},
+				800:{
+					items:1
+				},
+				1024:{
+					items:1
+				}
+			}
+		});  		
+	}
+	
+})(window.jQuery);
+  
   </script>
 </body>
 

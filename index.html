@@ -10,11 +10,15 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+
 </head>
 <style>
-    .workspace{
+    .workspace {
         display: flex;
         justify-content: center;
         text-align: center;
@@ -112,42 +116,647 @@
         stroke-dashoffset: 100;
         transition: 0.6s ease-out;
     }
-    .card button{
+
+    .card button {
         background-color: transparent;
         border: 1px solid #0087c4;
         padding: 3px 15px;
-      
+
         background-color: #0086c451;
         transition: .4s;
     }
-    .card button:hover{
+
+    .card button:hover {
         background-color: transparent;
         border: 1px solid #0087c4;
         padding: 3px 15px;
         color: white;
-      
+
         background-color: #0086c4;
         transition: .4s;
-        
+
     }
-    @media (max-width: 1000px){
-    .workspace{
+
+    @media (max-width: 1000px) {
+        .workspace {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            margin: auto;
+            align-items: center;
+            width: 100%;
+        }
+
+        .workspace .card:not(:first-child) {
+            margin-left: 0px;
+        }
+
+    }
+
+
+    #blog {
+        padding: 5rem 2rem;
+    }
+
+    #blog .blog-box {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
-        margin: auto;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
         align-items: center;
         width: 100%;
-    }
-    .workspace .card:not(:first-child) {
-        margin-left: 0px;
+        position: relative;
+        padding-bottom: 6rem;
     }
 
-}
+    #blog .blog-box .blog-image {
+        width: 50%;
+    }
 
-    
-    
+    #blog .blog-box .blog-image img {
+        width: 100%;
+        -o-object-fit: cover;
+        object-fit: cover;
+        transform: translateX(0px);
+        transition: .3s;
+        overflow: hidden;
+    }
+
+    #blog .blog-box .blog-image img:hover {
+        transform: translateX(-10px);
+        transition: .3s;
+        overflow: hidden;
+    }
+
+    #blog .blog-box h1 {
+        position: absolute;
+        top: -6.2rem;
+        left: 0;
+        padding: 5px;
+        font-size: 3rem;
+        font-weight: 500;
+        color: white;
+        background-color: #0086c478;
+        border-radius: 10px 0 10px 0;
+    }
+
+    #blog .blog-details {
+        width: 50%;
+        padding: 0 1rem;
+    }
+
+    #blog .blog-details a {
+        text-decoration: none;
+        color: #046969;
+        position: relative;
+        background-image: -webkit-gradient(linear,
+                left top,
+                right top,
+                from(red),
+                to(blue));
+        background-image: linear-gradient(90deg, red, blue);
+        background-size: 0% 3px;
+        background-repeat: no-repeat;
+        background-position: left bottom;
+        -webkit-transition: background-size 300ms ease;
+        transition: background-size 300ms ease;
+    }
+
+    #blog .blog-details a::after {
+        content: "";
+        width: 3rem;
+        height: 2px;
+        background-color: #004e4e;
+        position: absolute;
+        top: 10px;
+        right: -4rem;
+    }
+
+    #blog .blog-details a:hover {
+        background-size: 100% 3px;
+    }
+
+    #blog .blog-details a:hover::after {
+        background-image: -webkit-gradient(linear,
+                left top,
+                right top,
+                from(red),
+                to(blue));
+        background-image: linear-gradient(90deg, red, blue);
+        background-size: 0% 3px;
+        background-repeat: no-repeat;
+        background-position: left bottom;
+        -webkit-transition: background-size 300ms ease;
+        transition: background-size 300ms ease;
+        background-size: 100% 3px;
+    }
+
+    @media screen and (max-width: 992px) {
+        #blog .blog-box {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+        }
+
+        #blog .blog-box .blog-image {
+            width: 100%;
+            padding: 0;
+        }
+
+        #blog .blog-details {
+            width: 100%;
+            padding: 0;
+        }
+    }
+
+
+    .blog-card {
+        max-width: 550px;
+        width: 100%;
+        height: 500px;
+        position: absolute;
+        font-family: 'Droid Serif', serif;
+        color: #fff;
+        right: 0;
+        left: 0;
+        margin: 0 auto;
+        overflow: hidden;
+        border-radius: 0px;
+        box-shadow: 0px 10px 20px -9px rgba(0, 0, 0, 0.5);
+        text-align: center;
+        transition: all 0.4s;
+        background: url(https://unsplash.it/600/800?image=1061) center no-repeat;
+        background-size: 100%;
+    }
+
+    .blog-card a {
+        color: #fff;
+        text-decoration: none;
+        transition: all 0.2s
+    }
+
+    .blog-card .color-overlay {
+        background: rgba(64, 84, 94, 0.5);
+        width: 550px;
+        height: 500px;
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        left: 0;
+        transition: background 0.3s cubic-bezier(0.33, 0.66, 0.66, 1);
+    }
+
+    .blog-card .gradient-overlay {
+        background-image: linear-gradient(transparent 0%, rgba(0, 0, 0, 0.6) 21%);
+        width: 550px;
+        height: 500px;
+        position: absolute;
+        top: 350px;
+        left: 0;
+        z-index: 15;
+    }
+
+    .blog-card:hover {
+        box-shadow: 0px 18px 20px -9px rgba(0, 10, 30, 0.75);
+    }
+
+    .blog-card:hover .card-info {
+        opacity: 1;
+        bottom: 100px;
+    }
+
+    .blog-card:hover .color-overlay {
+        background: rgba(64, 64, 70, 0.8);
+    }
+
+    .blog-card:hover .title-content {
+        margin-top: 70px
+    }
+
+    .title-content {
+        text-align: center;
+        margin: 170px 0 0 0;
+        position: absolute;
+        z-index: 20;
+        width: 100%;
+        top: 0;
+        left: 0;
+        transition: all 0.6s
+    }
+
+    .blog-card:hover h3:after {
+
+        animation: changeLetter 0.3s 1 linear;
+        width: 80%
+    }
+
+    .blog-card h3,
+    h1 {
+        font-size: 1.9em;
+        font-weight: 400;
+        letter-spacing: 1px;
+        font-family: 'Abril Fatface', serif;
+        margin-bottom: 0;
+        display: inline-block;
+    }
+
+    .blog-card h3 a {
+        text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        transition: all 0.2s
+    }
+
+    .blog-card h3 a:hover {
+        text-shadow: 0px 8px 20px rgba(0, 0, 0, 0.95);
+    }
+
+    h3:after {
+        content: " ";
+        display: block;
+        width: 10%;
+        height: 2px;
+        margin: 20px auto;
+        border: 0;
+        background: #BDA26B;
+        transition: all 0.2s
+    }
+
+    @keyframes changeLetter {
+        0% {
+            width: 10%;
+        }
+
+        100% {
+            width: 80%;
+        }
+    }
+
+    .intro {
+        width: 170px;
+        margin: 0 auto;
+        color: #ddd;
+        font-style: italic;
+        line-height: 18px;
+    }
+
+    .intro a {
+        color: #ddd
+    }
+
+    .intro a:hover {
+        text-decoration: underline
+    }
+
+    .card-info {
+        box-sizing: border-box;
+        padding: 0;
+        width: 100%;
+        position: absolute;
+        bottom: -40px;
+        left: 0;
+        margin: 0 auto;
+        padding: 0 50px;
+        font-style: 16px;
+        line-height: 24px;
+        z-index: 20;
+        opacity: 0;
+        transition: bottom 0.64s, opacity 0.63s cubic-bezier(0.33, 0.66, 0.66, 1);
+    }
+
+    .card-info a {
+        display: block;
+        width: 100px;
+        margin: 15px auto;
+        background: #fff;
+        color: #444;
+        padding: 3px 10px;
+        border-radius: 2px;
+        font-size: 0.8em
+    }
+
+    .card-info a:hover {
+        background: #8e7c49;
+        color: #fff;
+    }
+
+    .card-info a:hover span {
+        filter: brightness(10);
+        opacity: 1
+    }
+
+    .utility-info {
+        position: absolute;
+        bottom: 0px;
+        left: 0;
+        z-index: 20;
+        width: 100%;
+        text-align: left
+    }
+
+    .utility-info:after {
+        content: " ";
+        background: url(https://rawcdn.githack.com/Nodws/NodPen/ffad95aa5244b4b09a3c7c1508a018959bbedb7e/postItem/licons.svg) center no-repeat;
+        background-size: 30px auto;
+        display: block;
+        opacity: 0.4;
+        position: absolute;
+        bottom: 25px;
+        right: 15px;
+        width: 30px;
+        height: 15px
+    }
+
+    .utility-info a:hover {
+        text-decoration: underline
+    }
+
+    .utility-list {
+        list-style-type: none;
+        margin: 0 0 10px 20px;
+        padding: 0;
+        width: 100%;
+
+    }
+
+    .utility-list li {
+        margin: 0 5px 0 0;
+        padding: 3px 0 15px 0px;
+        display: inline-block;
+
+        font-size: 0.8em
+    }
+
+    .licon {
+        position: relative;
+        width: 23px;
+        height: 15px;
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .licon:before {
+        content: "";
+        background: url(https://rawcdn.githack.com/Nodws/NodPen/ffad95aa5244b4b09a3c7c1508a018959bbedb7e/postItem/licons.svg?) -2px -6px no-repeat;
+        background-size: 250px;
+        width: 26px;
+        height: 20px;
+        display: inline-block;
+        vertical-align: middle;
+        position: absolute;
+        top: -3px;
+        left: 0;
+    }
+
+    .icon-white {
+        filter: brightness(10);
+    }
+
+    .icon-black {
+        filter: brightness(0);
+        opacity: 0.6
+    }
+
+    .icon-like:before {
+        background-position: -183px -6px;
+
+    }
+
+    .icon-com:before {
+        background-position: -63px -4px;
+
+    }
+
+    .icon-dat:before {
+        background-position: -94px -7px;
+    }
+
+    .icon-tag:before {
+        background-position: -33px -6px;
+
+    }
+
+    @media (max-width:750px) {
+        .utility-info {
+            text-align: center;
+        }
+
+        .utility-info ul {
+            width: 100%;
+            margin: 0;
+            box-sizing: border-box
+        }
+
+        .utility-info li {
+            width: 49%;
+            display: inline-block;
+            box-sizing: border-box;
+            margin: 0
+        }
+    }
+
+    @media (max-width:500px) {
+        .utility-info li:last-of-type {
+            width: 100%
+        }
+
+        .card-info {
+            display: none
+        }
+
+        .blog-card:hover .title-content,
+        .title-content {
+            margin-top: 40px
+        }
+
+        .blog-card {
+            height: 300px
+        }
+
+        .blog-card h3 {
+            font-size: 1.3em
+        }
+
+        .intro {
+            font-size: 0.8em
+        }
+    }
+
+
+    /*  ================  */
+
+    /* ignore this bit :P */
+    #profile-badges:after {
+        content: "BRO";
+        font-family: "Lato", "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
+        font-size: 13px;
+        font-weight: 500;
+        text-transform: uppercase;
+        padding: 1px 4px 1px 4px;
+        color: black !important;
+        border-radius: 3px;
+        position: relative;
+        top: -2px;
+        text-shadow: none !important;
+        white-space: nowrap;
+        letter-spacing: 0;
+        background: #FFDD40;
+    }
+
+    .profile-header {
+        background: #333 url(https://images.unsplash.com/photo-1435783099294-283725c37230?dpr=1&auto=compress,format&fit=crop&w=1376&h=635&q=80&cs=tinysrgb&crop=&bg=) top center no-repeat;
+        background-size: cover;
+        font-size: 3em;
+        position: relative
+    }
+
+    .profile-header:after {
+        position: absolute;
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: rgba(23, 23, 31, 0.42);
+        z-index: 0
+    }
+
+    #profile-links a {
+        font-family: 'Abril Fatface', serif;
+        font-size: 1.2em
+    }
+
+
+    .profile-links a[href*=nodws\.com]:before {
+        content: "\2616";
+        color: #0a45b5;
+        padding-right: 3px
+    }
+
+    .profile-links a[href*=twitter]:before {
+        content: "\1f426";
+        color: #08c
+    }
+
+    .profile-links a[href*=dribbble]:before {
+        content: "\26BE";
+        color: #d055bf
+    }
+
+    #following-this-user {
+        pointer-events: none
+    }
+
+    #follow-this-user {
+        font-size: 1.2em;
+        border-color: #359ef9
+    }
+
+    #follow-this-user:after {
+        content: "\1f448"
+    }
+
+    .links-and-stats {
+        background: rgb(20, 20, 21);
+    }
+
+    .profile-name h1 {
+        text-shadow: 0 6px 9px rgba(0, 0, 0, 0.48)
+    }
+
+    .profile-avatar {
+        bottom: -10px;
+        width: 150px;
+        height: 150px;
+        border: 0px solid #1E1E1E;
+        background: rgba(2, 2, 2, 0.49);
+        box-shadow: 0 19px 19px -10px rgba(0, 0, 0, 0.63)
+    }
+
+    .profile-username,
+    .upsell,
+    .profile-location,
+    .primary-pro {
+        opacity: 0;
+    }
+
+    .upsell,
+    #pen-as-header-question {
+        display: none
+    }
+
+    .profile-nav-1 a {
+        font-size: 1.2rem;
+    }
+
+    .profile-bio,
+    .profile-nav-1 a.active,
+    .profile-nav-1 a:hover {
+        color: rgba(20, 20, 21, 0.59) !important;
+        font-size: 1.2rem
+    }
+
+    .meta .pen-title {
+        font-family: 'Droid Serif', serif;
+        text-align: center
+    }
+
+    .pagination-button {
+        background-color: #2f2f31;
+        border-color: #2f2f31;
+        transition: all 0.2s
+    }
+
+    .pagination-button:hover {
+        box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2)
+    }
+
+    .single-project .stats,
+    .single-pen .stats {
+        text-align: center;
+        width: 100%
+    }
+
+    .stats svg {
+        fill: #bda26b;
+    }
+
+    .stats svg,
+    .loves .icon-heart {
+        fill: rgba(47, 47, 49, 0) !important;
+        stroke: #ba6 !important;
+        stroke-width: 0.1em !important;
+    }
+
+    .loves .icon-heart {
+        stroke-width: 0.5em !important;
+    }
+
+    .comments svg {
+        stroke-width: 0.35em !important;
+    }
+
+    .single-stat.loves.loved-1 svg {
+        stroke: #fff !important
+    }
+
+    .single-pen:hover h3:after {
+        width: 40%;
+        transition: all 0.2s
+    }
+
+    .pen-actions {
+        border: 0px !important
+    }
+
+    .meta {
+        box-shadow: none !important
+    }
 </style>
 
 <body>
@@ -179,10 +788,10 @@
                                 Workspace
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
-                                <a class="dropdown-item" href="#">Office Space</a>
-                                <a class="dropdown-item" href="#">Furnished Coworking Space</a>
-                                <a class="dropdown-item" href="#">Meeting Space</a>
-                                <a class="dropdown-item" href="#">Virtual Space</a>
+                                <a class="dropdown-item" href="./Workspace.html">Office Space</a>
+                                <a class="dropdown-item" href="./Workspace.html">Furnished Coworking Space</a>
+                                <a class="dropdown-item" href="./Workspace.html">Meeting Space</a>
+                                <a class="dropdown-item" href="./Workspace.html">Virtual Space</a>
                             </div>
                         </li>
                         <li class="nav-item">
@@ -215,7 +824,7 @@
             <ul class="case-study-wrapper ">
 
                 <li class="case-study-name">
-                    <a href="#" class="hover-target">DemoBsquare</a>
+                    <a href="#" class="hover-target">Westgate</a>
                 </li>
                 <li class="case-study-name">
                     <a href="#" class="hover-target">DemoBsquare</a>
@@ -526,8 +1135,9 @@
                         <div class="filledbar"></div>
                     </div>
                     <div class="circle text-start">
-                       <p>Now envisioning your fully furnished, well-equipped, sophisticated and state-of-the-art, rental office space in the heart of Ahmedabad isn’t just a dream but a dream come true!</p>
-                       <button type="submit">Know More</button>
+                        <p>Now envisioning your fully furnished, well-equipped, sophisticated and state-of-the-art,
+                            rental office space in the heart of Ahmedabad isn’t just a dream but a dream come true!</p>
+                        <button type="submit">Know More</button>
                     </div>
                 </div>
                 <div class="card">
@@ -538,9 +1148,10 @@
                         <div class="filledbar"></div>
                     </div>
                     <div class="circle text-start">
-                       <p>Discover the inspiring workspace that offers the freedom to work, fuels innovation and connects you to the thriving business environment!</p>
-                       <br>
-                       <button type="submit">Know More</button>
+                        <p>Discover the inspiring workspace that offers the freedom to work, fuels innovation and
+                            connects you to the thriving business environment!</p>
+                        <br>
+                        <button type="submit">Know More</button>
                     </div>
                 </div>
                 <div class="card">
@@ -551,7 +1162,8 @@
                         <div class="filledbar"></div>
                     </div>
                     <div class="circle text-start">
-                        <p>Now conducting meetings, interviews, conferences and presentations at a fully furnished and well equipped meeting room is just a click away and that too at a reasonable cost.</p>
+                        <p>Now conducting meetings, interviews, conferences and presentations at a fully furnished and
+                            well equipped meeting room is just a click away and that too at a reasonable cost.</p>
                         <button type="submit">Know More</button>
                     </div>
                 </div>
@@ -563,8 +1175,9 @@
                         <div class="filledbar"></div>
                     </div>
                     <div class="circle text-start">
-                       
-                        <p>A virtual office in Ahmedabad will have a designated phone number, address, mail handling and phone reception for your company while you are away expanding your business.</p>
+
+                        <p>A virtual office in Ahmedabad will have a designated phone number, address, mail handling and
+                            phone reception for your company while you are away expanding your business.</p>
                         <button type="submit">Know More</button>
                     </div>
                 </div>
@@ -1003,7 +1616,7 @@
                                     <h5 class="title"><a href="#">Administrative Support</a></h5>
 
                                 </div>
-                            </div> 
+                            </div>
                         </div>
                     </div>
 
@@ -1017,7 +1630,7 @@
                                     <h5 class="title"><a href="#">Office Support</a></h5>
 
                                 </div>
-                            </div> 
+                            </div>
                         </div>
                     </div>
 
@@ -1033,7 +1646,7 @@
                                         </a></h5>
 
                                 </div>
-                            </div> 
+                            </div>
                         </div>
                     </div>
 
@@ -1047,7 +1660,7 @@
                                     <h5 class="title"><a href="#">Business Meetings</a></h5>
 
                                 </div>
-                            </div> 
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6 content-card">
@@ -1073,7 +1686,7 @@
                                     <h5 class="title"><a href="#">Refreshments</a></h5>
 
                                 </div>
-                            </div> 
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6 content-card">
@@ -1086,7 +1699,7 @@
                                     <h5 class="title"><a href="#">Free Wifi</a></h5>
 
                                 </div>
-                            </div> 
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6 content-card">
@@ -1099,7 +1712,7 @@
                                     <h5 class="title"><a href="#">Housekeeping</a></h5>
 
                                 </div>
-                            </div> 
+                            </div>
                         </div>
                     </div>
 
@@ -1107,6 +1720,148 @@
                 </div>
 
 
+            </div>
+        </section>
+        <section style="background-color: #efeded;">
+            <div class="container">
+                <div>
+                    <h2 class="heading_style">Blogs</h2>
+                    <hr class="hr m-auto">
+                    <p class="text-center mt-2">Articles on innovations, experiences, entrepreneurship and much
+                        much more!</p>
+                </div>
+                <div class="row">
+                    <div class="col-xl-6 col-md-12">
+                        <div class="blog-card spring-fever">
+                            <div class="title-content">
+                                <h3><a href="#">10 inspiring photos</a></h3>
+                                <div class="intro"> <a href="#">Inspiration</a> </div>
+                            </div>
+                            <div class="card-info">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim...
+                                <a href="#">Read Article<span class="licon icon-arr icon-black"></span></a>
+                            </div>
+                            <div class="utility-info">
+                                <ul class="utility-list">
+                                    <li><span class="licon icon-like"></span><a href="#">2</a></li>
+                                    <li><span class="licon icon-com"></span><a href="#">12</a></li>
+                                    <li><span class="licon icon-dat"></span>03 jun 2017</li>
+                                    <li><span class="licon icon-tag"></span><a href="#">Photos</a>, <a href="#">Nice</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="gradient-overlay"></div>
+                            <div class="color-overlay"></div>
+                        </div><!-- /.blog-card -->
+                    </div>
+                    <div class="col-xl-6 col-md-12">
+                        <div class="blog-card spring-fever">
+                            <div class="title-content">
+                                <h3><a href="#">10 inspiring photos</a></h3>
+                                <div class="intro"> <a href="#">Inspiration</a> </div>
+                            </div>
+                            <div class="card-info">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim...
+                                <a href="#">Read Article<span class="licon icon-arr icon-black"></span></a>
+                            </div>
+                            <div class="utility-info">
+                                <ul class="utility-list">
+                                    <li><span class="licon icon-like"></span><a href="#">2</a></li>
+                                    <li><span class="licon icon-com"></span><a href="#">12</a></li>
+                                    <li><span class="licon icon-dat"></span>03 jun 2017</li>
+                                    <li><span class="licon icon-tag"></span><a href="#">Photos</a>, <a href="#">Nice</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="gradient-overlay"></div>
+                            <div class="color-overlay"></div>
+                        </div><!-- /.blog-card -->
+
+
+                        <!-- <div id="blog">
+                            <div class="blog-box">
+                                <div class="blog-image">
+                                    <img src="./public/images/team.jpg" alt="Blog">
+                                </div>
+                                <div class="blog-details">
+                                    <h4>5 Reasons Why Flexible Office Spaces and Co-Working Spaces are The Next Big
+                                        Thing</h4>
+                                    <p>Flexible office spaces and co-working spaces are a rage in all the big and small
+                                        cities. There are a lot of reasons for the same. Managing a huge office space
+                                        ...</p>
+                                    <a href="#">Continue reading</a>
+                                </div>
+                                <h1>01/22</h1>
+                            </div>
+                            <div class="blog-box">
+                                <div class="blog-image">
+                                    <img src="./public/images/coworking space.JPG" alt="Blog">
+                                </div>
+                                <div class="blog-details">
+                                    <h4>All You Need to Know About BSQUARE Coworking Space</h4>
+                                    <p>Choosing the right kind of office space is key to making sure you have a
+                                        successful career and get to focus on your productivity and nothing else. But
+                                        this can ...</p>
+                                    <a href="#">Continue reading</a>
+                                </div>
+                                <h1>01/19</h1>
+                            </div>
+                            <div class="blog-box">
+                                <div class="blog-image">
+                                    <img src="https://images.pexels.com/photos/972995/pexels-photo-972995.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                                        alt="Blog">
+                                </div>
+                                <div class="blog-details">
+                                    <h4>8 Beauty bloggers you should be following</h4>
+                                    <p> On the weekend (or whenever—who are we kidding?), we love nothing more than
+                                        checking out what our favorite influencers
+                                        are posting, from the products they're raving about or the makeup tutorials
+                                        they're loving. While makeup and skincare
+                                        blogs launch all the time, we continue to go back to certain experts over and
+                                        over again...</p>
+                                    <a href="#">Continue reading</a>
+                                </div>
+                                <h1>10/22</h1>
+                            </div>
+                            <div class="blog-box">
+                                <div class="blog-image">
+                                    <img src="https://images.pexels.com/photos/833052/pexels-photo-833052.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                                        alt="Blog">
+                                </div>
+                                <div class="blog-details">
+                                    <h4>Good, Better, Best</h4>
+                                    <p>Learning how to choose what kind of t-shirt to use for your craft or
+                                        screen-printing project depends on your crafting or
+                                        screen-printing business needs. Some fabric and screen-printing choices make
+                                        more sense for your bottom line than
+                                        others. Or perhaps you’re looking for a different kind of t-shirt for your
+                                        business due to changing needs.</p>
+                                    <a href="#">Continue reading</a>
+                                </div>
+                                <h1>09/15</h1>
+                            </div>
+                            <div class="blog-box">
+                                <div class="blog-image">
+                                    <img src="https://images.pexels.com/photos/1266139/pexels-photo-1266139.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                                        alt="Blog">
+                                </div>
+                                <div class="blog-details">
+                                    <h4>3 keys to healthy grocery shopping
+                                    </h4>
+                                    <p>With the New Year a few months behind us now, hectic schedules and daily
+                                        distractions have gotten in the way of our most
+                                        well intended resolutions. If you are still looking to work on being healthier
+                                        this year, eating healthier is a good
+                                        option that may be easier than it seems.</p>
+                                    <a href="#">Continue reading</a>
+                                </div>
+                                <h1>08/21</h1>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -1192,7 +1947,8 @@
                     <div class="icons text-center">
                         <span class="bi bi-instagram"></span>
                         <span class="bi bi-meta"></span>
-                        <span class="bi bi-linkedin"></span>
+                        <span class="bi bi-linkedin"><a
+                                href="https://www.linkedin.com/company/bsquarebusinesscenter/"></a></span>
 
                     </div>
                 </div>
@@ -1209,7 +1965,16 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
         crossorigin="anonymous"></script>
+
+
+    <script></script>
     <script>
+        jQuery(document).ready(function ($) {
+            $(".show-more-btn").click(function (e) {
+                $(".show-more-item:hidden").slice(0, 3).fadeIn();
+                if ($(".show-more-item:hidden").length < 1) $(this).fadeOut();
+            })
+        })
         var iphone = $('#First');
         // var camera= $('#camera');
 
@@ -1361,6 +2126,39 @@
             });
         });
 
+        (function ($) {
+
+            "use strict";
+
+            // Testimonial Carousel
+            if ($('.testimonial-carousel').length) {
+                $('.testimonial-carousel').owlCarousel({
+                    animateOut: 'slideOutDown',
+                    animateIn: 'zoomIn',
+                    loop: true,
+                    margin: 0,
+                    nav: true,
+                    smartSpeed: 300,
+                    autoplay: 7000,
+                    navText: ['<span class="arrow-left"></span>', '<span class="arrow-right"></span>'],
+                    responsive: {
+                        0: {
+                            items: 1
+                        },
+                        600: {
+                            items: 1
+                        },
+                        800: {
+                            items: 1
+                        },
+                        1024: {
+                            items: 1
+                        }
+                    }
+                });
+            }
+
+        })(window.jQuery);
     </script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>

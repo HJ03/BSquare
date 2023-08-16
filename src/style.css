@@ -104,7 +104,6 @@ main {
 }
 
 .navbar .navbar-brand img {
-
     width: 50%;
 }
 
@@ -250,7 +249,7 @@ main {
 } */
 
 /*----  Main Style  ----*/
-#cards_landscape_wrap-2 {
+/* #cards_landscape_wrap-2 {
     text-align: center;
     background: #F7F7F7;
 }
@@ -296,7 +295,7 @@ main {
 
 #cards_landscape_wrap-2 .card-flyer .text-box {
     text-align: center;
-}
+} */
 
 */ #row ul {
     padding: 0;
@@ -325,7 +324,7 @@ main {
     transition: .3s;
 
 }
-
+/* 
 #cards_landscape_wrap-2 .card-flyer .text-box .text-container {
     padding: 30px 18px;
 }
@@ -370,7 +369,7 @@ main {
     font-family: 'Roboto Black', sans-serif;
     letter-spacing: 1px;
     color: #000000;
-}
+} */
 
 .button_one {
     background-color: transparent;
@@ -684,7 +683,7 @@ a:focus {
 
 /* #Cursor
 ================================================== */
-.cursor,
+/* .cursor,
 .cursor2,
 .cursor3 {
     position: fixed;
@@ -726,7 +725,7 @@ a:focus {
 .cursor2.hover {
     background: rgba(255, 255, 255, .1);
     box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
-}
+} */
 
 /* #Slider
 ================================================== */
@@ -743,7 +742,7 @@ a:focus {
 
 /* #Cursor
 ================================================== */
-.cursor,
+/* .cursor,
 .cursor2,
 .cursor3 {
     position: fixed;
@@ -775,9 +774,9 @@ a:focus {
     -webkit-transform: scale(2) translateX(-25%) translateY(-25%);
     transform: scale(2) translateX(-25%) translateY(-25%);
     border: none
-}
+} */
 
-.cursor2 {
+/* .cursor2 {
     border: 2px solid #0086c461;
     box-shadow: 0 0 22px #0086c44f;
 }
@@ -785,7 +784,7 @@ a:focus {
 .cursor2.hover {
     background: rgba(255, 255, 255, .1);
     box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
-}
+} */
 
 /* #Slider
 ================================================== */
@@ -1190,7 +1189,7 @@ a:focus {
 }
 
 .case-study-images li:nth-child(1) .img-hero-background {
-    background-image: url('../public/images/back1.jpg');
+    background-image: url('../public/images/west-gate.jpg');
 }
 
 .case-study-images li:nth-child(2) .img-hero-background {
@@ -1362,4 +1361,5 @@ a:focus {
 
 .my-float {
     margin-top: 16px;
+    z-index: 200;
 }
