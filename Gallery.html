@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css">
+    
 </head>
 <style>
     .tabs span {
@@ -623,7 +624,7 @@
                             <div class="row">
                                 <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
 
-                                    <img src="./locations/location2/01.webp"
+                                    <img src="./locations/location2/01.webp" onclick="onClick(this)"
                                         class="w-100 shadow-1-strong rounded mb-4 " alt="img" />
 
 
@@ -658,7 +659,12 @@
                                 </div>
                             </div>
 
-
+                            <div id="modal01" class="w3-modal" onclick="this.style.display='none'">
+                                <span class="w3-button w3-hover-red w3-xlarge w3-display-right">&times;</span>
+                                <div class="w3-modal-content w3-animate-zoom">
+                                    <img id="img01" style="width:100%">
+                                </div>
+                            </div>
                         </div>
 
                     </div> <!-- #tab-content2 -->
@@ -817,7 +823,10 @@
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
         crossorigin="anonymous"></script>
     <script>
-
+function onClick(element) {
+            document.getElementById("img01").src = element.src;
+            document.getElementById("modal01").style.display = "block";
+        }
         
         const $dropdown = $(".dropdown");
         const $dropdownToggle = $(".dropdown-toggle");
