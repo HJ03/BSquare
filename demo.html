@@ -14,119 +14,396 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css">
 </head>
 <style>/* Image from https://www.behance.net/gallery/76726697/ColorLimitedISO */
+/* $color-primary: #69f0ae;
+$color-secondary: #18ffff;
+$color-bg: #37474f; */
 
-  html, body {
-    position: relative;
-    height: 100%;
-  }
-  body {
-    background: #eee;
-    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    color:#000;
-    margin: 0;
-    padding: 0;
-  }
-  .swiper-container {
-    margin-top: 50px !important;
-    /* box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2); */
-    width: 800px;
-    height: 450px;
-    border-radius: 20px;
-  }
-  
-  .swiper-slide {
-    text-align: center;
-    font-size: 18px;
+* {
+  font-size: 16px;
+  font-family: "Oxygen", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* body,
+html {
+  background: $color-bg;
+} */
+
+.page-wrapper {
+  max-width: 860px;
+  padding: 40px;
+  margin: 0 auto;
+}
+
+.expandable-card {
+  position:relative;
+  margin-bottom: 16px;
+}
+
+[cardContent]{
+  position: relative;
+  background: white;
+  border-radius: 8px;
+
+  box-shadow: 0 2px 2px 1px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  [collapsedContent] {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: row;
+    padding: 24px;
   }
-  
-  .item {
-    width: 80%;
-    height: 50%;
-    background: white;
-    box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
-    border-radius: 8px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    img {
-      width: 100%;
-      height: 100%;
-      border-radius: 8px;
-    }
-  }
-  
-  .swiper-pagination-bullet {
-    width: 12px !important;
-    height: 12px !important;
-    border-radius: 5px !important;
-    background: #fd3838 !important;
-    transition: all 0.3s !important;
-  }
-  
-  
-  .bg {
-    animation:slide 3s ease-in-out infinite alternate;
-    background-image: linear-gradient(-60deg, #baefff 50%, #FFFFFF 50%);
+  [expandedContent] {
+    visibility:hidden;
+    position:absolute;
+    left: 0;
+    right:0;
     bottom:0;
-    left:-50%;
-    opacity:.5;
-    position:fixed;
-    right:-50%;
-    top:0;
-    z-index:-1;
+    opacity: 0;
+    padding:24px;
+    overflow:hidden;
   }
-  
-  .bg2 {
-    animation-direction:alternate-reverse;
-    animation-duration:4s;
+}
+
+.expanding-card--backdrop {
+  background: black;
+  opacity: .50;
+}
+
+.expandable-card--title {
+  font-size: 21px;
+  font-weight: bold;
+  line-height: 24px;
+  margin-bottom: 8px;
+}
+.expandable-card--sub-title {
+  font-size: 14px;
+  color: #888888;
+}
+
+.expandable-card--profile-image {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background: $color-primary; */
+  color: black;
+  font-size: 21px;
+  font-weight: bold;
+  border-radius: 1000px;
+}
+
+.col:first-child {
+  margin-right: 24px;
+}
+
+
+.expanding-card--placeholder {
+  position:relative;
+  height: 0;
+  visibility:hidden;
+}
+
+.mock-content {
+  .mock-content-line {
+    background: #888888;
+    height: 16px;
+    margin-bottom: 8px;
+    
   }
-  
-  .bg3 {
-    animation-duration:5s;
-  }
-  
-  @keyframes slide {
-    0% {
-      transform:translateX(-25%);
-    }
-    100% {
-      transform:translateX(25%);
-    }
-  }
-  
+}
 </style>
 
 <body>
-
-    <div class="bg"></div>
-    <div class="bg bg2"></div>
-    <div class="bg bg3"></div>
-    
-
+  <div class="page-wrapper">
+    <div id="profile-1" class="expandable-card">
+      <div cardContent>
+        <div collapsedContent>
+          <div class="expandable-card--left-col col">
+            <div class="expandable-card--profile-image">
+              JD
+            </div>
+          </div>
+          <div class="expandable-card--right-col col">
+            <div class="expandable-card--title">
+              Profile Information
+            </div>
+            <div class="expandable-card--sub-title">
+              <p>Jane Doe</p>
+              <p>03/03/1976</p>
+              <p>St. Louis, MO</p>
+            </div>
+          </div>
+        </div>
+        <div expandedContent>
+          <div class="mock-content"></div>
+        </div>
+      </div>
+    </div>
+    <div id="profile-2" class="expandable-card">
+      <div cardContent>
+        <div collapsedContent>
+          <div class="expandable-card--left-col col">
+            <div class="expandable-card--profile-image" style="background: cyan;">
+              HG
+            </div>
+          </div>
+          <div class="expandable-card--right-col col">
+            <div class="expandable-card--title">
+              Profile Information
+            </div>
+            <div class="expandable-card--sub-title" >
+              <p>Henry Gregson</p>
+              <p>10/11/1990</p>
+              <p>Chicago, IL</p>
+            </div>
+          </div>
+        </div>
+        <div expandedContent>
+          <div class="mock-content"></div>
+        </div>
+      </div>
+    </div>
+    <div id="profile-3" class="expandable-card">
+      <div cardContent>
+        <div collapsedContent>
+          <div class="expandable-card--left-col col">
+            <div class="expandable-card--profile-image" style="background: pink;">
+              PF
+            </div>
+          </div>
+          <div class="expandable-card--right-col col">
+            <div class="expandable-card--title">
+              Profile Information
+            </div>
+            <div class="expandable-card--sub-title">
+              <p>Perry Ferento</p>
+              <p>04/01/1988</p>
+              <p>New York, NY</p>
+            </div>
+          </div>
+        </div>
+        <div expandedContent>
+          <div class="mock-content"></div>
+        </div>
+      </div>
+    </div>
+    <div id="profile-4" class="expandable-card">
+      <div cardContent>
+        <div collapsedContent>
+          <div class="expandable-card--left-col col">
+            <div class="expandable-card--profile-image" style="background: gold;">
+              JP
+            </div>
+          </div>
+          <div class="expandable-card--right-col col">
+            <div class="expandable-card--title">
+              Profile Information
+            </div>
+            <div class="expandable-card--sub-title">
+              <p>Juan Pedro</p>
+              <p>04/01/1988</p>
+              <p>San Francisco, CA</p>
+            </div>
+          </div>
+        </div>
+        <div expandedContent>
+          <div class="mock-content">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae excepturi asperiores impedit amet ipsam! Labore perferendis modi, vel rem aspernatur temporibus, laudantium dolorem, hic doloribus enim ratione qui! Nesciunt rem voluptate sit officiis quod minus sunt odio itaque dolorum nihil. Repudiandae, amet? Temporibus aspernatur eum ipsa labore, rem rerum quod distinctio soluta aliquid eligendi. Commodi minima, reiciendis autem temporibus dicta harum neque nemo quisquam eveniet aliquam culpa, corporis consequuntur maiores fuga voluptatum consectetur enim, odit ipsa quaerat eos dolor dolorem praesentium non! Ipsam blanditiis sint porro minima natus assumenda, vitae tenetur, neque officiis atque ab rem possimus saepe mollitia corrupti recusandae nostrum distinctio. Eius blanditiis numquam, aliquam quisquam, tenetur rerum possimus expedita consequuntur sint voluptatum mollitia, debitis magnam vel ducimus consequatur nisi molestiae nesciunt dignissimos id recusandae iste quis iusto! Cumque ratione dicta harum culpa expedita reprehenderit laudantium fugiat laboriosam aut perferendis vel commodi eos ducimus, totam quod obcaecati consequuntur adipisci suscipit odio impedit, animi hic quo. Ad iusto laborum dignissimos commodi minima nisi. Dolore ab nam quasi quia consequuntur sapiente dicta, repudiandae ad sequi nemo. Aut, omnis. Ipsa asperiores expedita beatae, dolorum officiis, voluptate error ad, fuga cupiditate quisquam sint nisi magnam. Autem nostrum optio doloribus, sequi nulla ullam dicta earum nihil mollitia, excepturi impedit molestiae cumque libero voluptatum iusto! Odit atque, soluta minima cumque et commodi esse sapiente nobis quae, impedit, deserunt eius quibusdam rem ipsa? Sit laudantium illum quae doloribus quod tempora, id fugit mollitia eveniet corrupti modi soluta quia accusantium et nihil sint ut labore recusandae nesciunt? Quod, neque eveniet a nam amet dignissimos esse error velit quo voluptate provident impedit voluptatum alias dolorum repellendus. Maiores facere illum vitae quam suscipit sequi reprehenderit eaque architecto omnis. Eum eveniet consequatur voluptas, adipisci, laboriosam minus expedita tempora rerum numquam qui minima voluptatibus eius sunt tenetur quasi quae inventore odit eligendi pariatur ipsa labore fuga libero dolor! Sint sapiente nulla, accusantium inventore rerum voluptas veniam fugit soluta itaque officia. Quae veritatis dicta inventore quam debitis. Sed ad modi cupiditate voluptatem repudiandae itaque fugit nam sint accusamus ea. Praesentium similique pariatur aspernatur ipsam hic eaque, unde odit omnis labore! Officiis mollitia quisquam vero quos, assumenda, deserunt fugit suscipit provident sint corrupti iusto dicta voluptatibus et cupiditate, temporibus illo repudiandae aliquid quod! Id laborum totam aliquid velit, laudantium illo voluptatibus nisi cumque iure ipsam vitae quasi. Totam eius sint nobis praesentium officia inventore quidem officiis temporibus magnam voluptatum qui sapiente nesciunt iusto accusantium veniam adipisci ipsum magni alias, nostrum odio voluptatem. Iusto iste iure veritatis corrupti adipisci suscipit id ullam modi veniam. Dolores necessitatibus natus, consectetur neque minus dignissimos possimus totam vero iure magnam unde sit corrupti ullam odit fuga quos, molestias voluptatibus vel voluptas nisi dolore nemo eius animi ratione? Vero cum asperiores voluptas quam totam sit modi rem quae dignissimos consequatur iure, tempore autem omnis, soluta at placeat blanditiis aliquid in aut. Dicta, a. Molestias voluptates tenetur numquam corrupti itaque nemo labore? Nam officia, consequatur quas nostrum officiis in cupiditate repudiandae voluptatum earum eum deleniti, assumenda, molestiae inventore facilis?</div>
+        </div>
+      </div>
+    </div>
+  </div>
   <script src="https://code.jquery.com/jquery-3.6.3.min.js"
     integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/2.1.3/parallax.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
     crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js"></script>
   <script src="https://md-aqil.github.io/images/swiper.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
   <script>
-   var swiper = new Swiper('.swiper-container', {
-  slidesPerView: 2,
-  spaceBetween: 30,
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true
+  const duration = 300;
+const leaveDuration = 250;
+class ExpandableCard {
+  constructor(node) {
+    this.backdropEl = document.createElement("DIV");
+    this.backdropEl.className = "expanding-card--backdrop";
+    this.backdropEl.addEventListener("click", () => {
+      this.collapse();
+    });
+    this.hostEl = node;
+    this.placeholderEl = document.createElement("DIV");
+    this.placeholderEl.className = "expanding-card--placeholder";
+    this.hostEl.appendChild(this.placeholderEl);
+    this.cardContentEl = node.querySelector("[cardContent]");
+    this.collapsedContentEl = node.querySelector("[collapsedContent]");
+    this.expandedContentEl = node.querySelector("[expandedContent]");
+    this.expanded = false;
+    this.animatingFlag = false;
+
+    this.hostEl.addEventListener("click", () => {
+      this.expand();
+    });
   }
-});
+
+  expand() {
+    if (this.expanded || this.animating) {
+      return;
+    }
+    this.animating = true;
+
+    this.backdropEl.style.position = "fixed";
+    this.backdropEl.style.top = "0px";
+    this.backdropEl.style.left = "0px";
+    this.backdropEl.style.right = "0px";
+    this.backdropEl.style.bottom = "0px";
+    this.backdropEl.style.opacity = "0";
+
+    this.backdropEl.style.zIndex = 9;
+
+    document.body.appendChild(this.backdropEl);
+
+    const cardBoundingRect = this.cardContentEl.getBoundingClientRect();
+
+    this.placeholderEl.style.height = `${cardBoundingRect.height}px`;
+    this.cardContentEl.style.position = "fixed";
+    this.cardContentEl.style.zIndex = 10;
+    this.cardContentEl.style.top = `${0}px`;
+    this.cardContentEl.style.left = `${0}px`;
+    this.cardContentEl.style.width = null;
+    this.cardContentEl.style.height = null;
+    this.cardContentEl.style.transform = `translate(${
+      cardBoundingRect.left
+    }px), ${cardBoundingRect.top}px)`;
+    this.expandedContentEl.style.visibility = "visible";
+
+    const fromHeight = this.staticHeight(this.cardContentEl);
+    const expandedContentHeight = this.staticHeight(this.expandedContentEl);
+    const toHeight = fromHeight + expandedContentHeight;
+
+    const targetBoundingRect = {
+      left: 16,
+      top: 16,
+      width: window.innerWidth - 32,
+      height: toHeight
+    };
+    const promises = [
+      anime({
+        targets: this.cardContentEl,
+        height: [fromHeight, toHeight],
+        translateX: [cardBoundingRect.left, targetBoundingRect.left],
+        translateY: [cardBoundingRect.top, targetBoundingRect.top],
+        width: [cardBoundingRect.width, targetBoundingRect.width],
+        boxShadow:
+          "0 0 1px 0 rgba(33,43,54,.08), 0 8px 10px 0 rgba(33,43,54,.2)",
+        duration: duration,
+        easing: 'easeOutCubic'
+      }).finished,
+      anime({
+        targets: this.expandedContentEl,
+        translateY: [16, 0],
+        opacity: [0, 1],
+        delay: 100,
+        duration: duration,
+        easing: 'easeOutCubic'
+      }).finished,
+      anime({
+        targets: this.backdropEl,
+        opacity: [0, 0.33],
+        duration: duration,
+        easing: 'easeOutCubic'
+      })
+    ];
+    return Promise.all(promises).then(() => {
+      this.animating = false;
+      this.expanded = true;
+    });
+  }
+
+  collapse() {
+    if (!this.expanded || this.animating) {
+      return;
+    }
+    this.animating = true;
+
+    const placeholderRect = this.placeholderEl.getBoundingClientRect();
+    const cardContentRect = this.cardContentEl.getBoundingClientRect();
+    const expandedContentHeight = this.expandedContentEl.offsetHeight;
+    const fromHeight = cardContentRect.height;
+    debugger;
+    const toHeight = fromHeight - expandedContentHeight;
+    const promises = [
+      anime({
+        targets: this.cardContentEl,
+        height: [fromHeight, toHeight],
+        translateX: [cardContentRect.left, placeholderRect.left],
+        translateY: [cardContentRect.top, placeholderRect.top],
+        width: [cardContentRect.width, placeholderRect.width],
+        boxShadow: "0 2px 2px 1px rgba(0, 0, 0, 0.1)",
+        duration: leaveDuration,
+        delay: 0,
+        easing: 'easeInQuad'
+      }).finished,
+      anime({
+        targets: this.expandedContentEl,
+        translateY: [0, 16],
+        opacity: [1, 0],
+        duration: leaveDuration,
+        easing: 'easeInQuad'
+      }).finished,
+      anime({
+        targets: this.backdropEl,
+        opacity: [0.33, 0],
+        duration: leaveDuration,
+        easing: 'easeInQuad'
+      })
+    ];
+    return Promise.all(promises).then(() => {
+      this.animating = false;
+      this.expanded = false;
+
+      this.placeholderEl.style.height = '0px';
+      this.cardContentEl.style.position = "relative";
+      this.cardContentEl.style.zIndex = null;
+      this.cardContentEl.style.top = null;
+      this.cardContentEl.style.left = null;
+      this.cardContentEl.style.width = null;
+      this.cardContentEl.style.height = null;
+      this.cardContentEl.style.transform = null;
+      this.expandedContentEl.style.visibility = "hidden";
+      document.body.removeChild(this.backdropEl);
+    });
+  }
+
+  staticHeight(node) {
+    const height = node.offsetHeight;
+    node.style.height = `${height}px`;
+    return height;
+  }
+}
+
+var c = new ExpandableCard(document.querySelector("#profile-1"));
+var c = new ExpandableCard(document.querySelector("#profile-2"));
+var c = new ExpandableCard(document.querySelector("#profile-3"));
+var c = new ExpandableCard(document.querySelector("#profile-4"));
+
+
+document.querySelectorAll('.mock-content').forEach(c => {
+  const lines = Math.floor(Math.random() * 6) + 2;
+  for(var i = 0; i < lines; i++) {
+    const w = (Math.random() * 2 ) + 3
+    const el = document.createElement('div');
+    el.className="mock-content-line";
+    el.style.width = `${w * 20}%`;
+    c.appendChild(el);
+  }
+})
+
   </script>
 </body>
 

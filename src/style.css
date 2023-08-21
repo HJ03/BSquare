@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Roboto:wght@300&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Neuton&display=swap');
+
+
 * {
     box-sizing: border-box;
 
@@ -27,6 +30,7 @@ li a {
 
 p {
     font-family: 'Roboto', sans-serif;
+    color: black;
 }
 
 
@@ -36,6 +40,7 @@ p {
     font-weight: 600;
     margin: 20px 0;
     color: #000000;
+    font-family: 'Neuton', serif;
 }
 
 .heading_style span {
