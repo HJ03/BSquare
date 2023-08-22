@@ -666,11 +666,12 @@
     }
 
     #testimonial .card .carousel-item {
-        min-height: 200px;
+        min-height: 226px;
+        padding: 0px 0;
     }
 
     #testimonial .card .carousel-caption {
-        padding: 0;
+        /* padding: 0; */
         right: 15px;
         left: 15px;
         top: 15px;
@@ -678,6 +679,7 @@
         border: 1px solid #ccc;
         min-height: 195px;
         padding: 15px;
+
     }
 
     #testimonial .card .carousel-caption .col-sm-3 {
@@ -734,6 +736,10 @@
         color: #0086c4;
     }
 
+    #testimonial .card .carousel-caption .col-sm-9 {
+        text-align: left;
+    }
+
     @media (min-width: 320px) and (max-width: 575px) {
         #testimonial .carousel-caption {
             position: relative;
@@ -742,7 +748,7 @@
         #testimonial .card .carousel-caption {
             left: 0;
             top: 0;
-            margin-bottom: 15px;
+            /* margin-bottom: 15px; */
         }
 
         #testimonial .card .carousel-caption img {
@@ -763,7 +769,25 @@
             margin-top: 0;
             font-size: 16px;
             font-weight: 700;
+            text-align: center;
         }
+
+        #testimonial .card .carousel-item {
+            min-height: 226px;
+            padding: 20px 0;
+        }
+
+        .carousel-caption .row {
+            display: flex;
+            flex-direction: column;
+            
+            text-align: center;
+        }
+
+        #testimonial .card .carousel-caption .col-sm-9 {
+            text-align: center;
+        }
+
     }
 
     @media (min-width: 576px) and (max-width: 767px) {
@@ -1878,7 +1902,7 @@
             </div>
             </div>
         </section> -->
-        <section class="pt-5 pb-5 " id="testimonial">
+        <section class="pt-5 " id="testimonial">
             <div class="container">
                 <div>
                     <h2 class="heading_style">Customer Success Stories</h2>
@@ -1888,19 +1912,19 @@
                 </div>
 
                 <div class="card col-md-12 mt-2">
-                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="5000">
-                        <div class="w-100 carousel-inner pb-4" role="listbox">
+                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="10000">
+                        <div class="w-100 carousel-inner" role="listbox">
                             <div class="carousel-item active ">
                                 <!-- <div class="bg"></div> -->
                                 <div class="row">
-                                    <div class="col-md-6">
+                                    <div class="col-md-12">
                                         <div class="carousel-caption">
                                             <div class="row">
-                                                <div class="col-sm-3 col-4 align-items-start">
+                                                <div class="col-sm-3 col-12 align-items-center">
                                                     <img src="./public/images/user2.png" alt=""
-                                                        class="rounded-circle img-fluid">
+                                                        class="rounded-circle img-fluid" style="width: 70%;">
                                                 </div>
-                                                <div class="col-sm-9 col-8">
+                                                <div class="col-sm-9 col-12">
                                                     <h2>Chaheti - <span>Copywriter</span></h2>
                                                     <small>I had a very good experience here as I got to meet a lot of
                                                         like-minded people and the meeting rooms are extremely
@@ -1912,7 +1936,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
+                                    <!-- <div class="col-md-6">
                                         <div class="carousel-caption">
                                             <div class="row">
                                                 <div class="col-sm-3 col-4 align-items-start">
@@ -1927,24 +1951,24 @@
                                                         customisation for our own space. Having helpful admin staff also
                                                         helps us to work without any pressure. My commendations to
                                                         BSquare on its growth.</small>
-                                                    <!-- <small class="smallest mute">- willi</small> -->
+                                                    <small class="smallest mute">- willi</small>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                             <div class="carousel-item">
                                 <!-- <div class="bg"></div> -->
                                 <div class="row">
-                                    <div class="col-md-6 col-12">
+                                    <div class="col-md-12">
                                         <div class="carousel-caption">
                                             <div class="row">
-                                                <div class="col-sm-3 col-4 align-items-start">
-                                                    <img src="./public/images/user2.png" alt=""
+                                                <div class="col-sm-3 col-12 align-items-start">
+                                                    <img src="./public/images/user2.png" alt="" style="width: 70%;"
                                                         class="rounded-circle img-fluid">
                                                 </div>
-                                                <div class="col-sm-9 col-8">
+                                                <div class="col-sm-9 col-12">
                                                     <h2>Nayan Panchal - <span>Freelancer</span></h2>
                                                     <small> I got to collaborate with a lot of other artists and that
                                                         has led to a lot of professional connections. I also find it
@@ -1955,14 +1979,20 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-6 col-12">
+
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <!-- <div class="bg"></div> -->
+                                <div class="row">
+                                    <div class="col-md-12">
                                         <div class="carousel-caption">
                                             <div class="row">
-                                                <div class="col-sm-3 col-4 align-items-start">
-                                                    <img src="./public/images/user2.png" alt=""
+                                                <div class="col-sm-3 col-12 align-items-start">
+                                                    <img src="./public/images/user2.png" alt="" style="width: 70%;"
                                                         class="rounded-circle img-fluid">
                                                 </div>
-                                                <div class="col-sm-9 col-8">
+                                                <div class="col-sm-9 col-12">
                                                     <h2>Tejas Nair - <span>Director</span></h2>
                                                     <small>BSQUARE Coworking Space is a one-stop solution for all your
                                                         office space related problems. They have well-equipped, fully-
@@ -1974,6 +2004,33 @@
                                             </div>
                                         </div>
                                     </div>
+
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <!-- <div class="bg"></div> -->
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="carousel-caption">
+                                            <div class="row">
+                                                <div class="col-sm-3 col-12 align-items-start">
+                                                    <img src="./public/images/user2.png" alt="" style="width: 70%;"
+                                                        class="rounded-circle img-fluid">
+                                                </div>
+                                                <div class="col-sm-9 col-12">
+                                                    <h2>Mrs. Dina Joseph - <span>Sr. Facilities Manager</span></h2>
+                                                    <small>Very accommodating and supportive services. Really helped us
+                                                        to manage our growth without putting too much pressure on
+                                                        creating our own assets. Working with BSquare, we could also do
+                                                        customisation for our own space. Having helpful admin staff also
+                                                        helps us to work without any pressure. My commendations to
+                                                        BSquare on its growth.</small>
+                                                    <!-- <small class="smallest mute">- willi</small> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
 
