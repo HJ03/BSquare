@@ -397,7 +397,7 @@ main {
 }
 
 .locations {
-    background-color: #006594;
+    background-image: url("/public/images/review-back.JPG");
     border-radius: 0% 0% 35% 0%;
 }
 
