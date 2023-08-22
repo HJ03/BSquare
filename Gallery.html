@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css">
-
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <style>
     .tabs span {
@@ -177,6 +177,74 @@
     #header img {
         object-fit: cover;
         height: 100%;
+    }
+    #gallery {
+        -webkit-column-count: 4;
+        -moz-column-count: 4;
+        column-count: 4;
+
+        -webkit-column-gap: 20px;
+        -moz-column-gap: 20px;
+        column-gap: 20px;
+    }
+
+    @media (max-width:1200px) {
+        #gallery {
+            -webkit-column-count: 3;
+            -moz-column-count: 3;
+            column-count: 3;
+
+            -webkit-column-gap: 20px;
+            -moz-column-gap: 20px;
+            column-gap: 20px;
+        }
+    }
+
+    @media (max-width:800px) {
+        #gallery {
+            -webkit-column-count: 2;
+            -moz-column-count: 2;
+            column-count: 2;
+
+            -webkit-column-gap: 20px;
+            -moz-column-gap: 20px;
+            column-gap: 20px;
+        }
+    }
+
+    @media (max-width:600px) {
+        #gallery {
+            -webkit-column-count: 1;
+            -moz-column-count: 1;
+            column-count: 1;
+        }
+    }
+
+    #gallery img,
+    #gallery video {
+        width: 100%;
+        height: auto;
+        margin: 4% auto;
+        box-shadow: -3px 5px 15px #000;
+        cursor: pointer;
+        -webkit-transition: all 0.2s;
+        transition: all 0.2s;
+    }
+
+    .w3-display-right {
+        position: absolute;
+        color: white;
+        background-color: #0087c4;
+        top: 22%;
+        right: 0%;
+        transform: translate(0%, -50%);
+        -ms-transform: translate(0%, -50%);
+    }
+
+    @media (max-width: 768px) {
+        .w3-modal {
+            padding-top: 252px;
+        }
     }
 </style>
 
@@ -647,40 +715,35 @@
 
 
 
-                                    <img src="./locations/location2/02.webp" class="w-100 shadow-1-strong rounded mb-4"
+                                    <img src="./locations/location2/02.webp" class="w-100 shadow-1-strong rounded mb-4" onclick="onClick(this)"
                                         alt="img" />
 
                                 </div>
 
                                 <div class="col-lg-4 mb-4 mb-lg-0">
-                                    <img src="./locations/location2/03.webp" class="w-100 shadow-1-strong rounded mb-4"
+                                    <img src="./locations/location2/03.webp" class="w-100 shadow-1-strong rounded mb-4" onclick="onClick(this)"
                                         alt="img" />
 
-                                    <img src="./locations/location2/04.webp" class="w-100 shadow-1-strong rounded mb-4 "
+                                    <img src="./locations/location2/04.webp" class="w-100 shadow-1-strong rounded mb-4 " onclick="onClick(this)"
                                         alt="img" />
                                 </div>
 
                                 <div class="col-lg-4 mb-4 mb-lg-0">
-                                    <img src="./locations/location2/05.webp" class="w-100 shadow-1-strong rounded mb-4 "
+                                    <img src="./locations/location2/05.webp" class="w-100 shadow-1-strong rounded mb-4 "onclick="onClick(this)"
                                         alt="img" />
 
-                                    <img src="./locations/location2/06.webp" class="w-100 shadow-1-strong rounded mb-4"
+                                    <img src="./locations/location2/06.webp" class="w-100 shadow-1-strong rounded mb-4"onclick="onClick(this)"
                                         alt="img" />
                                 </div>
                                 <div class="col-lg-4 mb-4 mb-lg-0">
-                                    <img src="./locations/location2/07.webp" class="w-100 shadow-1-strong rounded mb-4 "
+                                    <img src="./locations/location2/07.webp" class="w-100 shadow-1-strong rounded mb-4 "onclick="onClick(this)"
                                         alt="img" />
 
                                     <img src="" class="w-100 shadow-1-strong rounded mb-4" alt="" />
                                 </div>
                             </div>
 
-                            <div id="modal01" class="w3-modal" onclick="this.style.display='none'">
-                                <span class="w3-button w3-hover-red w3-xlarge w3-display-right">&times;</span>
-                                <div class="w3-modal-content w3-animate-zoom">
-                                    <img id="img01" style="width:100%">
-                                </div>
-                            </div>
+                            
                         </div>
 
                     </div> <!-- #tab-content2 -->
@@ -692,34 +755,34 @@
                             <div class="row">
                                 <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
 
-                                    <img src="./locations/location3/01.webp" class="w-100 shadow-1-strong rounded mb-4 "
+                                    <img src="./locations/location3/01.webp" class="w-100 shadow-1-strong rounded mb-4 " onclick="onClick(this)"
                                         alt="Boat on Calm Water" />
 
 
 
 
-                                    <img src="./locations/location3/02.webp" class="w-100 shadow-1-strong rounded mb-4"
+                                    <img src="./locations/location3/02.webp" class="w-100 shadow-1-strong rounded mb-4" onclick="onClick(this)"
                                         alt="Wintry Mountain Landscape" />
 
                                 </div>
 
                                 <div class="col-lg-4 mb-4 mb-lg-0">
-                                    <img src="./locations/location3/03.webp" class="w-100 shadow-1-strong rounded mb-4"
+                                    <img src="./locations/location3/03.webp" class="w-100 shadow-1-strong rounded mb-4" onclick="onClick(this)"
                                         alt="Mountains in the Clouds" />
 
-                                    <img src="./locations/location3/04.webp" class="w-100 shadow-1-strong rounded mb-4 "
+                                    <img src="./locations/location3/04.webp" class="w-100 shadow-1-strong rounded mb-4 " onclick="onClick(this)"
                                         alt="Boat on Calm Water" />
                                 </div>
 
                                 <div class="col-lg-4 mb-4 mb-lg-0">
-                                    <img src="./locations/location3/05.webp" class="w-100 shadow-1-strong rounded mb-4 "
+                                    <img src="./locations/location3/05.webp" class="w-100 shadow-1-strong rounded mb-4 " onclick="onClick(this)"
                                         alt="Waves at Sea" />
 
-                                    <img src="./locations/location3/06.webp" class="w-100 shadow-1-strong rounded mb-4"
+                                    <img src="./locations/location3/06.webp" class="w-100 shadow-1-strong rounded mb-4"onclick="onClick(this)"
                                         alt="Yosemite National Park" />
                                 </div>
                                 <div class="col-lg-4 mb-4 mb-lg-0">
-                                    <img src="./locations/location3/07.webp" class="w-100 shadow-1-strong rounded mb-4 "
+                                    <img src="./locations/location3/07.webp" class="w-100 shadow-1-strong rounded mb-4 " onclick="onClick(this)"
                                         alt="Waves at Sea" />
 
                                     <img src="" class="w-100 shadow-1-strong rounded mb-4" alt="" />
@@ -738,13 +801,13 @@
                             <div class="row">
                                 <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
 
-                                    <img src="./locations/location4/01.webp" class="w-100 shadow-1-strong rounded mb-4 "
+                                    <img src="./locations/location4/01.webp" class="w-100 shadow-1-strong rounded mb-4 " onclick="onClick(this)"
                                         alt="Boat on Calm Water" />
 
 
 
-
-                                    <img src="./locations/location4/02.webp" class="w-100 shadow-1-strong rounded mb-4"
+ 
+                                    <img src="./locations/location4/02.webp" class="w-100 shadow-1-strong rounded mb-4" onclick="onClick(this)"
                                         alt="Wintry Mountain Landscape" />
 
                                 </div>
@@ -753,12 +816,12 @@
                                     <!-- <img src="./locations/location4/03.webp"
                                         class="w-100 shadow-1-strong rounded mb-4" alt="Mountains in the Clouds" /> -->
 
-                                    <img src="./locations/location4/04.webp" class="w-100 shadow-1-strong rounded mb-4 "
+                                    <img src="./locations/location4/04.webp" class="w-100 shadow-1-strong rounded mb-4 "onclick="onClick(this)"
                                         alt="Boat on Calm Water" />
                                 </div>
 
                                 <div class="col-lg-4 mb-4 mb-lg-0">
-                                    <img src="./locations/location4/03.webp" class="w-100 shadow-1-strong rounded mb-4 "
+                                    <img src="./locations/location4/03.webp" class="w-100 shadow-1-strong rounded mb-4 "onclick="onClick(this)"
                                         alt="Waves at Sea" />
 
                                     <!-- <img src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain3.webp"
@@ -774,7 +837,12 @@
 
                 </div> <!-- .tabs -->
 
-
+                <div id="modal01" class="w3-modal" onclick="this.style.display='none'">
+                    <span class="w3-button w3-hover-red w3-xlarge w3-display-right">&times;</span>
+                    <div class="w3-modal-content w3-animate-zoom">
+                        <img id="img01" style="width:100%">
+                    </div>
+                </div>
             </div>
         </section>
 

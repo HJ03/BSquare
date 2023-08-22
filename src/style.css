@@ -428,7 +428,7 @@ main {
     width: 25%;
     color: white;
     font-size: 20px;
-    font-weight: 600;
+    font-weight: 500;
     text-decoration: none;
     text-align: center;
     line-height: 2;
@@ -919,7 +919,7 @@ a:focus {
         width: 100%;
         color: white;
         font-size: 20px;
-        font-weight: 600;
+        font-weight: 500;
         text-decoration: none;
         text-align: center;
         line-height: 2;
