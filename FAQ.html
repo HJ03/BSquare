@@ -63,9 +63,11 @@
         object-fit: cover;
         height: 100%;
     }
-    .FAQ{
-        padding:0 10% ;
+
+    .FAQ {
+        padding: 0 10%;
     }
+
     .FAQ .wrapper {
         width: 100%;
     }
@@ -126,9 +128,10 @@
         .FAQ .wrapper {
             width: 100%;
         }
-        .FAQ{
-        padding:0 2% ;
-    }
+
+        .FAQ {
+            padding: 0 2%;
+        }
     }
 </style>
 
@@ -208,7 +211,8 @@
                     <img src="https://images.unsplash.com/photo-1444723121867-7a241cacace9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
                         class="d-block w-100" alt="...">
                     <div class="title">
-                        <h1 class="animated slideInDown"><span>Frequently asked questions to solve all your queries </span></h1>
+                        <h1 class="animated slideInDown"><span>Frequently asked questions to solve all your queries
+                            </span></h1>
                         <h2 class="animated slideInLeft"></h2>
                     </div>
                 </div>
@@ -496,7 +500,7 @@
         </div>
 
     </div>
-
+    <a id="button"></a>
     <a href="https://api.whatsapp.com/send?phone=&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Varela%202."
         class="float" target="_blank">
         <i class="fa fa-whatsapp my-float"></i>
@@ -600,6 +604,20 @@
         crossorigin="anonymous"></script>
 
     <script>
+        var btn = $('#button');
+
+        $(window).scroll(function () {
+            if ($(window).scrollTop() > 300) {
+                btn.addClass('show');
+            } else {
+                btn.removeClass('show');
+            }
+        });
+
+        btn.on('click', function (e) {
+            e.preventDefault();
+            $('html, body').animate({ scrollTop: 0 }, '300');
+        });
         var cardsModule = (function () {
             var trigger = $(".item"),
                 closetrigger = $(".item span.close");

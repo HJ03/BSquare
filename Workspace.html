@@ -216,7 +216,7 @@
         padding: 20px;
 
     }
- 
+
 
     #Facilities img {
         width: 30%;
@@ -229,7 +229,8 @@
         margin: 0px 20px;
         box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
     }
-    #Facilities h6{
+
+    #Facilities h6 {
         font-size: 14px;
     }
 
@@ -952,14 +953,16 @@
 
 
         </section>
-        <div class="container mb-5" >
+        <div class="container mb-5">
             <div class="row">
-                <div class="col" style="background-color: #0086c4; color: white; height: 40vh; border-radius: 0px 0px 50px 50px; ">
+                <div class="col"
+                    style="background-color: #0086c4; color: white; height: 40vh; border-radius: 0px 0px 50px 50px; ">
                     <div>
                         <h2 class="heading_style text-start text-white"
                             style="border-left: 5px solid white; padding-left: 5px;">Facilities</h2>
                         <!-- <hr class="hr "> -->
-                        <p class="text-start mt-2 text-white" style="font-size: 15px; padding-left: 10px;">An established
+                        <p class="text-start mt-2 text-white" style="font-size: 15px; padding-left: 10px;">An
+                            established
                             enterprise with all the important amenities to take your business ahead!</p>
                     </div>
                 </div>
@@ -1066,7 +1069,7 @@
 
             </div>
         </div>
-
+        <a id="button"></a>
 
     </main>
     <a href="https://api.whatsapp.com/send?phone=&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Varela%202."
@@ -1075,16 +1078,20 @@
     </a>
     <footer class="footer-section">
         <div class="container">
-            
+
             <div class="footer-content pt-5 pb-5">
                 <div class="row">
                     <div class="col-xl-4 col-lg-4 mb-50">
                         <div class="footer-widget">
                             <div class="footer-logo">
-                                <a href="index.html"><img src="./public/images/logo.JPG" class="img-fluid" alt="logo"></a>
+                                <a href="index.html"><img src="./public/images/logo.JPG" class="img-fluid"
+                                        alt="logo"></a>
                             </div>
                             <div class="footer-text">
-                                <p>BSQUARE is a coworking space in Ahmedabad that provides world class workspaces, coworking spaces and virtual office spaces at cost-effective rates. We offer well furnished, well-equipped managed office spaces to MNCs, entrepreneurs and companies.</p>
+                                <p>BSQUARE is a coworking space in Ahmedabad that provides world class workspaces,
+                                    coworking spaces and virtual office spaces at cost-effective rates. We offer well
+                                    furnished, well-equipped managed office spaces to MNCs, entrepreneurs and companies.
+                                </p>
                             </div>
                             <div class="footer-social-icon mb-3">
                                 <span>Follow us</span>
@@ -1110,12 +1117,12 @@
                             <ul class="p-0">
                                 <li><a href="./index.html">Home</a></li>
                                 <li><a href="./Blogs.html">Blogs</a></li>
-                              
+
                                 <li><a href="./Facilities.html">Facilities</a></li>
                                 <li><a href="#">Careers</a></li>
                                 <li><a href="./Gallery.html">Gallery</a></li>
                                 <!-- <li><a href="#">About us</a></li> -->
-                                
+
                                 <!-- <li><a href="#">Expert Team</a></li> -->
                                 <li><a href="./FAQ.html">FAQ</a></li>
                                 <li><a href="./AboutUs.html">About Us</a></li>
@@ -1147,12 +1154,14 @@
                 <div class="row">
                     <div class="col-xl-6 col-lg-6 text-center text-lg-left">
                         <div class="copyright-text">
-                            <p>©2022 <a href="https://outleadsolutions.com/">Outlead Solutions.</a> All rights reserved</p>
-                            
+                            <p>©2022 <a href="https://outleadsolutions.com/">Outlead Solutions.</a> All rights reserved
+                            </p>
+
                         </div>
                     </div>
                     <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
-                        <p class="text-white">Designed and Developed by <a href="https://outleadsolutions.com/">OutleadSolutions</a></p>
+                        <p class="text-white">Designed and Developed by <a
+                                href="https://outleadsolutions.com/">OutleadSolutions</a></p>
                     </div>
                 </div>
             </div>
@@ -1165,6 +1174,20 @@
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
         crossorigin="anonymous"></script>
     <script>
+        var btn = $('#button');
+
+        $(window).scroll(function () {
+            if ($(window).scrollTop() > 300) {
+                btn.addClass('show');
+            } else {
+                btn.removeClass('show');
+            }
+        });
+
+        btn.on('click', function (e) {
+            e.preventDefault();
+            $('html, body').animate({ scrollTop: 0 }, '300');
+        });
         const $dropdown = $(".dropdown");
         const $dropdownToggle = $(".dropdown-toggle");
         const $dropdownMenu = $(".dropdown-menu");

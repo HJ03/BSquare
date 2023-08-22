@@ -15,279 +15,223 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css">
 </head>
 <style>
-  .card {
-    margin: 0 auto;
-    border: none;
-  }
+  @import url(https://fonts.googleapis.com/css?family=Josefin+Sans:300,400);
 
-  .card .carousel-item {
-    min-height: 190px;
-  }
-
-  .card .carousel-caption {
+  * {
+    margin: 0;
     padding: 0;
-    right: 15px;
-    left: 15px;
-    top: 15px;
-    color: #3d3d3d;
-    border: 1px solid #ccc;
-    min-height: 175px;
-    padding: 15px;
   }
 
-  .card .carousel-caption .col-sm-3 {
-    display: flex;
-    align-items: center;
+  html,
+  body {
+    height: 100%;
   }
 
-  .card .carousel-caption .col-sm-9 {
-    text-align: left;
+  section {
+    position: relative;
+    width: 100%;
+    height: 100%;
   }
 
-  .card .carousel-control-prev,
-  .card .carousel-control-next {
-    color: #3d3d3d !important;
-    opacity: 1 !important;
+  section::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 80%;
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, .8) 80%, rgba(0, 0, 0, .8) 100%);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, .8) 80%, rgba(0, 0, 0, .8) 100%);
   }
 
-  .carousel-control-prev-icon,
-  .carousel-control-next-icon {
-    background-image: none;
+  section h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     color: #fff;
-    font-size: 14px;
-    background-color: #cd3a54;
-    height: 32px;
-    line-height: 32px;
-    width: 32px;
+    font: normal 300 64px/1 'Josefin Sans', sans-serif;
+    text-align: center;
+    white-space: nowrap;
   }
 
-  .carousel-control-prev-icon:hover,
-  .carousel-control-next-icon:hover {
-    opacity: 0.85;
+  #section01 {
+    background: url(https://picsum.photos/1200/800?image=575) center center / cover no-repeat;
   }
 
-  .carousel-control-prev {
-    left: 40%;
-    top: 110%;
+  #section02 {
+    background: url(https://picsum.photos/1200/800?image=1016) center center / cover no-repeat;
   }
 
-  .carousel-control-next {
-    right: 40%;
-    top: 110%;
+  #section03 {
+    background: url(https://picsum.photos/1200/800?image=869) center center / cover no-repeat;
   }
 
-  .midline {
-    width: 60px;
-    border-top: 1px solid #d43025;
+  #section04 {
+    background: url(https://picsum.photos/1200/800?image=506) center center / cover no-repeat;
   }
 
-  .carousel-caption h2 {
-    font-size: 14px;
+  #section05 {
+    background: url(https://picsum.photos/1200/800?image=1037) center center / cover no-repeat;
   }
 
-  .carousel-caption h2 span {
-    color: #cd3a54;
+  #section06 {
+    background: url(https://picsum.photos/1200/800?image=901) center center / cover no-repeat;
   }
 
-  @media (min-width: 320px) and (max-width: 575px) {
-    .carousel-caption {
-      position: relative;
+  #section07 {
+    background: url(https://picsum.photos/1200/800?image=675) center center / cover no-repeat;
+  }
+
+  #section08 {
+    background: url(https://picsum.photos/1200/800?image=1050) center center / cover no-repeat;
+  }
+
+  #section09 {
+    background: url(https://picsum.photos/1200/800?image=902) center center / cover no-repeat;
+  }
+
+  #section10 {
+    background: url(https://picsum.photos/1200/800?image=516) center center / cover no-repeat;
+  }
+
+  #thanks {
+    background-color: #fff;
+  }
+
+  #thanks::after {
+    content: none;
+  }
+
+  #thanks div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  #thanks h2 {
+    margin-bottom: 60px;
+    color: #333;
+    font: normal 300 64px/1 'Josefin Sans', sans-serif;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  #thanks p {
+    color: #333;
+    font: normal 400 20px/1 'Josefin Sans', sans-serif;
+  }
+
+  #thanks p a {
+    color: #333;
+    text-decoration: none;
+    transition: color .3s;
+  }
+
+  #thanks p a:hover {
+    color: #888;
+  }
+
+
+  #section10 a {
+    padding-top: 60px;
+  }
+
+  #section10 a span {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 30px;
+    height: 50px;
+    margin-left: -15px;
+    border: 2px solid #fff;
+    border-radius: 50px;
+    box-sizing: border-box;
+  }
+
+  #section10 a span::before {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    content: '';
+    width: 6px;
+    height: 6px;
+    margin-left: -3px;
+    background-color: #fff;
+    border-radius: 100%;
+    -webkit-animation: sdb10 2s infinite;
+    animation: sdb10 2s infinite;
+    box-sizing: border-box;
+  }
+
+  @-webkit-keyframes sdb10 {
+    0% {
+      -webkit-transform: translate(0, 0);
+      opacity: 0;
     }
 
-    .card .carousel-caption {
-      left: 0;
-      top: 0;
-      margin-bottom: 15px;
+    40% {
+      opacity: 1;
     }
 
-    .card .carousel-caption img {
-      margin: 0 auto;
+    80% {
+      -webkit-transform: translate(0, 20px);
+      opacity: 0;
     }
 
-    .carousel-control-prev {
-      left: 35%;
-      top: 105%;
-    }
-
-    .carousel-control-next {
-      right: 35%;
-      top: 105%;
-    }
-
-    .card .carousel-caption h3 {
-      margin-top: 0;
-      font-size: 16px;
-      font-weight: 700;
+    100% {
+      opacity: 0;
     }
   }
 
-  @media (min-width: 576px) and (max-width: 767px) {
-    .carousel-caption {
-      position: relative;
+  @keyframes sdb10 {
+    0% {
+      transform: translate(0, 0);
+      opacity: 0;
     }
 
-    .card .carousel-caption {
-      left: 0;
-      top: 0;
-      margin-bottom: 15px;
+    40% {
+      opacity: 1;
     }
 
-    .card .carousel-caption img {
-      margin: 0 auto;
+    80% {
+      transform: translate(0, 20px);
+      opacity: 0;
     }
 
-    .card .carousel-caption h3,
-    .card .carousel-caption small {
-      text-align: center;
-    }
-
-    .carousel-control-prev {
-      left: 35%;
-      top: 105%;
-    }
-
-    .carousel-control-next {
-      right: 35%;
-      top: 105%;
-    }
-  }
-
-  @media (min-width: 767px) and (max-width: 991px) {
-    .card .carousel-caption h3 {
-      margin-top: 0;
-      font-size: 16px;
-      font-weight: 700;
+    100% {
+      opacity: 0;
     }
   }
 </style>
 
 <body>
- 
-  <section class="pt-5 pb-5">
-    <div class="container">
-      <h2 class="text-center">What other say for us</h2>
-      <hr class="midline">
-      <h5 class="text-center mb-5">Our team created best opportunities for your business.</h5>
-      <div class="card col-md-12 mt-2">
-        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="5000">
-          <div class="w-100 carousel-inner mb-5" role="listbox">
-            <div class="carousel-item active">
-              <div class="bg"></div>
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="carousel-caption">
-                    <div class="row">
-                      <div class="col-sm-3 col-4 align-items-start">
-                        <img src="https://s17.postimg.org/mqjuw14bz/profile1.png" alt=""
-                          class="rounded-circle img-fluid">
-                      </div>
-                      <div class="col-sm-9 col-8">
-                        <h2>Micheal Smith - <span>Web Developer</span></h2>
-                        <small>Well incremented. Comes with recommended workout. I'm using it to help with bladder
-                          leakage issues that I've been experiencing since a recent vasectomy.</small>
-                        <small class="smallest mute">- willi</small>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="carousel-caption">
-                    <div class="row">
-                      <div class="col-sm-3 col-4 align-items-start">
-                        <img src="https://s17.postimg.org/5q0yndefz/profile2.png" alt=""
-                          class="rounded-circle img-fluid">
-                      </div>
-                      <div class="col-sm-9 col-8">
-                        <h2>Helena Doe - <span>Architect</span></h2>
-                        <small>Well incremented. Comes with recommended workout. I'm using it to help with bladder
-                          leakage issues that I've been experiencing since a recent vasectomy.</small>
-                        <small class="smallest mute">- willi</small>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="bg"></div>
-              <div class="row">
-                <div class="col-md-6 col-12">
-                  <div class="carousel-caption">
-                    <div class="row">
-                      <div class="col-sm-3 col-4 align-items-start">
-                        <img src="https://s17.postimg.org/7ulbog0n3/profile3.png" alt=""
-                          class="rounded-circle img-fluid">
-                      </div>
-                      <div class="col-sm-9 col-8">
-                        <h2>John Doe - <span>Ceo Mobile company</span></h2>
-                        <small>Well incremented. Comes with recommended workout. I'm using it to help with bladder
-                          leakage issues that I've been experiencing since a recent vasectomy.</small>
-                        <small class="smallest mute">- willi</small>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6 col-12">
-                  <div class="carousel-caption">
-                    <div class="row">
-                      <div class="col-sm-3 col-4 align-items-start">
-                        <img src="https://s17.postimg.org/u6j4hu7gv/profile4.png" alt=""
-                          class="rounded-circle img-fluid">
-                      </div>
-                      <div class="col-sm-9 col-8">
-                        <h2>Helena Doe - <span>Architect</span></h2>
-                        <small>Well incremented. Comes with recommended workout. I'm using it to help with bladder
-                          leakage issues that I've been experiencing since a recent vasectomy.</small>
-                        <small class="smallest mute">- willi</small>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
 
-          </div>
-          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"><i class="fas fa-chevron-left"></i></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"><i class="fas fa-chevron-right"></i></span>
-            <span class="sr-only">Next</span>
-          </a>
-        </div>
-      </div>
+  
+  <section id="section10" class="demo">
+    <h1>Scroll Down Button #10</h1>
+    <a href="#thanks"><span></span>Scroll</a>
+  </section>
+  <section id="thanks">
+    <div>
+      <h2>Thanks!</h2>
+      <p><a href="https://www.nxworld.net/css-scroll-down-button.html" target="_parent">&lt; Back To Article</a></p>
     </div>
   </section>
 
-
   <script>
-    $(document).ready(function () {
-
-      $('.client-single').on('click', function (event) {
-        event.preventDefault();
-
-        var active = $(this).hasClass('active');
-
-        var parent = $(this).parents('.testi-wrap');
-
-        if (!active) {
-          var activeBlock = parent.find('.client-single.active');
-
-          var currentPos = $(this).attr('data-position');
-
-          var newPos = activeBlock.attr('data-position');
-
-          activeBlock.removeClass('active').removeClass(newPos).addClass('inactive').addClass(currentPos);
-          activeBlock.attr('data-position', currentPos);
-
-          $(this).addClass('active').removeClass('inactive').removeClass(currentPos).addClass(newPos);
-          $(this).attr('data-position', newPos);
-
-        }
+    $(function () {
+      $('a[href*=#]').on('click', function (e) {
+        e.preventDefault();
+        $('html, body').animate({ scrollTop: $($(this).attr('href')).offset().top }, 500, 'linear');
       });
-
-    }(jQuery));
+    });
 
   </script>
 

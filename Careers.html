@@ -341,6 +341,7 @@
                 </div>
             </div>
         </div>
+        <a id="button"></a>
     </section>
     <a href="https://api.whatsapp.com/send?phone=&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Varela%202."
         class="float" target="_blank">
@@ -445,6 +446,20 @@
         crossorigin="anonymous"></script>
 
     <script>
+        var btn = $('#button');
+
+        $(window).scroll(function () {
+            if ($(window).scrollTop() > 300) {
+                btn.addClass('show');
+            } else {
+                btn.removeClass('show');
+            }
+        });
+
+        btn.on('click', function (e) {
+            e.preventDefault();
+            $('html, body').animate({ scrollTop: 0 }, '300');
+        });
         var cardsModule = (function () {
             var trigger = $(".item"),
                 closetrigger = $(".item span.close");
