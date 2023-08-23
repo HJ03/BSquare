@@ -162,6 +162,16 @@
             margin-left: 0px;
         }
 
+        .workspace.card:hover {
+            transform: translateY(0px);
+            transition: 0.4s ease-out;
+        }
+        .workspace .card:hover~.card {
+        position: relative;
+        left: 0px;
+        transition: 0.4s ease-out;
+    }
+
     }
 
     #header {
