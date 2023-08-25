@@ -1522,12 +1522,13 @@ a:focus {
 
 .copyright-area {
     background: #202020;
-    padding: 25px 0;
+    /* padding: 25px 0; */
 }
 
 .copyright-text p {
-    margin: 0;
+    margin-top: 25px;
     font-size: 14px;
+    align-items: center;
     color: #878787;
 }
 
