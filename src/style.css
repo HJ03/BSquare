@@ -12,6 +12,7 @@
 .section_padding {
     margin-top: 3rem;
 }
+
 section {
     padding: 40px 0;
 }
@@ -242,11 +243,242 @@ main {
 
 }
 
-.locations {
-    background-image: url("../public/images/review-back.JPG");
-    border-radius: 0% 0% 35% 0%;
+
+/* ------------------------location section start------------------------ */
+.popup {
+    width: 100%;
+    text-align: center;
 }
 
+.popup img {
+    /* width: 100%; */
+    max-width: 321px;
+    /* Limit image width for larger screens */
+    height: auto;
+    cursor: pointer;
+    padding: 10px;
+
+}
+
+.showover {
+    z-index: 999;
+    display: none;
+}
+
+.showover .overlay {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 30;
+}
+
+.showover .img-show {
+
+    background: transparent;
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    z-index: 999;
+    text-align: center;
+    transform: translate(-50%, 0%);
+    overflow: hidden;
+}
+
+.img-show span {
+    position: absolute;
+    top: 0px;
+    right: 20px;
+    z-index: 99;
+    cursor: pointer;
+    background-color: red;
+    padding: 5px 20px;
+}
+
+/* .img-show img {
+    max-width: 100%;
+    max-height: 100%;
+} */
+
+/* Media query for screens smaller than 768px (adjust as needed) */
+@media (max-width: 768px) {
+
+    .popup img {
+        max-width: 100%;
+        /* Adjust the image width for smaller screens */
+    }
+
+    .showover .img-show {
+        padding: 0px 20px;
+        width: 100%;
+        background: transparent;
+        position: fixed;
+        top: 30%;
+        /* left: 0%; */
+        z-index: 999;
+        text-align: center;
+        /* transform: translate(-50%, 0%); */
+        overflow: hidden;
+
+    }
+}
+
+@media (min-width:1400px) and (max-width:3000px) {
+    .popup {
+        width: 100%;
+        text-align: left;
+    }
+}
+
+
+
+
+/* ------------------------location section End------------------------ */
+
+
+/* ------------------------------workspace section start ---------------------*/
+.workspace {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: row;
+}
+
+.workspace .card {
+    display: flex;
+    height: 500px;
+    margin-bottom: 20px;
+    width: 300px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: -1rem 0 3rem #00000024;
+    /*   margin-left: -50px; */
+    transition: 0.4s ease-out;
+    position: relative;
+    left: 0px;
+}
+
+.workspace .card:not(:first-child) {
+    margin-left: -50px;
+}
+
+.workspace.card:hover {
+    transform: translateY(-20px);
+    transition: 0.4s ease-out;
+}
+
+.workspace .card:hover~.card {
+    position: relative;
+    left: 50px;
+    transition: 0.4s ease-out;
+}
+
+.workspace .card .title {
+    color: rgb(0, 0, 0);
+    font-weight: 300;
+    position: absolute;
+    left: 20px;
+    top: 210px;
+}
+
+.workspace .card .bar {
+    position: absolute;
+    top: 260px;
+    left: 20px;
+    height: 5px;
+    width: 150px;
+}
+
+.emptybar {
+    background-color: #2e3033;
+    width: 100%;
+    height: 100%;
+}
+
+.filledbar {
+    position: absolute;
+    top: 0px;
+    z-index: 3;
+    width: 0px;
+    height: 100%;
+    background: rgb(0, 154, 217);
+    background: linear-gradient(90deg, rgba(0, 154, 217, 1) 0%, rgb(0, 129, 193) 65%, rgb(0, 126, 165) 100%);
+    transition: 0.6s ease-out;
+}
+
+.workspace .card:hover .filledbar {
+    width: 120px;
+    transition: 0.4s ease-out;
+}
+
+.workspace .circle {
+    position: absolute;
+    margin-left: -23%;
+    width: 85%;
+    top: 300px;
+    left: calc(50% - 60px);
+}
+
+.stroke {
+    stroke: rgb(0, 158, 194);
+    stroke-dasharray: 360;
+    stroke-dashoffset: 360;
+    transition: 0.6s ease-out;
+}
+
+svg {
+    fill: #17141d;
+    stroke-width: 2px;
+    width: 100%;
+}
+
+.workspace .card:hover .stroke {
+    stroke-dashoffset: 100;
+    transition: 0.6s ease-out;
+}
+
+.card button {
+    background-color: transparent;
+    border: 1px solid #0087c4;
+    padding: 3px 15px;
+
+    background-color: #0086c451;
+    transition: .4s;
+}
+
+.card button:hover {
+    background-color: transparent;
+    border: 1px solid #0087c4;
+    padding: 3px 15px;
+    color: white;
+
+    background-color: #0086c4;
+    transition: .4s;
+
+}
+
+@media (max-width: 1000px) {
+    .workspace {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        margin: auto;
+        align-items: center;
+        width: 100%;
+    }
+
+    .workspace .card:not(:first-child) {
+        margin-left: 0px;
+    }
+
+}
+
+
+/* --------------------------------workspace section end------------------------- */
 .tabs {
     max-width: 90%;
     float: none;
@@ -432,7 +664,10 @@ main {
  */
 /* -------------------------------about page start------------------------ */
 
-
+.locations {
+    background-image: url("../public/images/review-back.JPG");
+    border-radius: 0% 0% 35% 0%;
+}
 
 /* #about_us .img_overlay {
     position: absolute;
@@ -445,16 +680,18 @@ main {
 /* #about_us .content{
     min-height: 320px;
 } */
-#about_us .card{
+#about_us .card {
     margin: 10px;
-    min-height: 320px;
+    min-height: 360px;
 }
-#about_us .first_img{
+
+#about_us .first_img {
     width: 50%;
     aspect-ratio: 3/2;
     object-fit: contain;
 }
-#about_us .title a{
+
+#about_us .title a {
     color: black;
 }
 
@@ -937,13 +1174,13 @@ main {
 }
 
 .counter .counter-icon {
-    
+
     font-size: 35px;
     margin: 0 0 10px;
 }
 
 .counter h3 {
- 
+
     font-size: 16px;
     font-weight: 600;
     text-transform: capitalize;
@@ -951,7 +1188,7 @@ main {
 }
 
 .counter .counter-value {
-  
+
     font-size: 30px;
     font-weight: 700;
     line-height: 30px;
@@ -973,27 +1210,30 @@ main {
 
 
 /* ----------------------------------gallery section start----------------------- */
-.key-points .first_img{
+.key-points .first_img {
     width: 50%;
     aspect-ratio: 3/2;
     object-fit: contain;
-    
+
 }
-.key-points .card{
+
+.key-points .card {
     min-height: 200px;
     margin: 10px;
 }
-.key-points .title a{
+
+.key-points .title a {
     color: black;
 }
-.Gallery img {
-transition: .4s;
-}
 
-.Gallery img:hover {
+/* .Gallery img {
+transition: .4s;
+} */
+
+/* .Gallery img:hover {
     transform: scale(1.1);
     transition: .4s;
-}
+} */
 
 .key-points .row .col {
     background-color: red;
@@ -1045,7 +1285,7 @@ transition: .4s;
 
 .footer-content {
     position: relative;
-    z-index: 2;
+    /* z-index: 2; */
 }
 
 .footer-pattern img {
@@ -1208,18 +1448,19 @@ transition: .4s;
 #button {
     display: inline-block;
     background-color: #03a9f4;
-    width: 46px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
     text-align: center;
     border-radius: 4px;
     position: fixed;
     bottom: 110px;
-    right: 44px;
+    right: 50px;
     transition: background-color .3s,
         opacity .5s, visibility .5s;
     opacity: 0;
     visibility: hidden;
     z-index: 1000;
+    text-decoration: none;
 }
 
 #button::after {
@@ -1244,4 +1485,29 @@ transition: .4s;
 #button.show {
     opacity: 1;
     visibility: visible;
+}
+
+.carousal_button .carousel-control-prev,
+.carousal_button .carousel-control-next {
+    font-size: 10px;
+    background-color: #0086c4;
+    height: 40px;
+    width: 50px;
+    border-radius: 2px;
+    align-items: center;
+  
+    margin: auto;
+}
+.carousal_button img{
+    height: 100%;
+}
+.carousal_button button{
+    margin-top: 20px;
+    background-color: #0086c4;
+    border-radius: 3px;
+    color: white;
+    text-decoration: none;
+    padding: 5px 20px;
+   
+    transition: .4s;
 }

@@ -1,3 +1,18 @@
+
+$(function () {
+    "use strict";
+
+    $(".popup img").click(function () {
+        var $src = $(this).attr("src");
+        $(".showover").fadeIn();
+        $(".img-show img").attr("src", $src);
+    });
+
+    $("span, .overlay").click(function () {
+        $(".showover").fadeOut();
+    });
+
+});
 var btn = $('#button');
 
 $(window).scroll(function () {
@@ -44,30 +59,30 @@ jQuery(document).ready(function ($) {
         if ($(".show-more-item:hidden").length < 1) $(this).fadeOut();
     })
 })
-var iphone = $('#First');
-// var camera= $('#camera');
+// var iphone = $('#First');
+// // var camera= $('#camera');
 
-var layer = $('#main');
+// var layer = $('#main');
 
-layer.mousemove(function (e) {
-    var ivalueX = (e.pageX * -1 / 30);
-    var ivalueY = (e.pageY * -1 / 30);
-    var cvalueX = (e.pageX * -1 / 40);
-    var cvalueY = (e.pageY * -1 / 60);
-    console.log('ok');
-    iphone.css('transform', 'translate3d(' + ivalueX + 'px,' + ivalueY + 'px, 0)');
-    camera.css('transform', 'translate3d(' + cvalueX + 'px,' + cvalueY + 'px, 0)');
-});
-window.addEventListener(
-    "scroll",
-    () => {
-        document.body.style.setProperty(
-            "--scroll",
-            window.pageYOffset / (document.body.offsetHeight - window.innerHeight)
-        );
-    },
-    false
-);
+// layer.mousemove(function (e) {
+//     var ivalueX = (e.pageX * -1 / 30);
+//     var ivalueY = (e.pageY * -1 / 30);
+//     var cvalueX = (e.pageX * -1 / 40);
+//     var cvalueY = (e.pageY * -1 / 60);
+//     console.log('ok');
+//     iphone.css('transform', 'translate3d(' + ivalueX + 'px,' + ivalueY + 'px, 0)');
+//     camera.css('transform', 'translate3d(' + cvalueX + 'px,' + cvalueY + 'px, 0)');
+// });
+// window.addEventListener(
+//     "scroll",
+//     () => {
+//         document.body.style.setProperty(
+//             "--scroll",
+//             window.pageYOffset / (document.body.offsetHeight - window.innerHeight)
+//         );
+//     },
+//     false
+// );
 const $dropdown = $(".dropdown");
 const $dropdownToggle = $(".dropdown-toggle");
 const $dropdownMenu = $(".dropdown-menu");
