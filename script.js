@@ -129,72 +129,7 @@ $(window).on("load resize", function () {
 //     animate();
 // });
 
-(function ($) {
-    "use strict";
-
-    //Page cursors
-
-    document.getElementsByTagName("body")[0].addEventListener("mousemove", function (n) {
-        t.style.left = n.clientX + "px",
-            t.style.top = n.clientY + "px",
-            e.style.left = n.clientX + "px",
-            e.style.top = n.clientY + "px",
-            i.style.left = n.clientX + "px",
-            i.style.top = n.clientY + "px"
-    });
-    var t = document.getElementById("cursor"),
-        e = document.getElementById("cursor2"),
-        i = document.getElementById("cursor3");
-    function n(t) {
-        e.classList.add("hover"), i.classList.add("hover")
-    }
-    function s(t) {
-        e.classList.remove("hover"), i.classList.remove("hover")
-    }
-    s();
-    for (var r = document.querySelectorAll(".hover-target"), a = r.length - 1; a >= 0; a--) {
-        o(r[a])
-    }
-    function o(t) {
-        t.addEventListener("mouseover", n), t.addEventListener("mouseout", s)
-    }
-
-    $(document).ready(function () {
-
-        /* Hero Case study images */
-
-        $('.case-study-name:nth-child(1)').on('mouseenter', function () {
-            $('.case-study-name.active').removeClass('active');
-            $('.case-study-images li.show').removeClass("show");
-            $('.case-study-images li:nth-child(1)').addClass("show");
-            $('.case-study-name:nth-child(1)').addClass('active');
-        })
-        $('.case-study-name:nth-child(2)').on('mouseenter', function () {
-            $('.case-study-name.active').removeClass('active');
-            $('.case-study-images li.show').removeClass("show");
-            $('.case-study-images li:nth-child(2)').addClass("show");
-            $('.case-study-name:nth-child(2)').addClass('active');
-        })
-        $('.case-study-name:nth-child(3)').on('mouseenter', function () {
-            $('.case-study-name.active').removeClass('active');
-            $('.case-study-images li.show').removeClass("show");
-            $('.case-study-images li:nth-child(3)').addClass("show");
-            $('.case-study-name:nth-child(3)').addClass('active');
-        })
-        $('.case-study-name:nth-child(4)').on('mouseenter', function () {
-            $('.case-study-name.active').removeClass('active');
-            $('.case-study-images li.show').removeClass("show");
-            $('.case-study-images li:nth-child(4)').addClass("show");
-            $('.case-study-name:nth-child(4)').addClass('active');
-        })
-        $('.case-study-name:nth-child(1)').trigger('mouseenter')
-
-    });
-
-
-
-
-})(jQuery);
+//  ------------------------------counter javascript start-----------------------------------
 
 $(document).ready(function () {
     $('.counter-value').each(function () {
@@ -210,39 +145,75 @@ $(document).ready(function () {
     });
 });
 
-(function ($) {
+//  ------------------------------counter javascript End-----------------------------------
+// (function ($) {
+//     "use strict";
 
-    "use strict";
+//     //Page cursors
 
-    // Testimonial Carousel
-    if ($('.testimonial-carousel').length) {
-        $('.testimonial-carousel').owlCarousel({
-            animateOut: 'slideOutDown',
-            animateIn: 'zoomIn',
-            loop: true,
-            margin: 0,
-            nav: true,
-            smartSpeed: 300,
-            autoplay: 7000,
-            navText: ['<span class="arrow-left"></span>', '<span class="arrow-right"></span>'],
-            responsive: {
-                0: {
-                    items: 1
-                },
-                600: {
-                    items: 1
-                },
-                800: {
-                    items: 1
-                },
-                1024: {
-                    items: 1
-                }
-            }
-        });
-    }
+//     document.getElementsByTagName("body")[0].addEventListener("mousemove", function (n) {
+//         t.style.left = n.clientX + "px",
+//             t.style.top = n.clientY + "px",
+//             e.style.left = n.clientX + "px",
+//             e.style.top = n.clientY + "px",
+//             i.style.left = n.clientX + "px",
+//             i.style.top = n.clientY + "px"
+//     });
+//     var t = document.getElementById("cursor"),
+//         e = document.getElementById("cursor2"),
+//         i = document.getElementById("cursor3");
+//     function n(t) {
+//         e.classList.add("hover"), i.classList.add("hover")
+//     }
+//     function s(t) {
+//         e.classList.remove("hover"), i.classList.remove("hover")
+//     }
+//     s();
+//     for (var r = document.querySelectorAll(".hover-target"), a = r.length - 1; a >= 0; a--) {
+//         o(r[a])
+//     }
+//     function o(t) {
+//         t.addEventListener("mouseover", n), t.addEventListener("mouseout", s)
+//     }
 
-})(window.jQuery);
+//     $(document).ready(function () {
+
+//         /* Hero Case study images */
+
+//         $('.case-study-name:nth-child(1)').on('mouseenter', function () {
+//             $('.case-study-name.active').removeClass('active');
+//             $('.case-study-images li.show').removeClass("show");
+//             $('.case-study-images li:nth-child(1)').addClass("show");
+//             $('.case-study-name:nth-child(1)').addClass('active');
+//         })
+//         $('.case-study-name:nth-child(2)').on('mouseenter', function () {
+//             $('.case-study-name.active').removeClass('active');
+//             $('.case-study-images li.show').removeClass("show");
+//             $('.case-study-images li:nth-child(2)').addClass("show");
+//             $('.case-study-name:nth-child(2)').addClass('active');
+//         })
+//         $('.case-study-name:nth-child(3)').on('mouseenter', function () {
+//             $('.case-study-name.active').removeClass('active');
+//             $('.case-study-images li.show').removeClass("show");
+//             $('.case-study-images li:nth-child(3)').addClass("show");
+//             $('.case-study-name:nth-child(3)').addClass('active');
+//         })
+//         $('.case-study-name:nth-child(4)').on('mouseenter', function () {
+//             $('.case-study-name.active').removeClass('active');
+//             $('.case-study-images li.show').removeClass("show");
+//             $('.case-study-images li:nth-child(4)').addClass("show");
+//             $('.case-study-name:nth-child(4)').addClass('active');
+//         })
+//         $('.case-study-name:nth-child(1)').trigger('mouseenter')
+
+//     });
+
+
+
+
+// })(jQuery);
+
+
 
 
 
