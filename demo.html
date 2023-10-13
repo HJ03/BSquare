@@ -1,524 +1,514 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="utf-8" />
-  <link rel="icon" href="/favicon.ico" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="theme-color" content="#000000" />
-  <meta name="description" content="Nairo React Personal Portfolio" />
-  <link rel="apple-touch-icon" href="/logo192.png" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" />
-  <link rel="manifest" href="/manifest.json" />
-  <title>Nairo - React Personal Portfolio Template</title>
-  <script defer="defer" src="/static/js/main.174f991e.js"></script>
-  <link href="/static/css/main.22b13912.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .gallery-wrapper {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	overflow-x: hidden;
+}
+
+.gallery-wrapper img {
+	max-width: 100%;
+	transition: all 0.2s ease-in-out;
+}
+
+.gallery-wrapper .gallery-img img {
+	cursor: pointer;
+}
+
+.gallery-wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 1rem;
+	z-index: 2;
+	position: relative;
+}
+
+.gallery-popup.active + .gallery-overlay {
+	content: "";
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	inset: 0;
+	background-color: rgb(0 0 0 / 75%);
+	z-index: 5;
+	overflow: hidden;
+}
+
+.gallery-popup {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: calc(100% - 48px);
+	height: calc(100% - 80px);
+	padding: 0px;
+	display: none;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	z-index: 6;
+	animation: showPopUp 0.45s linear;
+}
+
+.gallery-popup .close,
+.gallery-popup .next,
+.gallery-popup .prev {
+	position: absolute;
+	top: 0;
+	right: 2rem;
+	margin-left: auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.gallery-popup img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.gallery-popup .close {
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+	top: -40px;
+	right: 0;
+}
+
+.gallery-popup .next {
+	right: 0px;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 30px;
+	height: 20px;
+	font-size: 20px;
+	cursor: pointer;
+	padding: 10px;
+	background-color: rgb(255 255 255 / 75%);
+}
+
+.gallery-popup .prev {
+	left: 0px;
+	right: auto;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 30px;
+	height: 20px;
+	font-size: 20px;
+	cursor: pointer;
+	padding: 10px;
+	background-color: rgb(255 255 255 / 75%);
+}
+
+.gallery-wrapper .gallery-inner {
+	display: grid;
+	gap: 10px;
+	grid-template-columns: repeat(4, 1fr);
+	position: relative;
+	z-index: 4;
+}
+
+@keyframes showPopUp {
+	0% {
+		opacity: 0;
+		visibility: hidden;
+	}
+	50% {
+		opacity: 0.5;
+		visibility: visible;
+	}
+	100% {
+		opacity: 1;
+		visibility: visible;
+	}
+}
+
+@keyframes imgTransitionNext {
+	0% {
+		transform: translateX(100vw);
+		opacity: 0;
+	}
+	
+	5% {
+		transform: translateX(95vw);
+		opacity: 0.15
+	}
+	
+	10% {
+		transform: translateX(90vw);
+		opacity: 0.1;
+	}
+	
+	15% {
+		transform: translateX(85vw);
+		opacity: 0.20;
+	}
+	
+	20% {
+		transform: translateX(80vw);
+		opacity: 0.2;
+	}
+	
+	25% {
+		transform: translateX(75vw);
+		opacity: 0.20;
+	}
+	
+	30% {
+		transform: translateX(70vw);
+		opacity: 0.3;
+	}
+	
+	35%{
+		transform: translateX(75vw);
+		opacity: 0.35;
+	}
+	
+	40% {
+		transform: translateX(60vw);
+		opacity: 0.4;
+	}
+	
+	45%{
+		transform: translateX(55vw);
+		opacity: 0.45;
+	}
+	
+	50% {
+		transform: translateX(50vw);
+		opacity: 0.5;
+	}
+	
+	55%{
+		transform: translateX(45vw);
+		opacity: 0.55;
+	}
+	
+	60% {
+		transform: translateX(40vw);
+		opacity: 0.6;
+	}
+	
+	65%{
+		transform: translateX(65vw);
+		opacity: 0.65;
+	}
+	
+	70% {
+		transform: translateX(30vw);
+		opacity: 0.7;
+	}
+	
+75%{
+		transform: translateX(25vw);
+		opacity: 0.75;
+	}
+	
+	80% {
+		transform: translateX(20vw);
+		opacity: 0.8;
+	}
+	
+	85%{
+		transform: translateX(15vw);
+		opacity: 0.85;
+	}
+	
+	90% {
+		transform: translateX(10vw);
+		opacity: 0.9;
+	}
+	
+	95%{
+		transform: translateX(5vw);
+		opacity: 0.95;
+	}
+	
+	100%{
+		transform: translateX(0vw);
+		opacity: 1;
+	}
+}
+
+
+@keyframes imgTransitionPrev {
+	0% {
+		transform: translateX(-100vw);
+		opacity: 0;
+	}
+	
+	5% {
+		transform: translateX(-95vw);
+		opacity: 0.15
+	}
+	
+	10% {
+		transform: translateX(-90vw);
+		opacity: 0.1;
+	}
+	
+	15% {
+		transform: translateX(-85vw);
+		opacity: 0.20;
+	}
+	
+	20% {
+		transform: translateX(-80vw);
+		opacity: 0.2;
+	}
+	
+	25% {
+		transform: translateX(-75vw);
+		opacity: 0.20;
+	}
+	
+	30% {
+		transform: translateX(-70vw);
+		opacity: 0.3;
+	}
+	
+	35%{
+		transform: translateX(-75vw);
+		opacity: 0.35;
+	}
+	
+	40% {
+		transform: translateX(-60vw);
+		opacity: 0.4;
+	}
+	
+	45%{
+		transform: translateX(-55vw);
+		opacity: 0.45;
+	}
+	
+	50% {
+		transform: translateX(-50vw);
+		opacity: 0.5;
+	}
+	
+	55%{
+		transform: translateX(-45vw);
+		opacity: 0.55;
+	}
+	
+	60% {
+		transform: translateX(-40vw);
+		opacity: 0.6;
+	}
+	
+	65%{
+		transform: translateX(-65vw);
+		opacity: 0.65;
+	}
+	
+	70% {
+		transform: translateX(-30vw);
+		opacity: 0.7;
+	}
+	
+75%{
+		transform: translateX(-25vw);
+		opacity: 0.75;
+	}
+	
+	80% {
+		transform: translateX(-20vw);
+		opacity: 0.8;
+	}
+	
+	85%{
+		transform: translateX(-15vw);
+		opacity: 0.85;
+	}
+	
+	90% {
+		transform: translateX(-10vw);
+		opacity: 0.9;
+	}
+	
+	95%{
+		transform: translateX(-5vw);
+		opacity: 0.95;
+	}
+	
+	100%{
+		transform: translateX(0vw);
+		opacity: 1;
+	}
+}
+
+@media only screen and (max-width: 1280px) {
+	.gallery-wrapper .gallery-inner {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.gallery-wrapper .gallery-inner {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.gallery-popup .next {
+		right: 0px;
+	}
+	.gallery-popup .prev {
+		left: 0px;
+	}
+	
+	.gallery-popup {
+		top: 60px !important;
+		left: 50% !important;
+		transform: translate(-50%, 0%);
+		height: calc(350px - 60px)
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	.gallery-wrapper .gallery-inner {
+		grid-template-columns: repeat(1, 1fr);
+	}
+}
+    </style>
 </head>
 
 <body>
-  <html>
-    <head>
-      <title>Responsive Photo Gallery</title>
-    </head>
-    <style>
- 
-/***************************
-    CUSTOM SCROLL BAR
-****************************/
-*, html{
-    scroll-behavior: smooth;
-}
+    <div class="gallery-wrapper">
+        <div class="gallery-inner">
+            <div class="gallery-img">
+                <img src="https://demo.epic-webdesign.com/tf-fable/cafe/images/food2.jpg" alt="">
+            </div>
+            <div class="gallery-img">
+                <img src="https://demo.epic-webdesign.com/tf-fable/cafe/images/food3.jpg" alt="">
+            </div>
+            <div class="gallery-img">
+                <img src="https://demo.epic-webdesign.com/tf-fable/cafe/images/food10.jpg" alt="">
+            </div>
+            <div class="gallery-img">
+                <img src="https://demo.epic-webdesign.com/tf-fable/cafe/images/food5.jpg" alt="">
+            </div>
+            <div class="gallery-img">
+                <img src="https://demo.epic-webdesign.com/tf-fable/cafe/images/food6.jpg" alt="">
+            </div>
+            <div class="gallery-img">
+                <img src="https://demo.epic-webdesign.com/tf-fable/cafe/images/food8.jpg" alt="">
+            </div>
+        </div>
+    </div>
+    <script>
+        const galleryStyleSheet = `
 
-*, *:after, *:before {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
+`;
 
-:root{
-    --white:#FFF;
-    --black:#232323;
-    --lite:rgba(255,255,255,0.6);
-    --gray:rgba(1,1,1,0.6);
-    --dark:#3c3d3c;
-    --primary:linear-gradient(145deg,#ff2f09,#c24a4e);
-    --primary_dark:#970104;
-    --primary_lite:#c24a4e;
-    --secondary:#000a17;
-    --default_font:'Ysabeau Infant', sans-serif;
-    --title_font:'Outfit', sans-serif;
-}
+        const body = document.querySelector("body");
+        const galleryWrapper = document.querySelector(".gallery-wrapper");
 
-::-webkit-scrollbar {
-    height: 12px;
-    width: 8px;
-    background: var(--dark);
-}
+        const styeElement = document.createElement("style");
+        styeElement.innerHTML = galleryStyleSheet;
+        styeElement.style.display = "none";
+        body.append(styeElement);
 
-::-webkit-scrollbar-thumb {
-    background: gray;
-    -webkit-box-shadow: 0px 1px 2px var(--dark);
-}
+        const galleryPopup = document.createElement("div");
+        galleryPopup.className = "gallery-popup";
 
-::-webkit-scrollbar-corner {
-    background: var(--dark);
-}
+        galleryPopup.innerHTML = `
+    <button class="close">&times;</button>
+		<span class="next">&#187;</span>
+		<span class="prev">&#171;</span>
+		<img src="" alt="">
+`;
 
+        const galleryOverlay = document.createElement("div");
+        galleryOverlay.className = "gallery-overlay";
+        body.prepend(galleryOverlay);
+        body.prepend(galleryPopup);
 
+        const images = [...galleryWrapper.querySelectorAll(".gallery-img img")];
+        const closeBtn = galleryPopup.querySelector(".close");
+        const nextBtn = galleryPopup.querySelector(".next");
+        const prevBtn = galleryPopup.querySelector(".prev");
 
-/***************************
-            DEFAULT
-****************************/
-body{
-    margin:0;
-    overflow-x:hidden !important;
-    font-family: var(--default_font);
-}
+        nextBtn.addEventListener("click", nextImg);
+        prevBtn.addEventListener("click", prevImg);
 
-a{
-    text-decoration:none !important;
-    min-width: fit-content;
-    width: fit-content;
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
-}
+        // Creating Animation For Image Transition
+        const imgTransitionNext = `animation: imgTransitionNext 0.45s linear`;
+        const imgTransitionPrev = `animation: imgTransitionPrev 0.45s linear`;
+        let showImg = galleryPopup.querySelector(".gallery-popup img");
 
-a, button{
-    transition:0.5s;
-}
+        let selectedImg = null;
+        let startCount = 0;
+        let endCount = images.length - 1;
 
-em{
-    font-style:normal;
-    color:var(--primary_lite);
-}
-
-a, p, .btn{
-    font-size:15px;
-}
-
-p{
-    line-height:1.9em;
-    color:var(--lite);
-}
-
-a, button, input, textarea, select{
-    outline:none !important;
-}
-
-fieldset{
-    border:0;
-}
-
-h1, h2, h3, h4, h5, h6{
-    margin:0;
-}
-
-.title, .sub_title{
-    font-family:var(--title_font);
-    font-weight:400;
-    margin:0;
-}
-
-.flex, .fixed_flex{
-    display:flex;
-}
-
-.flex_content{
-    width:100%;
-    position:relative;
-}
-
-.padding_1x{
-    padding:1rem;
-}
-
-.padding_2x{
-    padding:2rem;
-}
-
-.padding_3x{
-    padding:3rem;
-}
-
-.padding_4x{
-    padding:4rem;
-}
-
-.big{
-    font-size:3.5em;
-}
-
-.medium{
-    font-size:2em;
-}
-
-.small{
-    font-size:1.3em;
-}
-
-.btn{
-    padding:1rem;
-    border-radius:5px;
-    color:var(--white);
-    position:relative;
-    border:0;
-    text-align:center;
-    
-}
-
-.btn_3{
-    display:block;
-    background-color:0;
-    color:var(--white);
-    position:relative;
-    font-family:var(--default_font);
-    font-weight:400;
-    text-transform:uppercase;
-}
-
-.btn_3:before{
-    content:"";
-    border-radius:50%;
-    background-color:rgba(255,255,255,0.2);
-    position:absolute;
-    left:0;
-    top:50%;
-    width:40px;
-    height:40px;
-    transition:0.5s;
-    transform:translate(0%, -50%);
-}
-
-.btn_3:after{
-    content:"\f178";
-    font-family:"FontAwesome";
-    margin-left:5px;
-}
-
-.btn_3:hover:before{
-    border-radius:40px;
-    width:100%;
-}
-
-@media (max-width:920px){
-    .flex{
-        flex-wrap:wrap;
-    }
-    
-    .padding_1x, .padding_2x, .padding_3x, .padding_4x{
-        padding:1rem;
-    }
-    
-    .big{
-        font-size:1.8em;
-    }
-    
-    .medium{
-        font-size:1.3em;
-    }
-    
-    .small{
-        font-size:1.1em;
-    }
-    
-    .btn{
-        padding:0.5rem 1rem;
-    }
-    
-    a, p, .btn{
-        font-size:12px;
-    }
-}
-
-.slider {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-}
-
-ul{
-    padding:0;
-    margin:0;
-}
-
-.slider .title{
-    font-weight:400;
-}
-
-.slider li {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-repeat: no-repeat;
-    transition: clip .7s ease-in-out, z-index 0s .7s;
-    clip: rect(0, 100vw, 100vh, 100vw);
-    display:flex;
-    align-items:center;
-    justify-content:left;
-}
-
-.slider li:nth-child(1){
-    background:linear-gradient(to right, rgba(1,1,1,1) 10%, rgba(1,1,1,0.8) 51%, rgba(1,1,1,0.2) 100%), url("https://i.postimg.cc/VNgvq45t/slider-1.jpg");
-    background-size: cover;
-    background-position:top left;
-}
-
-.slider li:before{
-    content:"";
-    position:absolute;
-    top:-20px;
-    right:0;
-    width:250px;
-    height:250px;
-    background-image:url("https://i.postimg.cc/02zcww6c/slider-shape.png");
-    background-size:100% 100%;
-    transition-delay: 1s;
-    transform: rotate(-90deg);
-    z-index:1;
-}
-
-.slider li:after{
-    content:"";
-    position:absolute;
-    bottom:0;
-    left:0;
-    width:300px;
-    height:300px;
-    background-image:url("https://i.postimg.cc/KjKbwDfR/slider-shape-2.png");
-    background-size:100% 100%;
-    transform:rotate(360deg);
-	transition: all 1.5s cubic-bezier(0,0,.2,1);
-    z-index:1;
-    background-position:center left;
-}
-
-.slider li:nth-child(2){
-    background:linear-gradient(to right, rgba(1,1,1,1) 10%, rgba(1,1,1,0.8) 51%, rgba(1,1,1,0.2) 100%), url("https://i.postimg.cc/gchVRX3K/slider-2.jpg");
-    background-size: cover;
-    background-position:top left;
-}
-
-.slider li:nth-child(3){
-    background:linear-gradient(to right, rgba(1,1,1,1) 10%, rgba(1,1,1,0.8) 51%, rgba(1,1,1,0.2) 100%), url("https://i.postimg.cc/gchVRX3K/slider-2.jpg");
-    background-size: cover;
-    background-position:top left;
-}
-
-.slider article{
-    width:60%;
-    margin-top:4rem;
-    color: #fff;
-    z-index:11;
-}
-
-.slider h3 + p {
-    display: inline-block;
-    color: var(--lite);
-    font-weight:300;
-}
-
-.slider h3, .slider h3 + p, .slider p + .btn, li:after{
-    opacity: 0;
-    transition: opacity .7s 0s, transform .5s .2s;
-    transform: translate3d(0, 50%, 0);
-}
-
-li.current h3, li.current h3 + p, li.current p + .btn, li.current:after {
-    opacity: 1;
-    transition-delay: 1s;
-    transform: translate3d(0, 0, 0);
-}
-
-.slider li:before{
-    transition: 0.5s;
-    top:-250px !important;
-}
-
-li.current:before{
-    transition-delay: 1s;
-    transform: rotate(-90deg);
-    top:-20px !important;
-}
-
-li.current {
-    z-index: 1;
-    clip: rect(0, 100vw, 100vh, 0);
-}
-
-li.prev {
-    clip: rect(0, 0, 100vh, 0);
-}
-
-.slider aside {
-    position: absolute;
-    bottom: 2rem;
-    left: 2rem;
-    text-align: center;
-    z-index: 10;
-}
-
-.slider aside a {
-    display: inline-block;
-    width: 8px;
-    height: 8px;
-    min-width: 8px;
-    min-height: 8px;
-    background-color: var(--white);
-    margin: 0 0.2rem;
-    transition: transform .3s;
-}
-
-.slider em{
-    background: var(--primary);
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-}
-
-a.current_dot {
-    transform: scale(1.4);
-    background:var(--primary) !important;
-}
-
-@media screen and (max-width: 920px) {
-    header{
-        height:70vh;
-        position:relative;
-    }
-    
-    .cs-down{
-        display:none;
-    }
-
-    .slider{
-        height:70vh;
-    }
-    
-    .slider article{
-        width:100%;
-        margin-top:2rem;
-    }
-    
-    .slider li:nth-child(2){
-        background-position:top center;
-    }
-    
-    .slider li:nth-child(3){
-        background-position:top center;
-    }
-    
-    li.current:before{
-        top:-30px;
-        right:-10px;
-    }
-}
-    </style>
-    <body>
-      
-      <header>
-        <section class="slider">
-            <ul>
-                <li>
-                    <article class="center-y padding_2x">
-                        <h3 class="big title"><em>O</em>ccupational <em>H</em>ealth</h3>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>	
-                        <a href="#about" class="btn btn_3">More about us</a>
-                    </article>
-                </li>
-                <li>
-                    <article class="center-y padding_2x">
-                        <h3 class="big title"><em>Fire Fighting</em> Spill Response.</h3>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>	
-                        <a href="#" class="btn btn_3">View Issues</a>
-                    </article>
-                </li>
-              <li>
-                    <article class="center-y padding_2x">
-                        <h3 class="big title"><em>Fire Fighting</em> Spill Response.</h3>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>	
-                        <a href="#" class="btn btn_3">View Issues</a>
-                    </article>
-                </li>
-                <aside>
-                    <a href="#"></a>
-                    <a href="#"></a>
-                  <a href="#"></a>
-                </aside>
-            </ul>
-        </section>
-        <a href="#services" class="cs-down"></a>
-    </header>
-    
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/js/swiper.min.js"></script>
-      <script>
-      {
-  class SliderClip {
-    constructor(el) {
-      this.el = el;
-      this.Slides = Array.from(this.el.querySelectorAll('li'));
-      this.Nav = Array.from(this.el.querySelectorAll('aside a'));
-      this.totalSlides = this.Slides.length;
-      this.current = 0;
-      this.autoPlay = true; //true or false
-      this.timeTrans = 4000; //transition time in milliseconds
-      this.IndexElements = [];
-
-      for (let i = 0; i < this.totalSlides; i++) {
-        this.IndexElements.push(i);
-      }
-
-      this.setCurret();
-      this.initEvents();
-    }
-    setCurret() {
-      this.Slides[this.current].classList.add('current');
-      this.Nav[this.current].classList.add('current_dot');
-    }
-    initEvents() {
-      const self = this;
-
-      this.Nav.forEach(dot => {
-        dot.addEventListener('click', ele => {
-          ele.preventDefault();
-          this.changeSlide(this.Nav.indexOf(dot));
+        closeBtn.addEventListener("click", (e) => {
+            galleryPopup.style.display = "none";
+            galleryPopup.classList.remove("active");
+            selectedImg === null;
+            startCount = 0;
+            endCount = images.length - 1;
+            body.style.overflow = "auto";
         });
-      });
 
-      this.el.addEventListener('mouseenter', () => self.autoPlay = false);
-      this.el.addEventListener('mouseleave', () => self.autoPlay = true);
-
-      setInterval(function () {
-        if (self.autoPlay) {
-          self.current = self.current < self.Slides.length - 1 ? self.current + 1 : 0;
-          self.changeSlide(self.current);
+        // Click Next Button Function
+        function nextImg() {
+            if (selectedImg < 0) return;
+            if (selectedImg === endCount) {
+                selectedImg = startCount;
+            } else {
+                selectedImg++;
+            }
+            showImg.src = images[selectedImg].src;
+            addRemoveAnimationNext();
         }
-      }, this.timeTrans);
 
-    }
-    changeSlide(index) {
+        // Click Prev Button Function
+        function prevImg() {
+            if (selectedImg < 0) return;
+            if (selectedImg === startCount) {
+                selectedImg = endCount;
+            } else {
+                selectedImg--;
+            }
+            showImg.src = images[selectedImg].src;
+            addRemoveAnimationPrev();
+        }
 
-      this.Nav.forEach(allDot => allDot.classList.remove('current_dot'));
+        // Initial Click Handler
+        images.forEach((img, index) => {
+            img.addEventListener("click", (e) => {
+                galleryPopup.style.display = "block";
+                galleryPopup.classList.add("active");
+                showImg.src = e.currentTarget.src;
+                selectedImg = index;
+                body.style.overflow = "hidden";
+            });
+        });
 
-      this.Slides.forEach(allSlides => allSlides.classList.remove('prev', 'current'));
+        // Function for add and Remove Style Attribute
+        function addRemoveAnimationNext() {
+            showImg.setAttribute("style", imgTransitionNext);
+            setTimeout(() => {
+                showImg.setAttribute("style", "");
+            }, 500);
+        }
 
-      const getAllPrev = value => value < index;
+        function addRemoveAnimationPrev() {
+            showImg.setAttribute("style", imgTransitionPrev);
+            setTimeout(() => {
+                showImg.setAttribute("style", "");
+            }, 500);
+        }
 
-      const prevElements = this.IndexElements.filter(getAllPrev);
-
-      prevElements.forEach(indexPrevEle => this.Slides[indexPrevEle].classList.add('prev'));
-
-      this.Slides[index].classList.add('current');
-      this.Nav[index].classList.add('current_dot');
-    }}
-
-
-  const slider = new SliderClip(document.querySelector('.slider'));
-}
-      </script>
-    </body>
-  </html>
-
+    </script>
 </body>
 
 </html>
