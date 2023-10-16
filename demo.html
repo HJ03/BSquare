@@ -1,514 +1,170 @@
 <!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        .gallery-wrapper {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	overflow-x: hidden;
-}
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-.gallery-wrapper img {
-	max-width: 100%;
-	transition: all 0.2s ease-in-out;
-}
+<!-- IMPORTANT: 
 
-.gallery-wrapper .gallery-img img {
-	cursor: pointer;
-}
+For simplicity sake, I have uploaded all the related resources of this project, like ( .js files, .css files etc. ) to the BASE location mentioned below. Please visit this URL and then SAVE all these files, to your local folder ( i.e. to the folder containing this html file ) and then REMOVE this BASE tag, for complete LOCAL hosting purposes. 
 
-.gallery-wrapper {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	padding: 1rem;
-	z-index: 2;
-	position: relative;
-}
+-->  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css">
 
-.gallery-popup.active + .gallery-overlay {
-	content: "";
-	position: fixed;
-	width: 100%;
-	height: 100%;
-	inset: 0;
-	background-color: rgb(0 0 0 / 75%);
-	z-index: 5;
-	overflow: hidden;
-}
+<style>
+@import url('https://fonts.googleapis.com/css?family=Anton');
 
-.gallery-popup {
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	width: calc(100% - 48px);
-	height: calc(100% - 80px);
-	padding: 0px;
-	display: none;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	z-index: 6;
-	animation: showPopUp 0.45s linear;
-}
-
-.gallery-popup .close,
-.gallery-popup .next,
-.gallery-popup .prev {
-	position: absolute;
-	top: 0;
-	right: 2rem;
-	margin-left: auto;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-.gallery-popup img {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-}
-
-.gallery-popup .close {
-	width: 30px;
-	height: 30px;
-	cursor: pointer;
-	top: -40px;
-	right: 0;
-}
-
-.gallery-popup .next {
-	right: 0px;
-	top: 50%;
-	transform: translateY(-50%);
-	width: 30px;
-	height: 20px;
-	font-size: 20px;
-	cursor: pointer;
-	padding: 10px;
-	background-color: rgb(255 255 255 / 75%);
-}
-
-.gallery-popup .prev {
-	left: 0px;
-	right: auto;
-	top: 50%;
-	transform: translateY(-50%);
-	width: 30px;
-	height: 20px;
-	font-size: 20px;
-	cursor: pointer;
-	padding: 10px;
-	background-color: rgb(255 255 255 / 75%);
-}
-
-.gallery-wrapper .gallery-inner {
-	display: grid;
-	gap: 10px;
-	grid-template-columns: repeat(4, 1fr);
-	position: relative;
-	z-index: 4;
-}
-
-@keyframes showPopUp {
-	0% {
-		opacity: 0;
-		visibility: hidden;
-	}
-	50% {
-		opacity: 0.5;
-		visibility: visible;
-	}
-	100% {
-		opacity: 1;
-		visibility: visible;
-	}
-}
-
-@keyframes imgTransitionNext {
-	0% {
-		transform: translateX(100vw);
-		opacity: 0;
-	}
-	
-	5% {
-		transform: translateX(95vw);
-		opacity: 0.15
-	}
-	
-	10% {
-		transform: translateX(90vw);
-		opacity: 0.1;
-	}
-	
-	15% {
-		transform: translateX(85vw);
-		opacity: 0.20;
-	}
-	
-	20% {
-		transform: translateX(80vw);
-		opacity: 0.2;
-	}
-	
-	25% {
-		transform: translateX(75vw);
-		opacity: 0.20;
-	}
-	
-	30% {
-		transform: translateX(70vw);
-		opacity: 0.3;
-	}
-	
-	35%{
-		transform: translateX(75vw);
-		opacity: 0.35;
-	}
-	
-	40% {
-		transform: translateX(60vw);
-		opacity: 0.4;
-	}
-	
-	45%{
-		transform: translateX(55vw);
-		opacity: 0.45;
-	}
-	
-	50% {
-		transform: translateX(50vw);
-		opacity: 0.5;
-	}
-	
-	55%{
-		transform: translateX(45vw);
-		opacity: 0.55;
-	}
-	
-	60% {
-		transform: translateX(40vw);
-		opacity: 0.6;
-	}
-	
-	65%{
-		transform: translateX(65vw);
-		opacity: 0.65;
-	}
-	
-	70% {
-		transform: translateX(30vw);
-		opacity: 0.7;
-	}
-	
-75%{
-		transform: translateX(25vw);
-		opacity: 0.75;
-	}
-	
-	80% {
-		transform: translateX(20vw);
-		opacity: 0.8;
-	}
-	
-	85%{
-		transform: translateX(15vw);
-		opacity: 0.85;
-	}
-	
-	90% {
-		transform: translateX(10vw);
-		opacity: 0.9;
-	}
-	
-	95%{
-		transform: translateX(5vw);
-		opacity: 0.95;
-	}
-	
-	100%{
-		transform: translateX(0vw);
-		opacity: 1;
-	}
+body {
+    margin: 0;
+    background-image: url(https://images.pexels.com/photos/131683/pexels-photo-131683.jpeg?cs=srgb&dl=green-pattern-surface-131683.jpg&fm=jpg);
+    background-size: cover;
 }
 
 
-@keyframes imgTransitionPrev {
-	0% {
-		transform: translateX(-100vw);
-		opacity: 0;
-	}
-	
-	5% {
-		transform: translateX(-95vw);
-		opacity: 0.15
-	}
-	
-	10% {
-		transform: translateX(-90vw);
-		opacity: 0.1;
-	}
-	
-	15% {
-		transform: translateX(-85vw);
-		opacity: 0.20;
-	}
-	
-	20% {
-		transform: translateX(-80vw);
-		opacity: 0.2;
-	}
-	
-	25% {
-		transform: translateX(-75vw);
-		opacity: 0.20;
-	}
-	
-	30% {
-		transform: translateX(-70vw);
-		opacity: 0.3;
-	}
-	
-	35%{
-		transform: translateX(-75vw);
-		opacity: 0.35;
-	}
-	
-	40% {
-		transform: translateX(-60vw);
-		opacity: 0.4;
-	}
-	
-	45%{
-		transform: translateX(-55vw);
-		opacity: 0.45;
-	}
-	
-	50% {
-		transform: translateX(-50vw);
-		opacity: 0.5;
-	}
-	
-	55%{
-		transform: translateX(-45vw);
-		opacity: 0.55;
-	}
-	
-	60% {
-		transform: translateX(-40vw);
-		opacity: 0.6;
-	}
-	
-	65%{
-		transform: translateX(-65vw);
-		opacity: 0.65;
-	}
-	
-	70% {
-		transform: translateX(-30vw);
-		opacity: 0.7;
-	}
-	
-75%{
-		transform: translateX(-25vw);
-		opacity: 0.75;
-	}
-	
-	80% {
-		transform: translateX(-20vw);
-		opacity: 0.8;
-	}
-	
-	85%{
-		transform: translateX(-15vw);
-		opacity: 0.85;
-	}
-	
-	90% {
-		transform: translateX(-10vw);
-		opacity: 0.9;
-	}
-	
-	95%{
-		transform: translateX(-5vw);
-		opacity: 0.95;
-	}
-	
-	100%{
-		transform: translateX(0vw);
-		opacity: 1;
-	}
+
+.clear:after, .clear:before {
+	content: '';
+	display: table;
+	clear: both;
 }
 
-@media only screen and (max-width: 1280px) {
-	.gallery-wrapper .gallery-inner {
-		grid-template-columns: repeat(3, 1fr);
-	}
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    border: 10px solid #fff;
+    width: calc(100% - 50px);
+    margin: 60px auto 0;
 }
 
-@media only screen and (max-width: 768px) {
-	.gallery-wrapper .gallery-inner {
-		grid-template-columns: repeat(2, 1fr);
-	}
-
-	.gallery-popup .next {
-		right: 0px;
-	}
-	.gallery-popup .prev {
-		left: 0px;
-	}
-	
-	.gallery-popup {
-		top: 60px !important;
-		left: 50% !important;
-		transform: translate(-50%, 0%);
-		height: calc(350px - 60px)
-	}
+.gallery a {
+    display: block;
+    text-decoration: none;
+    width: 25%;
+    overflow: hidden;
+    outline: none;
 }
 
-@media only screen and (max-width: 600px) {
-	.gallery-wrapper .gallery-inner {
-		grid-template-columns: repeat(1, 1fr);
-	}
+.gallery a img {
+    height: 100%;
+    transform: scale(1,1);
+    transition: all 300ms ease;
 }
-    </style>
-</head>
+
+.gallery a img:hover {
+    transform: scale(1.1,1.1);
+}
+
+h1 {
+    text-align: center;
+    font-size: 40px;
+    font-family: 'Anton', sans-serif;
+    letter-spacing: 10px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.bg {
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    transform: scale(1,1);
+    transition: all 300ms ease;
+}
+
+.bg:hover {
+    transform: scale(1.1,1.1);
+}
+
+@media(max-width: 991px) {
+
+	.gallery a {
+		width: 50%;
+	}
+
+}
+
+@media(max-width: 767px) {
+
+	.gallery a {
+		width: 100%;
+	}
+
+	.bg {
+		height: 300px;
+	}
+
+}
+
+h1 a {
+  color: #000;
+}
+
+</style>
 
 <body>
-    <div class="gallery-wrapper">
-        <div class="gallery-inner">
-            <div class="gallery-img">
-                <img src="https://demo.epic-webdesign.com/tf-fable/cafe/images/food2.jpg" alt="">
-            </div>
-            <div class="gallery-img">
-                <img src="https://demo.epic-webdesign.com/tf-fable/cafe/images/food3.jpg" alt="">
-            </div>
-            <div class="gallery-img">
-                <img src="https://demo.epic-webdesign.com/tf-fable/cafe/images/food10.jpg" alt="">
-            </div>
-            <div class="gallery-img">
-                <img src="https://demo.epic-webdesign.com/tf-fable/cafe/images/food5.jpg" alt="">
-            </div>
-            <div class="gallery-img">
-                <img src="https://demo.epic-webdesign.com/tf-fable/cafe/images/food6.jpg" alt="">
-            </div>
-            <div class="gallery-img">
-                <img src="https://demo.epic-webdesign.com/tf-fable/cafe/images/food8.jpg" alt="">
-            </div>
-        </div>
-    </div>
-    <script>
-        const galleryStyleSheet = `
 
-`;
 
-        const body = document.querySelector("body");
-        const galleryWrapper = document.querySelector(".gallery-wrapper");
+	<body>
 
-        const styeElement = document.createElement("style");
-        styeElement.innerHTML = galleryStyleSheet;
-        styeElement.style.display = "none";
-        body.append(styeElement);
+	<div class="gallery clear">
+		<div class="bg" style="background-image: url(https://images.pexels.com/photos/1125273/pexels-photo-1125273.jpeg?cs=srgb&dl=abstract-art-blur-1125273.jpg&fm=jpg);"></div>
+		<div class="bg" style="background-image: url(https://images.pexels.com/photos/834894/pexels-photo-834894.jpeg?cs=srgb&dl=background-blur-bokeh-834894.jpg&fm=jpg);"></div>
+		<div class="bg" style="background-image: url(https://images.pexels.com/photos/599459/pexels-photo-599459.jpeg?cs=srgb&dl=architecture-buildings-city-599459.jpg&fm=jpg);"></div>
+		<div class="bg" style="background-image: url(https://images.pexels.com/photos/940380/pexels-photo-940380.jpeg?cs=srgb&dl=dawn-dusk-evening-940380.jpg&fm=jpg);"></div>
+		<div class="bg" style="background-image: url(https://images.pexels.com/photos/1275393/pexels-photo-1275393.jpeg?cs=srgb&dl=float-floating-globe-1275393.jpg&fm=jpg);"></div>
+		<div class="bg" style="background-image: url(https://images.pexels.com/photos/1287145/pexels-photo-1287145.jpeg?cs=srgb&dl=cold-daylight-desktop-backgrounds-1287145.jpg&fm=jpg);"></div>
+		<div class="bg" style="background-image: url(https://images.pexels.com/photos/1242764/pexels-photo-1242764.jpeg?cs=srgb&dl=alone-dawn-grass-1242764.jpg&fm=jpg);"></div>
+		<div class="bg" style="background-image: url(https://images.pexels.com/photos/546913/pexels-photo-546913.jpeg?cs=srgb&dl=bridge-hanging-outdoors-546913.jpg&fm=jpg);"></div>
 
-        const galleryPopup = document.createElement("div");
-        galleryPopup.className = "gallery-popup";
+	</div>
+	<div class="gallery clear">
+		<div class="bg" style="background-image: url(https://images.pexels.com/photos/1125273/pexels-photo-1125273.jpeg?cs=srgb&dl=abstract-art-blur-1125273.jpg&fm=jpg);"></div>
+		<div class="bg" style="background-image: url(https://images.pexels.com/photos/834894/pexels-photo-834894.jpeg?cs=srgb&dl=background-blur-bokeh-834894.jpg&fm=jpg);"></div>
+		<div class="bg" style="background-image: url(https://images.pexels.com/photos/599459/pexels-photo-599459.jpeg?cs=srgb&dl=architecture-buildings-city-599459.jpg&fm=jpg);"></div>
+		<div class="bg" style="background-image: url(https://images.pexels.com/photos/940380/pexels-photo-940380.jpeg?cs=srgb&dl=dawn-dusk-evening-940380.jpg&fm=jpg);"></div>
+		<div class="bg" style="background-image: url(https://images.pexels.com/photos/1275393/pexels-photo-1275393.jpeg?cs=srgb&dl=float-floating-globe-1275393.jpg&fm=jpg);"></div>
+		<div class="bg" style="background-image: url(https://images.pexels.com/photos/1287145/pexels-photo-1287145.jpeg?cs=srgb&dl=cold-daylight-desktop-backgrounds-1287145.jpg&fm=jpg);"></div>
+		<div class="bg" style="background-image: url(https://images.pexels.com/photos/1242764/pexels-photo-1242764.jpeg?cs=srgb&dl=alone-dawn-grass-1242764.jpg&fm=jpg);"></div>
+		<div class="bg" style="background-image: url(https://images.pexels.com/photos/546913/pexels-photo-546913.jpeg?cs=srgb&dl=bridge-hanging-outdoors-546913.jpg&fm=jpg);"></div>
 
-        galleryPopup.innerHTML = `
-    <button class="close">&times;</button>
-		<span class="next">&#187;</span>
-		<span class="prev">&#171;</span>
-		<img src="" alt="">
-`;
+	</div>
 
-        const galleryOverlay = document.createElement("div");
-        galleryOverlay.className = "gallery-overlay";
-        body.prepend(galleryOverlay);
-        body.prepend(galleryPopup);
+	
+	
+	<!-- <div class="bottom-text">
+	  <p>Magnific Popup on Github - <a href="https://github.com/dimsemenov/Magnific-Popup">https://github.com/dimsemenov/Magnific-Popup</a>,<br/> plugin homepage - <a href="http://dimsemenov.com/plugins/magnific-popup/">http://dimsemenov.com/plugins/magnific-popup/</a></p>
+	</div> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
+<script>
+$(document).ready(function(){
 
-        const images = [...galleryWrapper.querySelectorAll(".gallery-img img")];
-        const closeBtn = galleryPopup.querySelector(".close");
-        const nextBtn = galleryPopup.querySelector(".next");
-        const prevBtn = galleryPopup.querySelector(".prev");
+$('.gallery > div.bg').each(function(){
+	$(this).wrapAll('<a href="" data-fancybox="gallery"></a>');
+});
 
-        nextBtn.addEventListener("click", nextImg);
-        prevBtn.addEventListener("click", prevImg);
+$('.gallery a').each(function(){
+	var link = $(this).children('.bg').css('background-image');
+	console.log(link);
+	link = link.replace(/(url\(|\)|")/g,'');
+	$(this).attr('href', link);
+});
 
-        // Creating Animation For Image Transition
-        const imgTransitionNext = `animation: imgTransitionNext 0.45s linear`;
-        const imgTransitionPrev = `animation: imgTransitionPrev 0.45s linear`;
-        let showImg = galleryPopup.querySelector(".gallery-popup img");
+$("[data-fancybox]").fancybox({
+	loop: true,
+	buttons: [
+		"zoom",
+		"share",
+		"slideShow",
+		"fullScreen",
+		"download",
+		"thumbs",
+		"close"
+	]		
+});
 
-        let selectedImg = null;
-        let startCount = 0;
-        let endCount = images.length - 1;
-
-        closeBtn.addEventListener("click", (e) => {
-            galleryPopup.style.display = "none";
-            galleryPopup.classList.remove("active");
-            selectedImg === null;
-            startCount = 0;
-            endCount = images.length - 1;
-            body.style.overflow = "auto";
-        });
-
-        // Click Next Button Function
-        function nextImg() {
-            if (selectedImg < 0) return;
-            if (selectedImg === endCount) {
-                selectedImg = startCount;
-            } else {
-                selectedImg++;
-            }
-            showImg.src = images[selectedImg].src;
-            addRemoveAnimationNext();
-        }
-
-        // Click Prev Button Function
-        function prevImg() {
-            if (selectedImg < 0) return;
-            if (selectedImg === startCount) {
-                selectedImg = endCount;
-            } else {
-                selectedImg--;
-            }
-            showImg.src = images[selectedImg].src;
-            addRemoveAnimationPrev();
-        }
-
-        // Initial Click Handler
-        images.forEach((img, index) => {
-            img.addEventListener("click", (e) => {
-                galleryPopup.style.display = "block";
-                galleryPopup.classList.add("active");
-                showImg.src = e.currentTarget.src;
-                selectedImg = index;
-                body.style.overflow = "hidden";
-            });
-        });
-
-        // Function for add and Remove Style Attribute
-        function addRemoveAnimationNext() {
-            showImg.setAttribute("style", imgTransitionNext);
-            setTimeout(() => {
-                showImg.setAttribute("style", "");
-            }, 500);
-        }
-
-        function addRemoveAnimationPrev() {
-            showImg.setAttribute("style", imgTransitionPrev);
-            setTimeout(() => {
-                showImg.setAttribute("style", "");
-            }, 500);
-        }
-
-    </script>
+});
+</script>
+    
 </body>
 
 </html>

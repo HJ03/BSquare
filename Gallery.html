@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <!-- <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css"> -->
-
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
 </head>
 <style>
@@ -160,383 +160,79 @@
         box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
     }
 
-
-
-    .gallery-wrapper {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        overflow-x: hidden;
-    }
-
-    .gallery-wrapper img {
-        max-width: 100%;
-        transition: all 0.2s ease-in-out;
-    }
-
-    .gallery-wrapper .gallery-img img {
-        cursor: pointer;
-    }
-
-    .gallery-wrapper {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 1rem;
-        z-index: 2;
-        position: relative;
-    }
-
-    .gallery-popup.active+.gallery-overlay {
-        content: "";
-        position: fixed;
-        width: 100%;
-        height: 100%;
-        inset: 0;
-        background-color: rgb(0 0 0 / 75%);
-        z-index: 5;
-        overflow: hidden;
-    }
-
-    .gallery-popup {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: calc(100% - 48px);
-        height: calc(100% - 80px);
-        padding: 0px;
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        z-index: 6;
-        animation: showPopUp 0.45s linear;
-    }
-
-    .gallery-popup .close,
-    .gallery-popup .next,
-    .gallery-popup .prev {
-        position: absolute;
-        top: 0;
-        right: 2rem;
-        margin-left: auto;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .gallery-popup img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    .gallery-popup .close {
-        width: 30px;
-        height: 30px;
-        cursor: pointer;
-        top: -40px;
-        right: 0;
-    }
-
-    .gallery-popup .next {
-        right: 0px;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 30px;
-        height: 20px;
-        font-size: 20px;
-        cursor: pointer;
-        padding: 10px;
-        background-color: rgb(255 255 255 / 75%);
-    }
-
-    .gallery-popup .prev {
-        left: 0px;
-        right: auto;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 30px;
-        height: 20px;
-        font-size: 20px;
-        cursor: pointer;
-        padding: 10px;
-        background-color: rgb(255 255 255 / 75%);
-    }
-
-    .gallery-wrapper .gallery-inner {
-        display: grid;
-        gap: 10px;
-        grid-template-columns: repeat(4, 1fr);
-        position: relative;
-        z-index: 4;
-    }
-
-    @keyframes showPopUp {
-        0% {
-            opacity: 0;
-            visibility: hidden;
-        }
-
-        50% {
-            opacity: 0.5;
-            visibility: visible;
-        }
-
-        100% {
-            opacity: 1;
-            visibility: visible;
-        }
-    }
-
-    @keyframes imgTransitionNext {
-        0% {
-            transform: translateX(100vw);
-            opacity: 0;
-        }
-
-        5% {
-            transform: translateX(95vw);
-            opacity: 0.15
-        }
-
-        10% {
-            transform: translateX(90vw);
-            opacity: 0.1;
-        }
-
-        15% {
-            transform: translateX(85vw);
-            opacity: 0.20;
-        }
-
-        20% {
-            transform: translateX(80vw);
-            opacity: 0.2;
-        }
-
-        25% {
-            transform: translateX(75vw);
-            opacity: 0.20;
-        }
-
-        30% {
-            transform: translateX(70vw);
-            opacity: 0.3;
-        }
-
-        35% {
-            transform: translateX(75vw);
-            opacity: 0.35;
-        }
-
-        40% {
-            transform: translateX(60vw);
-            opacity: 0.4;
-        }
-
-        45% {
-            transform: translateX(55vw);
-            opacity: 0.45;
-        }
-
-        50% {
-            transform: translateX(50vw);
-            opacity: 0.5;
-        }
-
-        55% {
-            transform: translateX(45vw);
-            opacity: 0.55;
-        }
-
-        60% {
-            transform: translateX(40vw);
-            opacity: 0.6;
-        }
-
-        65% {
-            transform: translateX(65vw);
-            opacity: 0.65;
-        }
-
-        70% {
-            transform: translateX(30vw);
-            opacity: 0.7;
-        }
-
-        75% {
-            transform: translateX(25vw);
-            opacity: 0.75;
-        }
-
-        80% {
-            transform: translateX(20vw);
-            opacity: 0.8;
-        }
-
-        85% {
-            transform: translateX(15vw);
-            opacity: 0.85;
-        }
-
-        90% {
-            transform: translateX(10vw);
-            opacity: 0.9;
-        }
-
-        95% {
-            transform: translateX(5vw);
-            opacity: 0.95;
-        }
-
-        100% {
-            transform: translateX(0vw);
-            opacity: 1;
-        }
-    }
-
-
-    @keyframes imgTransitionPrev {
-        0% {
-            transform: translateX(-100vw);
-            opacity: 0;
-        }
-
-        5% {
-            transform: translateX(-95vw);
-            opacity: 0.15
-        }
-
-        10% {
-            transform: translateX(-90vw);
-            opacity: 0.1;
-        }
-
-        15% {
-            transform: translateX(-85vw);
-            opacity: 0.20;
-        }
-
-        20% {
-            transform: translateX(-80vw);
-            opacity: 0.2;
-        }
-
-        25% {
-            transform: translateX(-75vw);
-            opacity: 0.20;
-        }
-
-        30% {
-            transform: translateX(-70vw);
-            opacity: 0.3;
-        }
-
-        35% {
-            transform: translateX(-75vw);
-            opacity: 0.35;
-        }
-
-        40% {
-            transform: translateX(-60vw);
-            opacity: 0.4;
-        }
-
-        45% {
-            transform: translateX(-55vw);
-            opacity: 0.45;
-        }
-
-        50% {
-            transform: translateX(-50vw);
-            opacity: 0.5;
-        }
-
-        55% {
-            transform: translateX(-45vw);
-            opacity: 0.55;
-        }
-
-        60% {
-            transform: translateX(-40vw);
-            opacity: 0.6;
-        }
-
-        65% {
-            transform: translateX(-65vw);
-            opacity: 0.65;
-        }
-
-        70% {
-            transform: translateX(-30vw);
-            opacity: 0.7;
-        }
-
-        75% {
-            transform: translateX(-25vw);
-            opacity: 0.75;
-        }
-
-        80% {
-            transform: translateX(-20vw);
-            opacity: 0.8;
-        }
-
-        85% {
-            transform: translateX(-15vw);
-            opacity: 0.85;
-        }
-
-        90% {
-            transform: translateX(-10vw);
-            opacity: 0.9;
-        }
-
-        95% {
-            transform: translateX(-5vw);
-            opacity: 0.95;
-        }
-
-        100% {
-            transform: translateX(0vw);
-            opacity: 1;
-        }
-    }
-
-    @media only screen and (max-width: 1280px) {
-        .gallery-wrapper .gallery-inner {
-            grid-template-columns: repeat(3, 1fr);
-        }
-    }
-
-    @media only screen and (max-width: 768px) {
-        .gallery-wrapper .gallery-inner {
-            grid-template-columns: repeat(2, 1fr);
-        }
-
-        .gallery-popup .next {
-            right: 0px;
-        }
-
-        .gallery-popup .prev {
-            left: 0px;
-        }
-
-        .gallery-popup {
-            top: 60px !important;
-            left: 50% !important;
-            transform: translate(-50%, 0%);
-            height: calc(350px - 60px)
-        }
-    }
-
-    @media only screen and (max-width: 600px) {
-        .gallery-wrapper .gallery-inner {
-            grid-template-columns: repeat(1, 1fr);
-        }
-    }
+    .clear:after, .clear:before {
+	content: '';
+	display: table;
+	clear: both;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    border: 10px solid #fff;
+    width: calc(100% - 50px);
+    margin:0px auto 0;
+}
+
+.gallery a {
+    display: block;
+    text-decoration: none;
+    width: 25%;
+    overflow: hidden;
+    outline: none;
+}
+
+.gallery a img {
+    height: 100%;
+    transform: scale(1,1);
+    transition: all 300ms ease;
+}
+
+.gallery a img:hover {
+    transform: scale(1,1);
+}
+
+h1 {
+    text-align: center;
+    font-size: 40px;
+    font-family: 'Anton', sans-serif;
+    letter-spacing: 10px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.bg {
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    transform: scale(1,1);
+    transition: all 300ms ease;
+    margin: 10px;
+}
+
+.bg:hover {
+    transform: scale(1.1,1.1);
+}
+
+@media(max-width: 991px) {
+
+	.gallery a {
+		width: 50%;
+	}
+
+}
+
+@media(max-width: 767px) {
+
+	.gallery a {
+		width: 100%;
+	}
+
+	.bg {
+		height: 300px;
+	}
+
+}
 </style>
 
 <body>
@@ -686,81 +382,69 @@
                     </div>
 
                     <div id="tab-content1" class="tab-content">
-                        <div class="gallery-container">
-                            <div class="gallery-wrapper">
-                                <div class="gallery-inner">
-                                    <div class="gallery-img">
-                                        <img src="https://demo.epic-webdesign.com/tf-fable/cafe/images/food2.jpg"
-                                            alt="">
-                                    </div>
-                                    <div class="gallery-img">
-                                        <img src="https://demo.epic-webdesign.com/tf-fable/cafe/images/food3.jpg"
-                                            alt="">
-                                    </div>
-                                    <div class="gallery-img">
-                                        <img src="https://demo.epic-webdesign.com/tf-fable/cafe/images/food10.jpg"
-                                            alt="">
-                                    </div>
-                                    <div class="gallery-img">
-                                        <img src="https://demo.epic-webdesign.com/tf-fable/cafe/images/food5.jpg"
-                                            alt="">
-                                    </div>
-                                    <div class="gallery-img">
-                                        <img src="https://demo.epic-webdesign.com/tf-fable/cafe/images/food6.jpg"
-                                            alt="">
-                                    </div>
-                                    <div class="gallery-img">
-                                        <img src="https://demo.epic-webdesign.com/tf-fable/cafe/images/food8.jpg"
-                                            alt="">
-                                    </div>
-                                    <!-- Add more images as needed -->
-                                </div>
-                            </div>
+                        <div class="gallery clear">
+                            <div class="bg" style="background-image: url(./locations/location2/01.webp);"></div>
+                            <div class="bg" style="background-image: url(./locations/location2/02.webp);"></div>
+                            <div class="bg" style="background-image: url(./locations/location2/03.webp);"></div>
+                            <div class="bg" style="background-image: url(./locations/location2/04.webp);"></div>
+                            <div class="bg" style="background-image: url(./locations/location2/05.webp);"></div>
+                            <div class="bg" style="background-image: url(./locations/location2/06.webp);"></div>
+                            <div class="bg" style="background-image: url(./locations/location3/07.webp);"></div>
+                            <div class="bg" style="background-image: url(./locations/location4/01.webp);"></div>
+                            <div class="bg" style="background-image: url(./locations/location3/02.webp);"></div>
+                            <div class="bg" style="background-image: url(./locations/location3/03.webp);"></div>
+                            <div class="bg" style="background-image: url(./locations/location3/04.webp);"></div>
+                            <div class="bg" style="background-image: url(./locations/location3/05.webp);"></div>
+                            <div class="bg" style="background-image: url(./locations/location3/06.webp);"></div>
+                            <div class="bg" style="background-image: url(./locations/location3/07.webp);"></div>
+                            <div class="bg" style="background-image: url(./locations/location4/01.webp);"></div>
+                            <div class="bg" style="background-image: url(./locations/location4/02.webp);"></div>
+                            <div class="bg" style="background-image: url(./locations/location4/03.webp);"></div>
+                            <div class="bg" style="background-image: url(./locations/location4/04.webp);"></div>
+
+                    
                         </div>
                     </div>
                     <div id="tab-content2" class="tab-content">
-                        <div class="gallery-container">
-                            <div class="gallery-wrapper">
-                                <div class="gallery-inner">
-                                    <div class="gallery-img">
-                                        <img src="https://demo.epic-webdesign.com/tf-fable/cafe/images/food2.jpg"
-                                            alt="">
-                                    </div>
-                                    <div class="gallery-img">
-                                        <img src="https://demo.epic-webdesign.com/tf-fable/cafe/images/food3.jpg"
-                                            alt="">
-                                    </div>
-                                    <div class="gallery-img">
-                                        <img src="https://demo.epic-webdesign.com/tf-fable/cafe/images/food10.jpg"
-                                            alt="">
-                                    </div>
-                                    <div class="gallery-img">
-                                        <img src="https://demo.epic-webdesign.com/tf-fable/cafe/images/food5.jpg"
-                                            alt="">
-                                    </div>
-                                    <div class="gallery-img">
-                                        <img src="https://demo.epic-webdesign.com/tf-fable/cafe/images/food6.jpg"
-                                            alt="">
-                                    </div>
-                                    <div class="gallery-img">
-                                        <img src="https://demo.epic-webdesign.com/tf-fable/cafe/images/food8.jpg"
-                                            alt="">
-                                    </div>
-                                    <!-- Add more images as needed -->
-                                </div>
-                            </div>
+                        <div class="gallery clear">
+                            <div class="bg" style="background-image: url(./locations/location2/01.webp);"></div>
+                            <div class="bg" style="background-image: url(./locations/location2/02.webp);"></div>
+                            <div class="bg" style="background-image: url(./locations/location2/03.webp);"></div>
+                            <div class="bg" style="background-image: url(./locations/location2/04.webp);"></div>
+                            <div class="bg" style="background-image: url(./locations/location2/05.webp);"></div>
+                            <div class="bg" style="background-image: url(./locations/location2/06.webp);"></div>
+                            <div class="bg" style="background-image: url(./locations/location3/07.webp);"></div>
+                    
+                        </div>
+                    </div>
+                    <div id="tab-content3" class="tab-content">
+                        <div class="gallery clear">
+                            <div class="bg" style="background-image: url(./locations/location3/07.webp);"></div>
+                            <div class="bg" style="background-image: url(./locations/location4/01.webp);"></div>
+                            <div class="bg" style="background-image: url(./locations/location3/02.webp);"></div>
+                            <div class="bg" style="background-image: url(./locations/location3/03.webp);"></div>
+                            <div class="bg" style="background-image: url(./locations/location3/04.webp);"></div>
+                            <div class="bg" style="background-image: url(./locations/location3/05.webp);"></div>
+                            <div class="bg" style="background-image: url(./locations/location3/06.webp);"></div>
+                            <div class="bg" style="background-image: url(./locations/location3/07.webp);"></div>
+                    
+                        </div>
+                    </div>
+                    <div id="tab-content4" class="tab-content">
+                        <div class="gallery clear">
+                            <div class="bg" style="background-image: url(./locations/location4/01.webp);"></div>
+                            <div class="bg" style="background-image: url(./locations/location4/02.webp);"></div>
+                            <div class="bg" style="background-image: url(./locations/location4/03.webp);"></div>
+                            <div class="bg" style="background-image: url(./locations/location4/04.webp);"></div>
+                    
                         </div>
                     </div>
 
-                    <div class="gallery-popup">
-                        <button class="close">&times;</button>
-                        <span class="next">&#187;</span>
-                        <span class="prev">&#171;</span>
-                        <img src="" alt="">
-                    </div>
 
-                    <div class="gallery-overlay"></div>
-
+                 
+                    
+                    
+                
                     <!-- <div id="tab-content1" class="tab-content">
                         <div class="gallery-container">
                             <div class="gallery-wrapper">
@@ -1337,76 +1021,104 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
         crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
 
     <script>
-        const body = document.querySelector("body");
-        const galleryPopup = document.querySelector(".gallery-popup");
-        const galleryOverlay = document.querySelector(".gallery-overlay");
-        const closeBtn = galleryPopup.querySelector(".close");
-        const nextBtn = galleryPopup.querySelector(".next");
-        const prevBtn = galleryPopup.querySelector(".prev");
-        const showImg = galleryPopup.querySelector("img");
-        let selectedImg = null;
-        let images = [];
-        let startCount = 0;
-        let endCount = 0;
+        // const body = document.querySelector("body");
+        // const galleryPopup = document.querySelector(".gallery-popup");
+        // const galleryOverlay = document.querySelector(".gallery-overlay");
+        // const closeBtn = galleryPopup.querySelector(".close");
+        // const nextBtn = galleryPopup.querySelector(".next");
+        // const prevBtn = galleryPopup.querySelector(".prev");
+        // const showImg = galleryPopup.querySelector("img");
+        // let selectedImg = null;
+        // let images = [];
+        // let startCount = 0;
+        // let endCount = 0;
 
-        closeBtn.addEventListener("click", () => {
-            closeGallery();
-        });
+        // closeBtn.addEventListener("click", () => {
+        //     closeGallery();
+        // });
 
-        nextBtn.addEventListener("click", () => {
-            showNextImage();
-        });
+        // nextBtn.addEventListener("click", () => {
+        //     showNextImage();
+        // });
 
-        prevBtn.addEventListener("click", () => {
-            showPreviousImage();
-        });
+        // prevBtn.addEventListener("click", () => {
+        //     showPreviousImage();
+        // });
 
-        // Function to close the gallery
-        function closeGallery() {
-            galleryPopup.style.display = "none";
-            galleryPopup.classList.remove("active");
-            selectedImg = null;
-            startCount = 0;
-            endCount = 0;
-            body.style.overflow = "auto";
-        }
+        // // Function to close the gallery
+        // function closeGallery() {
+        //     galleryPopup.style.display = "none";
+        //     galleryPopup.classList.remove("active");
+        //     selectedImg = null;
+        //     startCount = 0;
+        //     endCount = 0;
+        //     body.style.overflow = "auto";
+        // }
 
-        // Function to show the next image
-        function showNextImage() {
-            if (selectedImg !== null && selectedImg < endCount) {
-                selectedImg++;
-                showImg.src = images[selectedImg].src;
-            }
-        }
+        // // Function to show the next image
+        // function showNextImage() {
+        //     if (selectedImg !== null && selectedImg < endCount) {
+        //         selectedImg++;
+        //         showImg.src = images[selectedImg].src;
+        //     }
+        // }
 
-        // Function to show the previous image
-        function showPreviousImage() {
-            if (selectedImg !== null && selectedImg > startCount) {
-                selectedImg--;
-                showImg.src = images[selectedImg].src;
-            }
-        }
+        // // Function to show the previous image
+        // function showPreviousImage() {
+        //     if (selectedImg !== null && selectedImg > startCount) {
+        //         selectedImg--;
+        //         showImg.src = images[selectedImg].src;
+        //     }
+        // }
 
-        // Add click event listeners to each gallery tab
-        const tabContents = document.querySelectorAll(".tab-content");
-        tabContents.forEach((tab) => {
-            const galleryContainer = tab.querySelector(".gallery-container");
-            const galleryImages = galleryContainer.querySelectorAll(".gallery-img img");
-            images = Array.from(galleryImages);
-            endCount = images.length - 1;
+        // // Add click event listeners to each gallery tab
+        // const tabContents = document.querySelectorAll(".tab-content");
+        // tabContents.forEach((tab) => {
+        //     const galleryContainer = tab.querySelector(".gallery-container");
+        //     const galleryImages = galleryContainer.querySelectorAll(".gallery-img img");
+        //     images = Array.from(galleryImages);
+        //     endCount = images.length - 1;
 
-            galleryImages.forEach((img, index) => {
-                img.addEventListener("click", () => {
-                    galleryPopup.style.display = "block";
-                    galleryPopup.classList.add("active");
-                    showImg.src = img.src;
-                    selectedImg = index;
-                    body.style.overflow = "hidden";
-                });
-            });
-        });
+        //     galleryImages.forEach((img, index) => {
+        //         img.addEventListener("click", () => {
+        //             galleryPopup.style.display = "block";
+        //             galleryPopup.classList.add("active");
+        //             showImg.src = img.src;
+        //             selectedImg = index;
+        //             body.style.overflow = "hidden";
+        //         });
+        //     });
+        // });$(document).ready(function(){
+
+$('.gallery > div.bg').each(function(){
+	$(this).wrapAll('<a href="" data-fancybox="gallery"></a>');
+});
+
+$('.gallery a').each(function(){
+	var link = $(this).children('.bg').css('background-image');
+	console.log(link);
+	link = link.replace(/(url\(|\)|")/g,'');
+	$(this).attr('href', link);
+});
+
+$("[data-fancybox]").fancybox({
+	loop: true,
+	buttons: [
+		"zoom",
+		"share",
+		"slideShow",
+		"fullScreen",
+		"download",
+		"thumbs",
+		"close"
+	]		
+});
+
+
     </script>
 </body>
 

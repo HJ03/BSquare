@@ -1469,6 +1469,8 @@ a.current_dot {
 #cards_landscape_wrap-2 .card-flyer .text-box .text-container {
     padding: 30px 18px;
     /* height: 250px; */
+    background-color: #f4f4f4;
+
 }
 
 #cards_landscape_wrap-2 .card-flyer {
@@ -1524,3 +1526,5 @@ a.current_dot {
     text-decoration: none;
     padding: 5px 10px;
 }
+
+/* --------------------workspace card section --------------------*/
