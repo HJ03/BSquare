@@ -1169,7 +1169,39 @@ a.current_dot {
 
 /* ----------------------gallery tabs section start ----------------------------*/
 .tabs {
-    max-width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+label {
+    background: #eee;
+    padding: 10px;
+    display: block;
+    cursor: pointer;
+    width: 100%;
+}
+
+label:hover {
+    background: #ddd;
+}
+
+@media screen and (max-width: 768px) {
+    .tabs {
+        flex-direction: column;
+    }
+
+    label {
+        margin-bottom: 5px;
+    }
+}
+.tabs {
+    max-width: 100%;
     float: none;
     list-style: none;
     padding: 0;
@@ -1192,13 +1224,14 @@ a.current_dot {
     border-radius: 4px;
     display: block;
     float: left;
-    width: 25%;
+    padding: 5px;
+    width: 275px;
     color: white;
     font-size: 20px;
     font-weight: 500;
     text-decoration: none;
     text-align: center;
-    line-height: 2;
+    /* line-height: 2; */
     cursor: pointer;
 
     -webkit-transition: all 0.5s;
@@ -1264,7 +1297,27 @@ a.current_dot {
 #tab4:checked~#tab-content4 {
     display: block;
 }
-
+@media (max-width:768px){
+    .tabs label {
+        border: 1px solid #0072a73e;
+        border-radius: 4px;
+        display: block;
+        float: left;
+        padding: 5px;
+        width: 100%;
+        color: white;
+        font-size: 20px;
+        font-weight: 500;
+        text-decoration: none;
+        text-align: center;
+        /* line-height: 2; */
+        cursor: pointer;
+    
+        -webkit-transition: all 0.5s;
+    
+        transition: all 0.5s;
+    }
+}
 @media (min-width: 768px) {
     .tabs i {
         padding: 5px;
@@ -1274,6 +1327,7 @@ a.current_dot {
     .tabs label span {
         display: inline-block;
     }
+    
 
 
 }

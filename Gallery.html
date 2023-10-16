@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <!-- <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css"> -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
 </head>
 <style>
@@ -160,79 +160,81 @@
         box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
     }
 
-    .clear:after, .clear:before {
-	content: '';
-	display: table;
-	clear: both;
-}
+    .clear:after,
+    .clear:before {
+        content: '';
+        display: table;
+        clear: both;
+    }
 
-.gallery {
-    display: flex;
-    flex-wrap: wrap;
-    border: 10px solid #fff;
-    width: calc(100% - 50px);
-    margin:0px auto 0;
-}
+    .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        border: 10px solid #fff;
+        width: calc(100% - 50px);
+        margin: 0px auto 0;
+    }
 
-.gallery a {
-    display: block;
-    text-decoration: none;
-    width: 25%;
-    overflow: hidden;
-    outline: none;
-}
+    .gallery a {
+        display: block;
+        text-decoration: none;
+        width: 25%;
+        /* overflow: hidden; */
+        outline: none;
+    }
 
-.gallery a img {
-    height: 100%;
-    transform: scale(1,1);
-    transition: all 300ms ease;
-}
+    .gallery a img {
+        height: 100%;
+        /* transform: scale(1, 1); */
+        /* transition: all 300ms ease; */
+    }
 
-.gallery a img:hover {
-    transform: scale(1,1);
-}
+    /* .gallery a img:hover {
+        transform: scale(1, 1);
+    } */
 
-h1 {
-    text-align: center;
-    font-size: 40px;
-    font-family: 'Anton', sans-serif;
-    letter-spacing: 10px;
-    color: #fff;
-    text-transform: uppercase;
-}
+    h1 {
+        text-align: center;
+        font-size: 40px;
+        font-family: 'Anton', sans-serif;
+        letter-spacing: 10px;
+        color: #fff;
+        text-transform: uppercase;
+    }
 
-.bg {
-    width: 100%;
+    .bg {
+        width: 100%;
     height: 200px;
     background-size: cover;
-    transform: scale(1,1);
+    /* transform: scale(1, 1); */
     transition: all 300ms ease;
-    margin: 10px;
-}
+    margin: 0px;
+    border: 3px solid white;
+    }
+/* 
+    .bg:hover {
+        transform: scale(1.1, 1.1);
+    } */
 
-.bg:hover {
-    transform: scale(1.1,1.1);
-}
+    @media(max-width: 991px) {
 
-@media(max-width: 991px) {
+        .gallery a {
+            width: 50%;
+        }
 
-	.gallery a {
-		width: 50%;
-	}
+    }
 
-}
+    @media(max-width: 767px) {
 
-@media(max-width: 767px) {
+        .gallery a {
+            width: 100%;
+        }
 
-	.gallery a {
-		width: 100%;
-	}
+        /* .bg {
+            height: 300px;
+        } */
 
-	.bg {
-		height: 300px;
-	}
-
-}
+    }
 </style>
 
 <body>
@@ -268,7 +270,7 @@ h1 {
                                 <a class="dropdown-item" href="./locations/location2.html">S.G.Road</a>
                                 <a class="dropdown-item" href="./locations/location3.html">IIM A Road</a>
                                 <a class="dropdown-item" href="./locations/location4.html">Navrangpura</a>
-                                <a class="dropdown-item" href="./location5.html">Sindhu Bhawan</a>
+                                <a class="dropdown-item" href="./locations/location5.html">Sindhu Bhawan</a>
                             </div>
                         </li>
                         <li class="nav-item">
@@ -353,14 +355,14 @@ h1 {
                 <div class="tabs">
 
                     <input type="radio" name="tabs" id="tab1" checked>
-                    <div>
+                    <div class="m-3">
                         <label for="tab1">
                             <span>ALL</span>
                         </label>
                     </div>
 
                     <input type="radio" name="tabs" id="tab2">
-                    <div>
+                    <div class="m-3">
                         <label for="tab2">
                             <span>S.G. ROAD</span>
                         </label>
@@ -368,14 +370,14 @@ h1 {
 
 
                     <input type="radio" name="tabs" id="tab3">
-                    <div>
+                    <div class="m-3">
                         <label for="tab3">
                             <span>IIM-A ROAD</span>
                         </label>
                     </div>
 
                     <input type="radio" name="tabs" id="tab4">
-                    <div>
+                    <div class="m-3">
                         <label for="tab4">
                             <span>NAVRANGPURA</span>
                         </label>
@@ -402,7 +404,7 @@ h1 {
                             <div class="bg" style="background-image: url(./locations/location4/03.webp);"></div>
                             <div class="bg" style="background-image: url(./locations/location4/04.webp);"></div>
 
-                    
+
                         </div>
                     </div>
                     <div id="tab-content2" class="tab-content">
@@ -414,7 +416,7 @@ h1 {
                             <div class="bg" style="background-image: url(./locations/location2/05.webp);"></div>
                             <div class="bg" style="background-image: url(./locations/location2/06.webp);"></div>
                             <div class="bg" style="background-image: url(./locations/location3/07.webp);"></div>
-                    
+
                         </div>
                     </div>
                     <div id="tab-content3" class="tab-content">
@@ -427,7 +429,7 @@ h1 {
                             <div class="bg" style="background-image: url(./locations/location3/05.webp);"></div>
                             <div class="bg" style="background-image: url(./locations/location3/06.webp);"></div>
                             <div class="bg" style="background-image: url(./locations/location3/07.webp);"></div>
-                    
+
                         </div>
                     </div>
                     <div id="tab-content4" class="tab-content">
@@ -436,16 +438,16 @@ h1 {
                             <div class="bg" style="background-image: url(./locations/location4/02.webp);"></div>
                             <div class="bg" style="background-image: url(./locations/location4/03.webp);"></div>
                             <div class="bg" style="background-image: url(./locations/location4/04.webp);"></div>
-                    
+
                         </div>
                     </div>
 
 
-                 
-                    
-                    
-                
-                    <!-- <div id="tab-content1" class="tab-content">
+                </div>
+
+
+
+                <!-- <div id="tab-content1" class="tab-content">
                         <div class="gallery-container">
                             <div class="gallery-wrapper">
                                 <div class="gallery-inner">
@@ -486,9 +488,9 @@ h1 {
                         <div class="gallery-overlay"></div>
 
                     </div> -->
-                    <!-- #tab-content1 -->
+                <!-- #tab-content1 -->
 
-                    <!-- <div id="tab-content2" class="tab-content">
+                <!-- <div id="tab-content2" class="tab-content">
                         <div class="gallery-container">
                             <div class="gallery-wrapper">
                                 <div class="gallery-inner">
@@ -525,10 +527,10 @@ h1 {
                     </div>  -->
 
 
-                    
-                    
 
-                </div> <!-- #tab-content3 -->
+
+
+                <!-- #tab-content3 -->
 
 
 
@@ -1021,8 +1023,8 @@ h1 {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
         crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
 
     <script>
         // const body = document.querySelector("body");
@@ -1093,30 +1095,72 @@ h1 {
         //         });
         //     });
         // });$(document).ready(function(){
+            var btn = $('#button');
 
-$('.gallery > div.bg').each(function(){
-	$(this).wrapAll('<a href="" data-fancybox="gallery"></a>');
+$(window).scroll(function () {
+    if ($(window).scrollTop() > 300) {
+        btn.addClass('show');
+    } else {
+        btn.removeClass('show');
+    }
 });
 
-$('.gallery a').each(function(){
-	var link = $(this).children('.bg').css('background-image');
-	console.log(link);
-	link = link.replace(/(url\(|\)|")/g,'');
-	$(this).attr('href', link);
+btn.on('click', function (e) {
+    e.preventDefault();
+    $('html, body').animate({ scrollTop: 0 }, '300');
 });
+               function onClick(element) {
+            document.getElementById("img01").src = element.src;
+            document.getElementById("modal01").style.display = "block";
+        }
+        const $dropdown = $(".dropdown");
+        const $dropdownToggle = $(".dropdown-toggle");
+        const $dropdownMenu = $(".dropdown-menu");
+        const showClass = "show";
 
-$("[data-fancybox]").fancybox({
-	loop: true,
-	buttons: [
-		"zoom",
-		"share",
-		"slideShow",
-		"fullScreen",
-		"download",
-		"thumbs",
-		"close"
-	]		
-});
+        $(window).on("load resize", function () {
+            if (this.matchMedia("(min-width: 768px)").matches) {
+                $dropdown.hover(
+                    function () {
+                        const $this = $(this);
+                        $this.addClass(showClass);
+                        $this.find($dropdownToggle).attr("aria-expanded", "true");
+                        $this.find($dropdownMenu).addClass(showClass);
+                    },
+                    function () {
+                        const $this = $(this);
+                        $this.removeClass(showClass);
+                        $this.find($dropdownToggle).attr("aria-expanded", "false");
+                        $this.find($dropdownMenu).removeClass(showClass);
+                    }
+                );
+            } else {
+                $dropdown.off("mouseenter mouseleave");
+            }
+        });
+        $('.gallery > div.bg').each(function () {
+            $(this).wrapAll('<a href="" data-fancybox="gallery"></a>');
+        });
+
+        $('.gallery a').each(function () {
+            var link = $(this).children('.bg').css('background-image');
+            console.log(link);
+            link = link.replace(/(url\(|\)|")/g, '');
+            $(this).attr('href', link);
+        });
+
+        $("[data-fancybox]").fancybox({
+            loop: true,
+            buttons: [
+                "zoom",
+                "share",
+                "slideShow",
+                "fullScreen",
+                "download",
+                "thumbs",
+                "close"
+            ]
+        });
 
 
     </script>
