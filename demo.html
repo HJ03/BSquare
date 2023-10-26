@@ -9,160 +9,67 @@ For simplicity sake, I have uploaded all the related resources of this project, 
 
 -->  
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
 <style>
-@import url('https://fonts.googleapis.com/css?family=Anton');
-
-body {
-    margin: 0;
-    background-image: url(https://images.pexels.com/photos/131683/pexels-photo-131683.jpeg?cs=srgb&dl=green-pattern-surface-131683.jpg&fm=jpg);
-    background-size: cover;
+.modal-body h1 {
+  font-weight: 900;
+  font-size: 2.3em;
+  text-transform: uppercase;
 }
 
-
-
-.clear:after, .clear:before {
-	content: '';
-	display: table;
-	clear: both;
-}
-
-.gallery {
-    display: flex;
-    flex-wrap: wrap;
-    border: 10px solid #fff;
-    width: calc(100% - 50px);
-    margin: 60px auto 0;
-}
-
-.gallery a {
-    display: block;
-    text-decoration: none;
-    width: 25%;
-    overflow: hidden;
-    outline: none;
-}
-
-.gallery a img {
-    height: 100%;
-    transform: scale(1,1);
-    transition: all 300ms ease;
-}
-
-.gallery a img:hover {
-    transform: scale(1.1,1.1);
-}
-
-h1 {
-    text-align: center;
-    font-size: 40px;
-    font-family: 'Anton', sans-serif;
-    letter-spacing: 10px;
-    color: #fff;
-    text-transform: uppercase;
-}
-
-.bg {
-    width: 100%;
-    height: 200px;
-    background-size: cover;
-    transform: scale(1,1);
-    transition: all 300ms ease;
-}
-
-.bg:hover {
-    transform: scale(1.1,1.1);
-}
-
-@media(max-width: 991px) {
-
-	.gallery a {
-		width: 50%;
-	}
-
-}
-
-@media(max-width: 767px) {
-
-	.gallery a {
-		width: 100%;
-	}
-
-	.bg {
-		height: 300px;
-	}
-
-}
-
-h1 a {
+.modal-body a.pre-order-btn {
   color: #000;
+  background-color: gold;
+  border-radius: 1em;
+  padding: 1em;
+  display: block;
+  margin: 2em auto;
+  width: 50%;
+  font-size: 1.25em;
+  font-weight: 6600;
 }
+
+.modal-body a.pre-order-btn:hover {
+  background-color: #000;
+  text-decoration: none;
+  color: gold;
+}
+
 
 </style>
 
 <body>
 
-
-	<body>
-
-	<div class="gallery clear">
-		<div class="bg" style="background-image: url(https://images.pexels.com/photos/1125273/pexels-photo-1125273.jpeg?cs=srgb&dl=abstract-art-blur-1125273.jpg&fm=jpg);"></div>
-		<div class="bg" style="background-image: url(https://images.pexels.com/photos/834894/pexels-photo-834894.jpeg?cs=srgb&dl=background-blur-bokeh-834894.jpg&fm=jpg);"></div>
-		<div class="bg" style="background-image: url(https://images.pexels.com/photos/599459/pexels-photo-599459.jpeg?cs=srgb&dl=architecture-buildings-city-599459.jpg&fm=jpg);"></div>
-		<div class="bg" style="background-image: url(https://images.pexels.com/photos/940380/pexels-photo-940380.jpeg?cs=srgb&dl=dawn-dusk-evening-940380.jpg&fm=jpg);"></div>
-		<div class="bg" style="background-image: url(https://images.pexels.com/photos/1275393/pexels-photo-1275393.jpeg?cs=srgb&dl=float-floating-globe-1275393.jpg&fm=jpg);"></div>
-		<div class="bg" style="background-image: url(https://images.pexels.com/photos/1287145/pexels-photo-1287145.jpeg?cs=srgb&dl=cold-daylight-desktop-backgrounds-1287145.jpg&fm=jpg);"></div>
-		<div class="bg" style="background-image: url(https://images.pexels.com/photos/1242764/pexels-photo-1242764.jpeg?cs=srgb&dl=alone-dawn-grass-1242764.jpg&fm=jpg);"></div>
-		<div class="bg" style="background-image: url(https://images.pexels.com/photos/546913/pexels-photo-546913.jpeg?cs=srgb&dl=bridge-hanging-outdoors-546913.jpg&fm=jpg);"></div>
-
-	</div>
-	<div class="gallery clear">
-		<div class="bg" style="background-image: url(https://images.pexels.com/photos/1125273/pexels-photo-1125273.jpeg?cs=srgb&dl=abstract-art-blur-1125273.jpg&fm=jpg);"></div>
-		<div class="bg" style="background-image: url(https://images.pexels.com/photos/834894/pexels-photo-834894.jpeg?cs=srgb&dl=background-blur-bokeh-834894.jpg&fm=jpg);"></div>
-		<div class="bg" style="background-image: url(https://images.pexels.com/photos/599459/pexels-photo-599459.jpeg?cs=srgb&dl=architecture-buildings-city-599459.jpg&fm=jpg);"></div>
-		<div class="bg" style="background-image: url(https://images.pexels.com/photos/940380/pexels-photo-940380.jpeg?cs=srgb&dl=dawn-dusk-evening-940380.jpg&fm=jpg);"></div>
-		<div class="bg" style="background-image: url(https://images.pexels.com/photos/1275393/pexels-photo-1275393.jpeg?cs=srgb&dl=float-floating-globe-1275393.jpg&fm=jpg);"></div>
-		<div class="bg" style="background-image: url(https://images.pexels.com/photos/1287145/pexels-photo-1287145.jpeg?cs=srgb&dl=cold-daylight-desktop-backgrounds-1287145.jpg&fm=jpg);"></div>
-		<div class="bg" style="background-image: url(https://images.pexels.com/photos/1242764/pexels-photo-1242764.jpeg?cs=srgb&dl=alone-dawn-grass-1242764.jpg&fm=jpg);"></div>
-		<div class="bg" style="background-image: url(https://images.pexels.com/photos/546913/pexels-photo-546913.jpeg?cs=srgb&dl=bridge-hanging-outdoors-546913.jpg&fm=jpg);"></div>
-
-	</div>
-
-	
+	<div id="myModal" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+		  <!-- Modal content-->
+		  <div class="modal-content">
+			<div class="modal-header">
+			  <button type="button" class="close" data-dismiss="modal">&times;</button>
+			  <!--         <h4 class="modal-title">Modal Header</h4> -->
+			</div>
+			<div class="modal-body text-center">
+			  <h1>Full screen Transparent Bootstrap Modal</h1>
+			  <p>FEEL FRREE TO GET YOUR MODAL CODE HERE FOLKS.</p>
+			  <a class="pre-order-btn" href="#">GET THE MODAL CODE</a>
+			</div>
+			<div class="modal-footer">
+			  <!--         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+			</div>
+		  </div>
+	  
+		</div>
+	  </div>
 	
 	<!-- <div class="bottom-text">
 	  <p>Magnific Popup on Github - <a href="https://github.com/dimsemenov/Magnific-Popup">https://github.com/dimsemenov/Magnific-Popup</a>,<br/> plugin homepage - <a href="http://dimsemenov.com/plugins/magnific-popup/">http://dimsemenov.com/plugins/magnific-popup/</a></p>
 	</div> -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script>
-$(document).ready(function(){
-
-$('.gallery > div.bg').each(function(){
-	$(this).wrapAll('<a href="" data-fancybox="gallery"></a>');
-});
-
-$('.gallery a').each(function(){
-	var link = $(this).children('.bg').css('background-image');
-	console.log(link);
-	link = link.replace(/(url\(|\)|")/g,'');
-	$(this).attr('href', link);
-});
-
-$("[data-fancybox]").fancybox({
-	loop: true,
-	buttons: [
-		"zoom",
-		"share",
-		"slideShow",
-		"fullScreen",
-		"download",
-		"thumbs",
-		"close"
-	]		
-});
-
-});
+$(document).ready(function(){       
+   $('#myModal').modal('show');
+    }); 
 </script>
     
 </body>
