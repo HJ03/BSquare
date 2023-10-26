@@ -317,6 +317,9 @@
 </style>
 
 <body>
+    <div class="preloader">
+        <img src="./public/images/logo.JPG" alt="Preloader Image">
+    </div>
     <nav class="navbar navbar-expand-lg navbar-fixed-top py-0" aria-label="Offcanvas navbar large">
         <div class="container-fluid" id="nav_container">
             <div class="container main_nav_container justify-content-center">
@@ -1340,6 +1343,15 @@
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
         crossorigin="anonymous"></script>
     <script>
+          $(document).ready(function () {
+    // Simulate a delay (2 seconds in this case)
+    setTimeout(function () {
+      const preloader = $(".preloader");
+      preloader.fadeOut(200); // Fade out the preloader
+      const content = $(".content");
+      content.removeClass("hidden"); // Show the website content
+    }, 1500); // 2 seconds in milliseconds (2000 ms)
+  });
         var btn = $('#button');
 
         $(window).scroll(function () {
