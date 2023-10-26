@@ -1298,7 +1298,7 @@ label:hover {
     display: block;
     float: left;
     padding: 5px;
-    width: 275px;
+    width: 215px;
     color: white;
     font-size: 20px;
     font-weight: 500;
@@ -1306,6 +1306,7 @@ label:hover {
     text-align: center;
     /* line-height: 2; */
     cursor: pointer;
+    margin: 0px 10px;
 
     -webkit-transition: all 0.5s;
 
@@ -1367,7 +1368,8 @@ label:hover {
 #tab1:checked~#tab-content1,
 #tab2:checked~#tab-content2,
 #tab3:checked~#tab-content3,
-#tab4:checked~#tab-content4 {
+#tab4:checked~#tab-content4,
+#tab5:checked~#tab-content5 {
     display: block;
 }
 
