@@ -23,12 +23,43 @@
         justify-content: space-between;
     }
 
-    .modal-header .close {
-        background-color: #0086c4;
-
+    .close {
+        background: transparent;
         border: none;
+        color: white;
+        font-size: 24px;
+        padding: 0px 11px;
     }
 
+    #myModal .modal-body {
+        padding: 0 0;
+    }
+    #myModal .first_side{
+        background-color: #ffffff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #myModal .second_side{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #00496b;
+    }
+    #myModal .dual_side_body{
+        height: 70vh;
+        
+    }
+    #myModal .dual_side_body h1{
+        color: white;
+    }
+    #myModal .dual_side_body .onload_img{
+        width: 50%;
+        height: 45%;
+    }
+    #myModal .modal-dialog{
+        max-width: 800px;
+    }
     .modal-body h1 {
         font-weight: 600;
         font-size: 1.3em;
@@ -251,23 +282,19 @@
         <div class="modal-dialog">
             <!-- Modal content-->
             <div class="modal-content">
-                <div class="modal-header">
-                    <div>
-                        <!-- hii -->
-                    </div>
-                    <div>
+
+                <div class="modal-body text-center">
+                    <div style="    text-align: right;
+                    position: absolute;
+                    right: 0;">
                         <button type="button" class="close" data-bs-dismiss="modal">&times;</button>
                     </div>
-                    <!--         <h4 class="modal-title">Modal Header</h4> -->
+                    <div class="d-flex justify-content-between dual_side_body">
+                        <div class="w-100 first_side"><img src="./public/images/BSquare logo without bg.png" class="onload_img" alt=""></div>
+                        <div class="w-100 second_side"><h1>Bsquare Coworking Space</h1></div>
+                    </div>
                 </div>
-                <div class="modal-body text-center">
-                    <h1>Full screen Transparent Bootstrap Modal</h1>
-                    <p>FEEL FRREE TO GET YOUR MODAL CODE HERE FOLKS.</p>
-                    <a class="pre-order-btn" href="#">Demo</a>
-                </div>
-                <div class="modal-footer">
-                    <!--         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
-                </div>
+
             </div>
 
         </div>
@@ -1131,12 +1158,12 @@
                                     furnished, well-equipped managed office spaces to MNCs, entrepreneurs and companies.
                                 </p>
                             </div>
-                            
+
 
                             <br><br>
                         </div>
                     </div>
-                    
+
                     <!-- <div class="col-xl-4 col-lg-4 col-md-4 mb-30">
                         <div class="footer-widget">
                             <div class="footer-widget-heading">
@@ -1575,7 +1602,7 @@
 
                         </div>
 
-                        
+
 
 
 
@@ -1588,8 +1615,7 @@
                                     <div class="carousel-item active" data-bs-interval="50000">
                                         <a href="https://instagram.com/bsquarecoworks?igshid=MzRlODBiNWFlZA=="
                                             target="_blank">
-                                            <video src="./public/images/reels/reel1.mp4" autoplay
-                                                width="100%"></video>
+                                            <video src="./public/images/reels/reel1.mp4" autoplay width="100%"></video>
                                         </a>
 
 
@@ -1597,16 +1623,15 @@
                                     <div class="carousel-item" data-bs-interval="50000">
                                         <a href="https://instagram.com/bsquarecoworks?igshid=MzRlODBiNWFlZA=="
                                             target="_blank">
-                                            <video src="./public/images/reels/reel2.mp4" autoplay
-                                                width="100%"></video>
+                                            <video src="./public/images/reels/reel2.mp4" autoplay width="100%"></video>
                                         </a>
 
 
                                     </div>
                                     <div class="carousel-item" data-bs-interval="50000">
                                         <a href="https://instagram.com/bsquarecoworks?igshid=MzRlODBiNWFlZA=="
-                                            target="_blank"> <video src="./public/images/reels/reel3.mp4"
-                                                autoplay width="100%"></video></a>
+                                            target="_blank"> <video src="./public/images/reels/reel3.mp4" autoplay
+                                                width="100%"></video></a>
 
 
                                     </div>
@@ -1637,7 +1662,7 @@
                             </div>
                             <ul class="p-0">
                                 <li><a href="./index.html">Home</a></li>
-                                <li><a href="./Blogs.html" >Blogs</a></li>
+                                <li><a href="./Blogs.html">Blogs</a></li>
 
                                 <li><a href="./Facilities.html">Facilities</a></li>
                                 <li><a href="./Careers.html">Careers</a></li>
@@ -1649,7 +1674,7 @@
 
                             </ul>
                         </div>
-                     
+
                         <div class="footer-social-icon mb-3 ">
                             <span>Follow us</span>
                             <a href="https://www.facebook.com/bsquarebc" target="_blank"><i
@@ -1658,15 +1683,15 @@
                                     class="bi bi-twitter twitter-bg" ></i></a> -->
                             <a href="https://www.linkedin.com/company/bsquarebusinesscenter/" target="_blank"><i
                                     class="bi bi-linkedin linkdin-bg"></i></a>
-                            <a href="https://instagram.com/bsquarecoworks?igshid=MzRlODBiNWFlZA=="
-                                target="_blank"><i class="bi bi-instagram instagram-bg"></i></a>
+                            <a href="https://instagram.com/bsquarecoworks?igshid=MzRlODBiNWFlZA==" target="_blank"><i
+                                    class="bi bi-instagram instagram-bg"></i></a>
                         </div>
                         <a href="mailto:info@bsquarebc.com" target="_blank"
                             class="bi bi-envelope-fill text-white text-decoration-none mt-5">
                             info@bsquarebc.com
                         </a>
                         <br><br><br>
-                        
+
                     </div>
 
                 </div>
