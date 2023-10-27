@@ -928,7 +928,7 @@ ul {
 }
 
 .slider li:nth-child(1) {
-    background: linear-gradient(to right, rgba(29, 73, 101, 0.655) 10%, rgba(0, 0, 0, 0.573) 51%, rgba(1, 1, 1, 0.377) 100%), url("../locations/location\ 1\(westgate\)/2.jpg");
+    background: linear-gradient(to right, rgba(29, 73, 101, 0.655) 10%, rgba(0, 0, 0, 0.573) 51%, rgba(1, 1, 1, 0.377) 100%), url("../locations/location1/9-9.jpg");
     background-size: cover;
     background-position: top left;
 }
