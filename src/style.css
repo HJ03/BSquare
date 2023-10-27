@@ -928,7 +928,7 @@ ul {
 }
 
 .slider li:nth-child(1) {
-    background: linear-gradient(to right, rgb(29, 73, 101) 10%, rgba(0, 0, 0, 0.8) 51%, rgba(0, 0, 0, 0.2) 100%), url("https://i.postimg.cc/VNgvq45t/slider-1.jpg");
+    background: linear-gradient(to right, rgba(29, 73, 101, 0.655) 10%, rgba(0, 0, 0, 0.573) 51%, rgba(1, 1, 1, 0.377) 100%), url("../locations/location\ 1\(westgate\)/2.jpg");
     background-size: cover;
     background-position: top left;
 }
@@ -963,7 +963,7 @@ ul {
 }
 
 .slider li:nth-child(2) {
-    background: linear-gradient(to right, rgba(29, 73, 101, 0.655) 10%, rgba(0, 0, 0, 0.573) 51%, rgba(1, 1, 1, 0.377) 100%), url("../locations/location2/01.webp");
+    background: linear-gradient(to right, rgba(29, 73, 101, 0.655) 10%, rgba(0, 0, 0, 0.573) 51%, rgba(1, 1, 1, 0.377) 100%), url("../locations/location2/03.webp");
     background-size: cover;
     background-position: top left;
 }
@@ -975,13 +975,13 @@ ul {
 }
 
 .slider li:nth-child(4) {
-    background: linear-gradient(to right, rgba(29, 73, 101, 0.655) 10%, rgba(0, 0, 0, 0.573) 51%, rgba(1, 1, 1, 0.377) 100%), url("../locations/location4/02.webp");
+    background: linear-gradient(to right, rgba(29, 73, 101, 0.655) 10%, rgba(0, 0, 0, 0.573) 51%, rgba(1, 1, 1, 0.377) 100%), url("../locations/location4/01.webp");
     background-size: cover;
     background-position: top left;
 }
 
 .slider li:nth-child(5) {
-    background: linear-gradient(to right, rgba(29, 73, 101, 0.655) 10%, rgba(0, 0, 0, 0.573) 51%, rgba(1, 1, 1, 0.377) 100%), url("../locations/location4/02.webp");
+    background: linear-gradient(to right, rgba(29, 73, 101, 0.655) 10%, rgba(0, 0, 0, 0.573) 51%, rgba(1, 1, 1, 0.377) 100%), url("../locations/location5/16.jpg");
     background-size: cover;
     background-position: top left;
 }
@@ -1369,7 +1369,8 @@ label:hover {
 #tab2:checked~#tab-content2,
 #tab3:checked~#tab-content3,
 #tab4:checked~#tab-content4,
-#tab5:checked~#tab-content5 {
+#tab5:checked~#tab-content5, 
+#tab6:checked~#tab-content6 {
     display: block;
 }
 
