@@ -299,6 +299,54 @@
         color: #fff;
         font-size: 25px;
     }
+    .dropdown-menu {
+    min-width: 10rem;
+}
+
+.dropdown-menu.dropdown-menu-end {
+    margin-left: auto;
+}
+
+.dropdown-toggle::after {
+    /* display: inline-block; */
+    margin-left: 0.255em;
+    vertical-align: middle;
+    content: "";
+    border-top: 0.3em solid;
+    border-right: 0.3em solid transparent;
+    border-bottom: 0;
+    border-left:
+ 
+0.3em solid transparent;
+}
+
+.dropdown-toggle:empty::after {
+    margin-left: 0;
+}
+
+.dropdown.show .dropdown-toggle::after {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu .dropdown-item {
+    width: 100%;
+}
+
+.dropdown-menu .dropdown-item.dropdown-toggle::after {
+    float: right;
+    margin-left: 0;
+}
+
+.dropdown-menu .dropdown-item.dropdown-toggle:empty::after {
+    margin-right: 0.255em;
+}
+.dropdown-menu {
+    display: none;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
 </style>
 
 <body>
@@ -338,7 +386,7 @@
             <div class="container main_nav_container justify-content-center">
                 <div class="d-flex flex-row justify-content-between inner_div">
                     <a class="navbar-brand" href="index.html">
-                        <img src="./public/images/BSquare logo without bg.png" alt="Bsquare" ></a>
+                        <img src="./public/images/BSquare logo without bg.png" alt="Bsquare"></a>
                     <button class="navbar-toggler " type="button" data-bs-toggle="offcanvas"
                         data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2">
                         <span class="bi bi-list "></span>
@@ -359,13 +407,16 @@
                                 <a class="nav-link" aria-current="page" href="index.html">Home</a>
                             </li> -->
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown2" role="button"
+
+
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button"
                                     aria-haspopup="true" aria-expanded="false" type="button" data-bs-toggle="dropdown">
                                     Locations
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
                                     <a class="dropdown-item" href="./locations/location1.html">Westgate</a>
                                     <a class="dropdown-item" href="./locations/location2.html">S.G.Road</a>
+                                    
                                     <a class="dropdown-item" href="./locations/location3.html">IIM A Road</a>
                                     <a class="dropdown-item" href="./locations/location4.html">Navrangpura</a>
                                     <a class="dropdown-item" href="./locations/location5.html">Sindhu Bhawan</a>
@@ -754,7 +805,7 @@
                                                     and state-of-the-art, rental office space in the heart of Ahmedabad
                                                     ...</p>
 
-                                                    <br>
+                                                <br>
                                                 <a href="" class="read_more_btn"><button>Know More</button></a>
                                             </div>
                                         </div>
@@ -798,7 +849,7 @@
                                                 <h6>Board Room</h6>
                                                 <p>Now conducting meetings, interviews, conferences and presentations at
                                                     a fully furnished and well equipped meeting room is ...</p>
-                                                    <br>
+                                                <br>
                                                 <a href="" class="read_more_btn"><button>Know More</button></a>
                                             </div>
                                         </div>
@@ -818,7 +869,7 @@
                                                 <p>A virtual office in Ahmedabad will have a designated phone number,
                                                     address, mail handling and phone reception for your company while
                                                     you are away ...</p>
-                                                    <br>
+                                                <br>
                                                 <a href="" class="read_more_btn"><button>Know More</button></a>
                                             </div>
                                         </div>
@@ -1635,6 +1686,16 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="footer-widget-heading">
+                            <h3>Locations</h3>
+                            <div class="row">
+                                <div class="col"></div>
+                                <div class="col"></div>
+                                <div class="col"></div>
+                                <div class="col"></div>
+                            </div>
+                            </div>
+                           
 
                         </div>
 
@@ -1768,7 +1829,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script>
-        
+
         $(document).ready(function () {
             $('#myModal').modal('show');
         });
